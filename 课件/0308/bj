@@ -1,0 +1,40 @@
+selenium
+中间建 如果返回response 直接将结果返回给spider
+
+请求头useragent
+1.在配置文件自定义 ua池
+    直接在spider
+    在中间中去使用
+        设置 request.header['User-Agent']=ua
+2.使用fake_useragent
+       ua = UserAgent()
+       ua.浏览器名
+       ua.random
+
+3.导入setting的方式
+    from 项目名.setting import USER_AGENTS
+    from scrapy.conf import setting
+
+requests代理
+requests 是直接将字典给到proxies
+    {
+        'http':'http://ip:port',
+        'https':'https://ip:port'
+    }
+    {
+        'http':'http://同户名:密码@ip:port'
+    }
+
+4.scrapy proxy
+    非认证代理 给 request.meta['proxy']=prox['host']
+    prox = {
+        'host':'http://ip:port'
+    }
+   认证代理的格式
+        auth = base64.b64encode(bytes(proxys['auth'],encoding="utf-8"))
+        request.headers['Proxy-Authorization'] = b'Basic ' + auth
+        request.meta['proxy']=proxys['host']
+   proxy = {
+        'host':'http://ip:port',
+        'auth':'用户名：密码'
+   }

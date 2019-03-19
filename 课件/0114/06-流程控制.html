@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>流程控制</title>
+</head>
+<body>
+    <h1>流程控制</h1>
+    <hr>
+    <script>
+		/*
+			流程控制    	
+			1. 顺序结构: 代码从上往下依次执行
+			2. 分支结构: 通过if 和 switch 来进行分支选择
+			3. 循环结构: 通过for, while 等重复执行某段代码 (功能)
+		 */
+
+
+		// 分支1:
+		//  	if( 条件表达式 )  代码块
+		//  	
+		//  	分析: if条件 只能影响到紧跟在后面的一句话
+
+		// if( 1+1==2 ) console.log('加鸡腿');
+		if( 1+1==3 ) console.log('加鸡腿');
+		console.log('白米饭');
+		console.log('-------------------------------')
+
+
+		// 分支2:
+		// 		if( 条件表达式 ) {
+		// 			代码块
+		// 		}
+		// 		
+		// 		分析:
+		// 			if条件 能影响{} 内的所有代码
+
+		if (1+1==3) {
+			console.log('火枪腿');
+			console.log('番茄鸡蛋汤');
+		}
+		console.log('白米饭');
+		console.log('-------------------------------')
+
+
+		// 分支3:
+		//  	if ( 条件表达式 ) {
+		//  		true环境
+		//  	}else{
+		//  		false环境
+		//  	}
+		if ( true ) {
+			console.log('我吃啥, 狗吃啥');			
+		}else{
+			console.log('狗吃啥, 我吃啥');
+		}
+		console.log('-------------------------------')
+
+		// 分支4:
+		// 		if ( 条件表达式1 ) {
+		// 			true环境1
+		// 		}else if( 条件表达式2 ){
+		// 			true环境2
+		// 		}else if( 条件表达式3 ){
+		// 			true环境3
+		// 		}...
+
+		var lv = 7.5;
+
+		if (lv < 6) {
+			console.log('黑铁');
+		}else if(lv < 7 ){
+			console.log('青铜');
+		}else if(lv < 8){
+			console.log('白银');
+		}else if (lv < 9) {
+			console.log('黄金');
+		}else{
+			console.log('王者');
+		}
+		console.log('-------------------------------')
+
+
+		// 分支5:
+		// 	if ( 条件表达式1 ) {
+		// 		if ( 条件表达式2 ) {
+		// 			if ( 条件表达式3) {
+		// 				代码块
+		// 			}
+		// 		}
+		// 	}
+
+		console.log('-------------------------------')
+
+
+		// switch 分支
+		// 
+		// 	switch( 标志 ){
+		// 		case 标志1: 代码块
+		// 		case 标志2: 代码块
+		// 		...
+		// 		case 标志N: 代码块
+		// 		default: 代码块
+		// 	}
+		// 	
+		// 	
+		// 	注意点:
+		// 		默认情况下, 每执行一个case, 默认会自动向下执行
+		// 		
+		// 		若只执行一个case, 需要在每个case 的最后面, 补上break
+		// 		
+		// 		当匹配不到标志时, 默认 default
+		// 	
+		// 	适用场景:
+		// 		if 适用于 范围判断 和 定值判断
+		// 		switch 只适用于 定值判断
+		// 		
+
+
+
+		var name = '快乐风男';
+		// var name = '风女';
+		// var name = '提百万';
+		var name = '儿童劫';
+
+		switch( name ){
+			case '快乐风男': console.log('面对疾风吧'); break;
+			case '风女': console.log('只有998, 就能让你爽到不能呼吸'); break;
+			case '提百万': console.log('提莫队长, 正在送命'); break;
+			default: console.log('404');
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

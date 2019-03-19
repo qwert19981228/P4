@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    #out{
+        width: 1000px;
+        height: 40px;
+        border: 1px solid #333;
+    }
+    #in{
+        width: 0%;
+        height: 40px;
+        background-color: #05f;
+        color:#fff;
+        font-size: 25px;
+        line-height: 40px;
+        text-align: center;
+    }
+    button{
+        width: 200px;
+        height: 50px;
+        font-size: 30px;
+        background-color : #fff;
+        color : #000;
+    }
+    </style>
+
+</head>
+<body>
+    <h1>下载进度条</h1>
+    <hr>
+
+    <button id="btn" onclick="s()">开始</button>
+    <br><br><br><br>
+
+    <div id="out">
+        <div id="in"></div>
+    </div>
+
+
+    <script>
+        // //获取 div
+        // var div = document.getElementById('in');
+        // //设置定时函数
+        // var timer = setInterval(run, 100);
+        // //声明循环变量
+        // var m = 0;
+        // //声明 定时 的函数
+        // function run(){
+        //     m ++;
+        //     div.style.width = m + '%';
+        //     div.innerHTML = m+' '+'%';
+        //     判断定时结束
+        //     if (m >= 100) {
+        //         clearInterval(timer);
+        //         return;
+        //     }
+        // }
+
+        //获取div 和 btn
+        var div = document.getElementById('in');
+        var btn = document.getElementById('btn');
+
+        var m = 0;//下载进度,从0开始
+        var mark = true;//暂停标记
+
+        //进度执行函数
+        function run(){
+            //判断定时结束
+            if (m == 100) {
+                btn.innerHTML = '已下载完成';
+                alert('迅雷提示 : 您的小片儿 已经下载好了!');
+                clearInterval(timer);
+                m = 0;
+                return;
+            }
+            m++;
+            div.style.width = m+'%';
+            div.innerHTML = m+' '+'%';
+        }
+
+        //设置定时操作函数
+        function s(){
+            if (m == 0) {
+                //首次开始,即m=0时
+                timer = setInterval(run,100);
+                btn.innerHTML = '暂停';
+                btn.style.color = '#fff';
+                btn.style.backgroundColor = '#000';
+            }else{
+                //m非0,进度条在执行,要根据标记 判断是否为暂停/开始
+                if (mark) {
+                    mark = false;//改标记状态
+                    clearInterval(timer);
+                    btn.innerHTML = '开始';
+                    btn.style.color = '#000';
+                    btn.style.backgroundColor = '#fff';
+                }else{
+                    mark = true;//改标记状态
+                    timer = setInterval(run,100);
+                    btn.innerHTML = '暂停';
+                    btn.style.color = '#fff';
+                    btn.style.backgroundColor = '#000';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

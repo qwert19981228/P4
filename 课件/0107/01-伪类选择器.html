@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>伪类选择器</title>
+    <style>
+    	a{color: black;}
+    	a:hover{color: blue;}
+
+    	/* ul:hover li{color: red;} */
+
+    	input{outline: none; border: 1px solid #ccc;}
+    	input:focus{border: 1px solid #5D98F0;}
+
+		/* li:first-child{color: red;} */
+		/* li:first-of-type{color: green;} */
+
+
+		/* li:nth-of-type(3){color: blue;} */
+		/* li:nth-of-type(odd){color: blue;} */
+		/* li:nth-of-type(even){color: blue;} */
+		/* li:nth-of-type(2n){color: blue;} */
+		/* li:nth-of-type(2n+1){color: blue;} */
+		li:nth-of-type(3n){color: blue;}
+
+
+
+    </style>
+</head>
+<body>
+    <h1>伪类选择器</h1>
+    <hr>
+    <!-- 
+		s1 和 s2 代表基础选择器
+
+		1. s1:hover{ ... } 		当鼠标悬停在s1上时, 触发css
+
+		   使用技巧:
+		   	s1:hover   s2{ ... }
+		   	s1:hover > s2{ ... }
+		   	s1:hover + s2{ ... }
+		   	s1:hover ~ s2{ ... }
+
+		2. s1:focus{ ... } 		当s1获取到光标时, 触发css
+
+		3. 按照顺序查找标签
+			s1:first-child{ ... } 	匹配s1父级里面的第一个元素s1
+			详细分析:
+				第一步: 先找s1的父级
+				第二步: 找到父级里面的第一个儿子元素
+				第三步: 第一个儿子元素 是不是s1
+
+			s1充当子级
+
+		4. 按照标签查询顺序
+			s1:first-of-type{ ... } 匹配s1父级里面所有s1中的第一个
+			详细分析:
+				第一步: 先找s1的父级
+				第二步: 找到父级里面的所有s1
+				第三步: 找到s1中第一个
+			s1充当子级
+
+		5. 
+			s1:last-child{} 	匹配s1父级里面的最后一个元素s1
+			s1:last-of-type{} 	匹配s1父级里面所有s1中的最后一个
+
+			s1:nth-child(N){} 	匹配s1父级里面的第N个元素s1
+			s1:nth-of-type(N){} 匹配s1父级里面所有s1中的第N个
+					N的写法:
+					* 1 数字
+					* 2 单词  odd奇数   even偶数
+					* 3 一元一次方程
+					* 	例如： 2n
+					* 		   2n+1
+					* 		   3n
+					* 		   3n+1
+					* 		   3n+2
+					* 		   4n
+					* 		   。。。
+
+    -->
+    
+    <a href="">新闻</a>
+    <a href="">hao123</a>
+    <a href="">地图</a>
+    <a href="">视频</a>
+
+
+    <ul>
+    	<li>搜索设置</li>
+    	<li>高级搜索</li>
+    	<li>关闭预测</li>
+    </ul>
+
+    <input type="text">
+
+    <hr>
+
+	世界上最没用的一句话
+	<ul>
+		<li>警察: 不要跑</li>
+		<li>神经病: 我没病</li>
+		<li>女人: 不要</li>
+	</ul>
+
+	<hr>
+
+	世界上最没用的一句话
+	<ol>
+		<p>烟盒: 吸烟有害健康</p>
+		<li>警察: 不要跑</li>
+		<li>神经病: 我没病</li>
+		<li>女人: 不要</li>
+		<p>医生: 我尽力了</p>
+	</ol>
+
+
+
+
+    
+
+</body>
+</html>

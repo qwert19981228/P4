@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>盒子阴影</title>
+    <style>
+    	
+		.box{
+			width: 200px;
+			height: 200px;
+			border: 5px solid;
+			box-shadow: 10px 20px 30px #ccc;
+			box-shadow: 10px 20px 30px 40px #ccc;
+			box-shadow: 10px 20px 30px 40px #ccc inset;
+		}
+
+    </style>
+</head>
+<body>
+    <h1>盒子阴影</h1>
+    <hr>
+    <!-- 
+		box-shadow: 10px 20px 30px #ccc;
+		box-shadow: 10px 20px 30px 40px #ccc;
+		box-shadow: 10px 20px 30px 40px #ccc inset;
+		
+		10px: 水平对齐
+		20px: 垂直对齐
+		30px: 模糊度   不能为负数
+		40px: 阴影面积 默认为当前大小, 可省略
+		#ccc: 阴影颜色
+		inset: 内阴影
+    -->
+
+	<div class="box"></div>
+    
+</body>
+</html>

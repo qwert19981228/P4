@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>放大镜</title>
+	<script src="./jquery-1.8.3.min.js"></script>
+	<style>
+
+		#small{
+			width: 200px;
+			height: 300px;
+			margin-left: 200px;
+			margin-top: 200px;
+			position: relative;
+		}
+
+		#small img{
+			width: 200px;
+			height: 300px;
+		}
+
+		#small #zoom{
+			width: 80px;
+			height: 120px;
+			background: rgba(0,0,0,0.3);
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			display: none;
+		}
+
+		#small #zoom:hover{
+			cursor: move;
+		}
+
+		#big {
+			width: 400px;
+			height: 600px;
+			overflow: hidden;
+			display: none;
+		}
+
+		#big img{
+			width: 1000px;
+			height: 1500px;
+		}
+
+
+	</style>
+</head>
+<body>
+	
+	
+	<div id="small">
+		<img src="./imgs/2.jpg">
+		<div id="zoom"></div>
+	</div>
+
+
+	<div id="big">
+		<img src="./imgs/2.jpg">
+	</div>
+
+
+	<script>
+		
+		$('#small').mouseover(function(){
+			// 当鼠标悬停在 #img 上时, 显示 zoom 和 big 框
+			$('#zoom').show();
+			$('#big').show();
+
+
+			// 获取 small 的位置	
+			var left = $(this).offset().left;
+			var top = $(this).offset().top;
+
+			// 设置 big 的位置
+			$('#big').offset({
+				left: left + $('#small').width() + 30,
+				top: top - 150,
+			})
+
+
+			// 设置 zoom 随着鼠标的移动而移动
+			$('#zoom').mousemove(function( event ){
+
+				// 当前鼠标 距离 small最左侧的距离
+				var x = event.pageX - left;
+				var y = event.pageY - top;
+
+				$('#zoom').css({
+					left:  Math.min( Math.max(0, (x-40)), 120 ),
+					top: Math.min( Math.max(0, (y-60))  , 180)
+				});
+
+
+				$('#big').scrollLeft(  (x-40)*5 ).scrollTop( (y-60)*5 );
+			});
+
+		}).mouseout(function(){
+			$('#zoom').hide();
+			$('#big').hide();
+
+		});
+
+
+
+	</script>
+
+
+
+
+</body>
+</html>

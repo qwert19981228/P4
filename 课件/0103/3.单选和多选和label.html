@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>表单</h1>
+    <hr>
+
+    <form action="./cgi-bin/form.py" method="get">
+        性别:
+            <label><input type="radio" name="sex" value="woman">少女</label>
+            <label><input type="radio" name="sex" value="man" checked>猛男</label>
+            <label><input type="radio" name="sex" value="twoinone">妖人</label>
+        <br>
+        <br>
+        爱好:
+            <input type="checkbox" name="hobby1" value="woman" id="ck1"><label for="ck1">少女</label>
+            <input type="checkbox" name="hobby2" value="man" id="ck2"><label for="ck2">猛男</label>
+            <input type="checkbox" name="hobby4" value="yuepao" id="ck3" checked><label for="ck3">约跑</label>
+            <input type="checkbox" name="hobby5" value="yuefan" id="ck4"><label for="ck4">约饭</label>
+        <br>
+        <br>
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>

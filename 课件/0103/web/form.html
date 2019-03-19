@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单</title>
+</head>
+<body>
+	<!-- 
+		form属性
+			action 	将表单提交给服务器
+			method  传输方式
+			
+
+		注意点:
+			由于 启动的服务器中 使用cgi程序处理类. 所以处理 html请求的py文件经常会放在 cgi-bin 目录中
+			注意哦, 必须要创建该目录, 否则在访问时, 会显示原生py代码
+
+	 -->
+	<form action="./cgi-bin/form.py" method="get" enctype="multipart/form-data"> 
+		<input type="text" name="userName"> 
+		<input type="file" name="icon">
+		<input type="submit"> 
+	</form>
+</body>	
+</html>

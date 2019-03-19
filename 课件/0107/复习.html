@@ -1,0 +1,189 @@
+<pre>
+	1. 表单
+		标签
+			form
+			input
+			select
+			option
+			textarea
+			button
+
+		属性
+			form
+				action 		将表单提交给 xx服务器文件
+				method 		将表单以什么方式传输给服务器
+					get 	明文, 速度快, 安全低, 
+							大小< 2K, 实际受到浏览器限制
+							适用场景: 查
+
+					post 	密文, 速度慢, 安全高, 
+							大小理论无限制, 实际上受到服务器限制
+							适用场景: 增删改
+				enctype 
+					multipart/form-data 只有在上传文件时才需要
+
+			select 		下拉框
+				name
+				multiple 
+
+			option 		下拉子菜单
+				value
+				selected
+
+			textarea
+				rows 行
+				cols 列
+				name 
+				默认值: 正文内容. 不需要value
+
+			button 按钮, 自带提交
+
+			input
+				name 	 给表单取名
+				value 	 给表单赋予默认值
+				type
+				 	默认 text
+				 	password
+				 	radio
+				 	checkbox
+				 	file
+				 	hidden
+
+				 	email
+				 	url
+				 	number
+				 	date
+					search
+
+					submit
+
+		常用属性
+			maxlength
+			minlength
+			placeholder	
+			disabled 禁用
+			readonly 只读	
+			required 不能为空
+			autofocus 自动获取光标
+			autocomplete 自动提示  On/Off
+			multiple  多选(文件, 下拉框)
+			checked
+			selected 
+
+	2. 分帧
+		大分帧
+			不能与body共存
+			frameset
+				rows
+				cols
+				frameborder
+
+			frame
+				name
+				src
+				noresize
+				scrolling=Yes/No
+
+		小分帧
+			可以与body共存
+			iframe
+				frameborder
+				name
+				src
+				scrolling
+				width
+				height
+
+	3. head头标签
+		字符集
+		网页标题
+		重定向 <meta http-equiv="refresh" content="秒数; url=网址">
+		基地地址 <base href="网址">
+		描述 
+		关键字
+		导入css
+		导入图标
+		导入js
+
+	4. css基础
+		注释: /* 注释内容  */
+		html注释: <!-- 注释内容 -->
+
+		css属性不区分大小写
+		css格式:
+			选择器{
+				属性名:属性值;
+				属性名:属性值;
+				...
+				属性名:属性值;
+			}
+
+	5. 颜色
+		单词
+		#RGB
+		#RRGGBB
+		RGB(0~255, 0~255, 0~255)
+		RGBA(0~255, 0~255, 0~255, 0~1)
+
+	6. 长度
+		px, em, %
+
+	7. 导入方式
+		外链式
+		内嵌式
+		内联式
+
+	8. 选择器
+		基础选择器
+			标签名{...}
+			.class名{...}
+			#id名{...}
+
+		关联选择器
+			s1 s2{ ... } 	匹配s1下的所有后辈s2
+			s1>s2{ ... } 	匹配s1下的所有儿子s2
+			s1+s2{ ... } 	匹配s1后面的一个兄弟s1
+			s1~s2{ ... } 	匹配s1后面的所有兄弟s2
+
+		组合选择器
+			s1, s2, s3, ... sN{...}
+			给不同的选择器 赋予相同的样式
+
+		伪类选择器
+			s1:hover{ ... }
+			s1:focus{ ... }
+			s1:first-child{}
+			s1:last-child{}
+			s1:nth-child(){}
+			s1:first-of-type{...}
+			s1:last-of-type{...}
+			s1:nth-of-type(){...}
+
+		伪对象选择器
+			s1::before{...}
+			s1::after{...}
+			常配合 content属性
+	
+	9. 优先级
+		权重值相同时, 就近原则
+		权重值不同时, 权重越大, 优先级越高
+		
+		权重分配:
+			标签: 1
+			class: 10
+			id: 100
+			最高权重: !important  一般写在属性值的后面
+
+		权重可以叠加
+
+</pre>
+
+<input type="date">
+
+
+<input type="text" autofocus>
+
+
+
+
+

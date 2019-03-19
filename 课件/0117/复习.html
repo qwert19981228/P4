@@ -1,0 +1,81 @@
+<pre>
+	1. constructor
+		查看对象的父级对象
+
+	2. 	原型
+		prototype 给对象添加属性和方法
+
+	3. 数组
+		构造方式: new Array( 值1, 值2, ... )
+		JSON方式: [ 值1, 值2, 值... ]
+		
+		数组操作
+			访问数组: 数组名[ 键 ]
+			修改数组: 数组名[ 已存在的键 ] = 值
+			新增数组: 数组名[ 不存在的键 ] = 值
+			
+			键为 string, 不会计入length
+			键为 number, 会计入length
+
+		遍历数组
+			for( ) 		适合遍历数组
+			for( in ) 	适合遍历对象
+
+		内置对象Array
+			会改变原有数组
+				push
+				pop
+				unshift
+				shift
+				reverse
+				sort
+
+			不会改变原有数组
+				concat
+				join
+				slice(x,y)
+
+			属性
+				length
+
+
+	4. 事件
+		绑定1: 在开始标签内容  事件="js代码"
+		绑定2: 标签对象.事件 = function(){} 或 函数名
+		监听:  标签对象.addEventListener(事件, 函数, bool)
+				true: 事件捕获    先父级 -> 再子集
+				false: 事件冒泡 	先子集 -> 再父级
+		
+		解绑:
+			标签对象.事件 = null 或 空函数
+			标签对象.removeEventListener(事件, 函数)
+
+	5. 鼠标事件
+		onclick 
+		ondblclick
+		oncontextmenu
+		onmouseover
+		onmouseout
+		onmousedown
+		onmouseup
+		onmousemove
+
+	6. event事件
+		获取event, 在事件触发时, 才能赋予
+		xx对象.事件 = function( event ){}
+
+		做IE兼容 window.event
+
+		event属性
+			x 		
+			y
+			offsetX
+			offsetY 
+			button
+
+	7. 闭包
+		特性: 数据持久化
+
+
+
+</pre>

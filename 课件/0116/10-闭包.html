@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+</head>
+<body>
+    <h1>闭包</h1>
+    <hr>
+    <!-- 
+		闭包: 主要作用就是让数据 持久化
+     -->
+
+    <ul id="nav">
+    	<li>小米</li>
+    	<li>红米</li>
+    	<li>笔记本</li>
+    </ul>
+
+   <div id="btnlist">
+   		<button>获取第一个内容</button>
+   		<button>获取第二个内容</button>
+   		<button>获取第三个内容</button>
+   </div>
+
+	<script>
+		var list = document.getElementById('nav').getElementsByTagName('li');
+		var btnlist = document.getElementById('btnlist').getElementsByTagName('button');
+
+
+		for(var i = 0; i < btnlist.length; i++){
+			// btnlist[i].onclick = function(){
+			// 	alert(i);
+			// }
+			// Bug: 只能获取到 最后一个i, 前面获取不到
+
+
+			// 原生写法
+			// function demo(x){
+			// 	btnlist[x].onclick = function(){
+			// 		// alert(x);
+			// 		alert( list[x].innerHTML );
+			// 	}
+			// }
+
+			// demo(i);
+
+
+			// 自执行函数
+			(function(i){
+				btnlist[i].onclick = function(){
+					alert( list[i].innerHTML );
+				}
+			})(i);
+			// 利用 闭包的数据持久化的特性, 将参数送进函数, 可实时获取当前的 i
+		}
+
+
+
+	</script>
+	
+
+    
+
+</body>
+</html>

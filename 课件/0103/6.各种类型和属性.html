@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>表单</h1>
+    <hr>
+
+    <form action="./cgi-bin/form.py" method="get">
+        设置权限:
+            <input type="radio" name="access" value="0" disabled>ROOT
+            <input type="radio" name="access" value="1">超管
+            <input type="radio" name="access" value="2">VIP
+        <br>
+        <br>
+        手机号: <input type="text" name="tel" value="13888888888" id="tel" readonly>
+        <input type="button" value="点击解绑" onclick="document.getElementById('tel').removeAttribute('readonly')">
+        <br>
+        <br>
+
+        1~10: <input type="number" name="num" max="10" min="1" value="5">
+        <br>
+        <br>
+
+        限制时间: <input type="time" name="times">
+
+        <br>
+        限制邮箱: <input type="email" name="em">
+        <br>
+
+
+        <input type="submit" value="提交">
+        
+
+        <button type="submit">随便写..</button>
+
+    </form>
+
+</body>
+</html>

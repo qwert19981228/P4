@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>绑定一组元素 与 this的使用</title>
+</head>
+<body>
+    <h1>绑定一组元素 与 this的使用</h1>
+    <hr>
+    <!-- 
+		1. 获取一组标签
+			元素对象.getElementsByTagName('标签名')
+
+			document :   整个页面
+			指定标签对象 : 指定标签
+
+		2. this
+			代表当前对象
+			谁用this, this就代表谁
+     -->
+
+
+     <ul id="nav">
+     	<li>小米</li>
+     	<li>红米</li>
+     	<li>笔记本</li>
+     </ul>
+
+
+     <script>
+     		var nav = document.getElementById('nav');
+     		var list = nav.getElementsByTagName('li');
+
+     		for(var i = 0; i < list.length; i++){
+     			list[i].onclick = function(){
+     				alert(this.innerHTML);
+     				this.style.color = 'red';
+     			}
+     		}
+     </script>
+    
+
+</body>
+</html>

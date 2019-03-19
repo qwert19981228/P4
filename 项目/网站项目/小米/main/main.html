@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小米商城 - 小米MIX 3、蓝米Note 7、小米8、小米电视官方网站</title>
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="../jquery-1.8.3.min.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div id="top">
+        <div class="container">
+            <div class="top-left">
+                <ul>
+                    <li><a href="">小米商城</a></li>
+                    <li><a href="">MIUI</a></li>
+                    <li><a href="">loT</a></li>
+                    <li><a href="">云服务</a></li>
+                    <li><a href="">金融</a></li>
+                    <li><a href="">有品</a></li>
+                    <li><a href="">小爱开放平台</a></li>
+                    <li><a href="">政企服务</a></li>
+                    <li><a href="">资质证照</a></li>
+                    <li><a href="">协议规则</a></li>
+                    <li><a href="">下载app</a></li>
+                    <li><a href="">Select Region</a></li>
+                </ul>
+            </div>
+            <div class="top-right">
+                <ul>
+                    <li><a href="../login/login.html">登录</a></li>
+                    <li><a href="../register/register.html">注册</a></li>
+                    <li><a href="">消息通知</a></li>
+                </ul>
+                <div class="cart">
+                    <span class="iconfont">&#xe622;</span>
+                    购物车
+                    <span>(0)</span>
+                    <div class="cart-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="nav" class="clearfix">
+        <div class="container">
+            <div class="logo"></div>
+            <div class="search">
+                <form action="">
+                    <input type="text" class="search-text">
+                    <input type="submit" class="search-btn iconfont" value="&#xe620;">
+                </form>
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li>
+						<a href="">小米手机</a>
+						<div class="nav-goods"></div>
+					</li>
+					<li>
+						<a href="">红米</a>
+						<div class="nav-goods"></div>
+					</li>
+					<li>
+						<a href="">电视</a>
+						<div class="nav-goods"></div>
+					</li>
+					<li>
+						<a href="">笔记本</a>
+						<div class="nav-goods"></div>
+					</li>
+					<li>
+						<a href="">家电</a>
+						<div class="nav-goods"></div>
+					</li>
+					<li>
+						<a href="">新品</a>
+						<div class="nav-goods"></div>
+					</li>
+					<li>
+						<a href="">路由器</a>
+						<div class="nav-goods"></div>
+					</li>
+                    <li>
+						<a href="">智能硬件</a>
+						<div class="nav-goods"></div>
+					</li>
+                    <li>
+						<a href="">服务</a>
+						<div class="nav-goods"></div>
+					</li>
+                    <li>
+						<a href="">社区</a>
+						<div class="nav-goods"></div>
+					</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="hot">
+        <div class="banner" id="imgList">
+            <img src="banner/1.jpg" width="1226">
+            <img src="banner/2.jpg" width="1226">
+            <img src="banner/3.jpg" width="1226">
+            <img src="banner/4.jpg" width="1226">
+            <img src="banner/5.jpg" width="1226">
+            <ul>
+            <li class="menu-list">
+                <span>手机 电话卡</span>
+                <span class="iconfont">&#xe624;</span>
+                <div class="more"></div>
+            </li>
+            <li class="menu-list">
+                <span>电视 盒子</span>
+                <span class="iconfont">&#xe624;</span>
+                <div class="more"></div>
+            </li>
+            <li class="menu-list">
+                <span>笔记本 平板</span>
+                <span class="iconfont">&#xe624;</span>
+                <div class="more"></div>
+            </li>
+            <li class="menu-list">
+                <span>家电 插线板</span>
+                <span class="iconfont">&#xe624;</span>
+                <div class="more"></div>
+            </li>
+            <li class="menu-list">
+                <span>出行 穿戴</span>
+                <span class="iconfont">&#xe624;</span>
+                <div class="more"></div>
+            </li>
+            <li class="menu-list">
+                <span>智能 路由器</span>
+                <span class="iconfont">&#xe624;</span>
+                <div class="more"></div>
+            </li>
+            <li class="menu-list">
+                <span>电源 配件</span>
+                <span class="iconfont">&#xe624;</span>
+                <div class="more"></div>
+            </li>
+            <li class="menu-list">
+                <span>健康 儿童</span>
+                <span class="iconfont">&#xe624;</span>
+                <div class="more"></div>
+            </li>
+            <li class="menu-list">
+                <span>耳机 音箱</span>
+                <span class="iconfont">&#xe624;</span>
+                <div class="more"></div>
+            </li>
+            <li class="menu-list">
+                <span>生活 箱包</span>
+                <span class="iconfont">&#xe624;</span>
+                <div class="more"></div>
+            </li>
+        </ul>
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="list" id="iconList">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+        </div>
+        <div class="subnav">
+            <ul>
+                <li class="font-list iconfont">
+                    <div class="font-box">
+                        <span class="iconfont-text">&#xe660;</span>
+                        <span class="font-text">选购手机</span>
+                    </div>
+                </li>
+                <li class="font-list iconfont">
+                    <div class="font-box">
+                        <span class="iconfont-text">&#xe609;</span>
+                        <span class="font-text">企业团购</span>
+                    </div>
+                </li>
+                <li class="font-list iconfont">
+                    <div class="font-box">
+                        <span class="iconfont-text">&#xe671;</span>
+                        <span class="font-text">F码通道</span>
+                    </div>
+                </li>
+                <li class="font-list iconfont">
+                    <div class="font-box">
+                        <span class="iconfont-text">&#xe62d;</span>
+                        <span class="font-text">米粉卡</span>
+                    </div>
+                </li>
+                <li class="font-list iconfont">
+                    <div class="font-box">
+                        <span class="iconfont-text">&#xe66b;</span>
+                        <span class="font-text">以旧换新</span>
+                    </div>
+                </li>
+                <li class="font-list iconfont">
+                    <div class="font-box">
+                    <span class="iconfont-text">&#xe629;</span>
+                    <span class="font-text">话费充值</span>
+                    </div>
+                </li>
+            </ul>
+            <div class="news">
+
+                    <div class="news-list"><img src="1.jpg" width="316"></div>
+                    <div class="news-list"><img src="2.jpg" width="316"></div>
+                    <div class="news-list"><img src="3.jpg" width="316"></div>
+
+            </div>
+        </div>
+    </div>
+    <div id="flash">
+        <div class="flash-text clearfix">
+            <span class="title">小米闪购</span>
+            <div class="more iconfont">&#xe63b;</div>
+            <div class="more iconfont">&#xe63a;</div>
+
+        </div>
+        <div class="flash-list">
+            <ul>
+                <li><div class="item"><img src="./item/1.png" width="234"></div></li>
+                <li><div class="item"><img src="./item/2.png" width="234"></div></li>
+                <li><div class="item"><img src="./item/3.png" width="234"></div></li>
+                <li><div class="item"><img src="./item/4.png" width="234"></div></li>
+                <li><div class="item"><img src="./item/5.png" width="234"></div></li>
+            </ul>
+        </div>
+    </div>
+    <div class="heisha"></div>
+    <div id="main">
+        <div id="phone">
+            <div class="phone-main">
+                <div class="phone-test">
+                    <div class="title">手机</div>
+                    <div class="phone-font iconfont">
+                        <span>查看全部</span>&#xe641;</div>
+                </div>
+                <div class="phone-item clearfix">
+                    <div class="phone-large"></div>
+                    <div class="phone-list">
+                        <ul>
+                            <li><div class="item">
+                                <img src="./phone-item/1.png" width="234" height="300"></div></li>
+                            <li><div class="item">
+                                <img src="./phone-item/2.png" width="234" height="300"></div></li>
+                            <li><div class="item">
+                                <img src="./phone-item/3.png" width="234" height="300"></div></li>
+                            <li><div class="item">
+                                <img src="./phone-item/4.png" width="234" height="300"></div></li>
+                            <li><div class="item">
+                                <img src="./phone-item/5.png" width="234" height="300"></div></li>
+                            <li><div class="item">
+                                <img src="./phone-item/6.png" width="234" height="300"></div></li>
+                            <li><div class="item">
+                                <img src="./phone-item/7.png" width="234" height="300"></div></li>
+                            <li><div class="item">
+                                <img src="./phone-item/8.png" width="234" height="300"></div></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="banner1"></div>
+        <div id="homeelec">
+            <div class="homeelec-main">
+                <div class="homeelec-text">
+                    <span class="homeelec-title">家电</span>
+                    <span class="title-more">家居</span>
+                    <span class="title-more">电脑</span>
+                    <span class="title-more">电视影音</span>
+                    <span class="title-more">热门</span>
+                </div>
+                <div class="homeelec-item">
+                    <ul class="item-1">
+                        <li>
+                            <div class="list-1">
+                            <img src="./homeelec-item/1.jpg" width="234" height="300">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-1">
+                            <img src="./homeelec-item/2.jpg" width="234" height="300">
+                            </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <div class="list-2">
+                                <img src="./homeelec-item/3.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./homeelec-item/4.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./homeelec-item/5.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./homeelec-item/6.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./homeelec-item/7.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./homeelec-item/8.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./homeelec-item/9.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <div class="list-3">
+                                <img src="./homeelec-item/10.png" width="234" height="143">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-3">
+                                <img src="./homeelec-item/11.png" width="234" height="143">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="banner2"></div>
+        <div id="smart">
+            <div class="smart-main">
+                <div class="smart-text">
+                    <span class="smart-title">智能</span>
+                    <span class="title-more">路由器</span>
+                    <span class="title-more">酷玩</span>
+                    <span class="title-more">健康</span>
+                    <span class="title-more">出行</span>
+                    <span class="title-more">热门</span>
+                </div>
+                <div class="smart-item">
+                    <ul class="item-1">
+                        <li>
+                            <div class="list-1">
+                            <img src="./smart-item/1.jpg" width="234" height="300">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-1">
+                            <img src="./smart-item/2.jpg" width="234" height="300">
+                            </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <div class="list-2">
+                                <img src="./smart-item/3.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./smart-item/4.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./smart-item/5.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./smart-item/6.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./smart-item/7.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./smart-item/8.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./smart-item/9.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <div class="list-3">
+                                <img src="./smart-item/10.png" width="234" height="143">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-3">
+                                <img src="./smart-item/11.png" width="234" height="143">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="banner3"></div>
+        <div id="match">
+            <div class="match-main">
+                <div class="match-text">
+                    <span class="match-title">搭配</span>
+                    <span class="title-more">电池存储卡</span>
+                    <span class="title-more">电源</span>
+                    <span class="title-more">耳机音箱</span>
+                    <span class="title-more">热门</span>
+                </div>
+                <div class="match-item">
+                    <ul class="item-1">
+                        <li>
+                            <div class="list-1">
+                            <img src="./match-item/1.jpg" width="234" height="300">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-1">
+                            <img src="./match-item/2.jpg" width="234" height="300">
+                            </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <div class="list-2">
+                                <img src="./match-item/3.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./match-item/4.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./match-item/5.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./match-item/6.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./match-item/7.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./match-item/8.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./match-item/9.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <div class="list-3">
+                                <img src="./match-item/10.png" width="234" height="143">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-3">
+                                <img src="./match-item/11.png" width="234" height="143">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="banner4"></div>
+        <div id="accessories">
+            <div class="accessories-main">
+                <div class="accessories-text">
+                    <span class="accessories-title">配件</span>
+                    <span class="title-more">其他配件</span>
+                    <span class="title-more">保护套</span>
+                    <span class="title-more">贴膜</span>
+                    <span class="title-more">热门</span>
+                </div>
+                <div class="accessories-item">
+                    <ul class="item-1">
+                        <li>
+                            <div class="list-1">
+                            <img src="./accessories-item/1.jpg" width="234" height="300">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-1">
+                            <img src="./accessories-item/2.jpg" width="234" height="300">
+                            </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <div class="list-2">
+                                <img src="./accessories-item/3.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./accessories-item/4.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./accessories-item/5.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./accessories-item/6.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./accessories-item/7.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./accessories-item/8.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./accessories-item/9.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <div class="list-3">
+                                <img src="./accessories-item/10.png" width="234" height="143">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-3">
+                                <img src="./accessories-item/11.png" width="234" height="143">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="banner5"></div>
+        <div id="around">
+            <div class="around-main">
+                <div class="around-text">
+                    <span class="around-title">周边</span>
+                    <span class="title-more">箱包</span>
+                    <span class="title-more">生活周边</span>
+                    <span class="title-more">居家</span>
+                    <span class="title-more">出行</span>
+                    <span class="title-more">热门</span>
+                </div>
+                <div class="around-item">
+                    <ul class="item-1">
+                        <li>
+                            <div class="list-1">
+                            <img src="./around-item/1.jpg" width="234" height="300">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-1">
+                            <img src="./around-item/2.jpg" width="234" height="300">
+                            </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <div class="list-2">
+                                <img src="./around-item/3.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./around-item/4.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./around-item/5.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./around-item/6.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./around-item/7.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./around-item/8.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-2">
+                                <img src="./around-item/9.png" width="234" height="300">
+                                <div class="son"></div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <div class="list-3">
+                                <img src="./around-item/10.png" width="234" height="143">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-3">
+                                <img src="./around-item/11.png" width="234" height="143">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="banner6"></div>
+        <div id="recommend">
+        <div class="recommend-text clearfix">
+            <span class="title">为你推荐</span>
+            <div class="more iconfont">&#xe63b;</div>
+            <div class="more iconfont">&#xe63a;</div>
+
+        </div>
+        <div class="recommend-list">
+            <ul>
+                <li><div class="item"><img src="./item/6.png" width="234"></div></li>
+                <li><div class="item"><img src="./item/7.png" width="234"></div></li>
+                <li><div class="item"><img src="./item/8.png" width="234"></div></li>
+                <li><div class="item"><img src="./item/9.png" width="234"></div></li>
+                <li><div class="item"><img src="./item/10.png" width="234"></div></li>
+            </ul>
+        </div>
+    </div>
+        <div id="comment">
+        <div class="comment-text">
+            <span class="title">热评产品</span>
+        </div>
+        <div class="comment-item">
+            <ul>
+                <li><div><img src="./comment-item/1.png" width="296" height="415"></div></li>
+                <li><div><img src="./comment-item/2.png" width="296" height="415"></div></li>
+                <li><div><img src="./comment-item/3.png" width="296" height="415"></div></li>
+                <li><div><img src="./comment-item/4.png" width="296" height="415"></div></li>
+            </ul>
+        </div>
+    </div>
+        <div id="content">
+            <div class="content-text">
+            <span class="title">内容</span>
+        </div>
+            <div class="content-item">
+            <ul>
+                <li><div><img src="./content-item/1.png" width="296" height="415">
+                    <a href="" class="left iconfont">&#xe63a;</a>
+		<a href="" class="right iconfont">&#xe63b;</a>
+                </div></li>
+                <li><div><img src="./content-item/2.png" width="296" height="415">
+                <a href="" class="left iconfont">&#xe63a;</a>
+		<a href="" class="right iconfont">&#xe63b;</a>
+                </div></li>
+                <li><div><img src="./content-item/3.png" width="296" height="415">
+                <a href="" class="left iconfont">&#xe63a;</a>
+		<a href="" class="right iconfont">&#xe63b;</a>
+                </div></li>
+                <li><div><img src="./content-item/4.png" width="296" height="415">
+                <a href="" class="left iconfont">&#xe63a;</a>
+		<a href="" class="right iconfont">&#xe63b;</a>
+                </div></li>
+            </ul>
+        </div>
+        </div>
+        <div id="video">
+            <div class="video-text">
+                <span class="title">视频</span>
+                <div class="video-font iconfont">
+                    <span>查看全部</span>&#xe641;</div>
+        </div>
+            <div class="video-item">
+            <ul>
+                <li><div><img src="./video-item/1.png" width="296" height="285"></div></li>
+                <li><div><img src="./video-item/2.png" width="296" height="285"></div></li>
+                <li><div><img src="./video-item/3.png" width="296" height="285"></div></li>
+                <li><div><img src="./video-item/4.png" width="296" height="285"></div></li>
+            </ul>
+        </div>
+        </div>
+        <div id="site-footer">
+            <div class="footer-service iconfont ">
+                <ul>
+                <li><a href=""><i class="iconfont">&#xe62f;</i>预约维修服务</a></li>
+                <li><a href=""><i class="iconfont">&#xe637;</i>7天无理由退货</a></li>
+                <li><a href=""><i class="iconfont">&#xe636;</i>15天免费换货</a></li>
+                <li><a href=""><i class="iconfont">&#xe609;</i>满150包邮</a></li>
+                <li><a href=""><i class="iconfont">&#xe600;</i>520余家售后网点</a></li>
+                </ul>
+            </div>
+            <div class="footer-links clearfix">
+                <dl class="col-links">
+                    <dt>帮助中心</dt>
+                    <dd>账户管理</dd>
+                    <dd>购物指南</dd>
+                    <dd>订单操作</dd>
+                </dl>
+                <dl class="col-links">
+                    <dt>服务支持</dt>
+                    <dd>售后政策</dd>
+                    <dd>自助服务</dd>
+                    <dd>相关下载</dd>
+                </dl>
+                <dl class="col-links">
+                    <dt>线下门店</dt>
+                    <dd>小米之家</dd>
+                    <dd>服务网点</dd>
+                    <dd>授权体验店</dd>
+                </dl>
+                <dl class="col-links">
+                    <dt>关于小米</dt>
+                    <dd>了解小米</dd>
+                    <dd>加入小米</dd>
+                    <dd>投资者关系</dd>
+                </dl>
+                <dl class="col-links">
+                    <dt>关注我们</dt>
+                    <dd>新浪微博</dd>
+                    <dd>官方微信</dd>
+                    <dd>联系我们</dd>
+                </dl>
+                <dl class="col-links">
+                    <dt>特色服务</dt>
+                    <dd>F码通道</dd>
+                    <dd>礼物码</dd>
+                    <dd>防伪查询</dd>
+                </dl>
+            </div>
+            <div class="col-contact">
+                <p class="phone">400-100-5678</p>
+                <p>
+                    周一至周日 8:00-18:00
+                    <br>
+                    （仅收市话费）
+                </p>
+                <div class="btn">
+                    <i class="iconfont">&#xe642;</i>
+                     联系客服
+                </div>
+            </div>
+        </div>
+        <div id="site-info">
+            <div class="site-info-main container">
+                <div class="logo"></div>
+                <div class="info-text">
+                    <p>
+                        <a href="">小米商城</a>
+                        <a href="">MIUI</a>
+                        <a href="">米家</a>
+                        <a href="">米聊</a>
+                        <a href="">多看</a>
+                        <a href="">游戏</a>
+                        <a href="">路由器</a>
+                        <a href="">米粉卡</a>
+                        <a href="">政企服务</a>
+                        <a href="">小米天猫店</a>
+                        <a href="">隐私政策</a>
+                        <a href="">商城用户协议</a>
+                        <a href="">账号协议</a>
+                        <a href="">问题反馈</a>
+                        <a href="">廉正举报</a>
+                        <a href="">诚信合规</a>
+                        <a href="">Select Region</a>
+                    </p>
+                    <p class="sites">
+                        &copy;
+                        <a href="">mi.com</a>
+                        京ICP证110507号
+                        <a href="">京ICP备10046444号</a>
+                        <a href="">京公网安备11010802020134号</a>
+                        <a href="">京网文[2017]1530-131号</a>
+                        <br>
+                        <a href="">（京）网械平台备字（2018）第00005号</a>
+                        <a href="">互联网药品信息服务资格证 (京) -非经营性-2014-0090</a>
+                        <a href="">营业执照</a>
+                        <a href="">医疗器械公告</a>
+                        <br>
+                        <a href="">增值电信业务许可证</a>
+                        网络食品经营备案（京）【2018】WLSPJYBAHF-12
+                        <a href="">食品经营许可证</a>
+                        <br>
+                        违法和不良信息举报电话：185-0130-1238
+                        <a href="">知识产权侵权投诉</a>
+                         本网站所列数据，除特殊说明，所有数据均出自我司实验室测试
+                    </p>
+                </div>
+                <div class="info-links">
+                    <a href=""><img src="./info-links/truste.png"></a>
+                    <a href=""><img src="./info-links/v-logo-1.png"></a>
+                    <a href=""><img src="./info-links/v-logo-2.png"></a>
+                    <a href=""><img src="./info-links/v-logo-3.png"></a>
+                    <a href=""><img src="./info-links/v-logo-4.png"></a>
+
+                </div>
+                <div class="slogan"></div>
+            </div>
+        </div>
+    </div>
+    <div id="J_rightbar_l">
+        <ul>
+            <li>
+                <div>
+                    <img src="./bar-right/1-1.png" width="30" height="30" class="img-main" >
+                    <img src="./bar-right/1-2.png" width="30" height="30" class="img-right">
+                </div>
+                <p class="bar-text">手机APP</p>
+            </li>
+            <li>
+                <div>
+                    <img src="./bar-right/2-1.png" width="30" height="30" class="img-main">
+                    <img src="./bar-right/2-2.png" width="30" height="30" class="img-right">
+                </div>
+                <p class="bar-text">个人中心</p>
+            </li>
+            <li>
+                <div>
+                    <img src="./bar-right/3-1.png" width="30" height="30" class="img-main">
+                    <img src="./bar-right/3-2.png" width="30" height="30" class="img-right">
+                </div>
+                <p class="bar-text">联系客服</p>
+            </li>
+            <li>
+                <div>
+                    <img src="./bar-right/4-1.png" width="30" height="30" class="img-main">
+                    <img src="./bar-right/4-2.png" width="30" height="30" class="img-right">
+                </div>
+                <p class="bar-text">购物车</p>
+            </li>
+            <li id="bartop" style="display: none">
+                <div>
+                    <img src="./bar-right/totop.png" width="30" height="30" class="img-main">
+                    <img src="./bar-right/totop_hover.png" width="30" height="30" class="img-right">
+                    <p class="bar-text">回顶部</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    </div>
+    /*淡入淡出轮播*/
+	<script>
+		// 改变当前图片的显示
+		function img(m){
+			$('#imgList img').fadeOut(500).eq(m).fadeIn(500);
+		}
+		// 改变当前图标的显示
+		function icon(m){
+			$('#iconList .circle').css({
+                'background-color': 'rgba(0,0,0,0.4)',
+                'border-color': 'rgba(255,255,255,0.3)'
+            });
+			$('#iconList .circle').eq(m).css({
+                'background-color': 'rgba(255,255,255,0.3)',
+                'border-color': 'rgba(0,0,0,0.4)'
+			});
+		}
+
+		// 第几张图片 (索引)
+		index = 0;
+		function run(){
+			index++;
+			// 一共5张图, 当到 第6张图片时, 重置index = 0
+			if( index > 4){
+				index = 0;
+			}
+			img(index);  // 改变显示的图片
+			icon(index); // 改变显示的图标
+		}
+		timer = setInterval(run , 1000);
+
+		// 当鼠标悬停在 图片上时, 停止轮播
+		$('#imgList img').mouseover(function(){
+			clearInterval( timer );
+		});
+		// 当鼠标移出  图片上时, 恢复轮播
+		$('#imgList img').mouseout(function(){
+			timer = setInterval(run , 1000);
+		});
+
+		// 当鼠标 悬停在某一个图标上时, 立马切换到对应的图片
+		$('#iconList .circle').each(function(i, item){
+			$('#iconList .circle').eq(i).mouseover(function(){
+				img(i);
+				icon(i);
+				index = i;
+			});
+		})
+        //鼠标点击左右
+        imglength = $('#imgList img').length;
+        $('#hot .banner .left').click(function () {
+            clearInterval( timer );
+            index -= 1;
+            if (index == -1){
+                index = imglength - 1;
+            }
+            img(index);
+            icon(index);
+        });
+        $('#hot .banner .right').click(function () {
+            clearInterval( timer );
+            index += 1;
+            if (index == imglength){
+                index = 0;
+            }
+            img(index);
+            icon(index);
+        });
+	</script>
+
+</body>
+</html>

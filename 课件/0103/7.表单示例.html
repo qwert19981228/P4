@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body bgcolor="#abcdef">
+    <center><h1>表单示例</h1></center>
+    
+    <!-- 表单域 -->
+    <form action="./cgi-bin/form.py" method="post" enctype="multipart/form-data">
+        <!-- 隐藏域 -->
+        <input type="hidden"  name="id" value="93">
+
+        <table width="500" align="center" cellspacing="0" cellpadding="10">
+            <tr>
+                <td width="30%" align="right">
+                    <label for="username">用户名:</label>
+                </td>
+                <td width="70%">
+                    <input type="text" name="username" id="username">
+                </td>
+            </tr>
+
+            <tr>
+                <td width="30%" align="right">
+                    <label for="useremail">邮箱:</label>
+                </td>
+                <td width="70%">
+                    <input type="email" name="useremail" id="useremail">
+                </td>
+            </tr>
+
+            <tr>
+                <td width="30%" align="right">
+                    <label for="userpass">密码:</label>
+                </td>
+                <td width="70%">
+                    <input type="password" name="userpass" id="userpass">
+                </td>
+            </tr>
+
+            <tr>
+                <td width="30%" align="right">
+                    性别:
+                </td>
+                <td width="70%">
+                    <label><input type="radio" name="sex" value="woman">少女</label>
+                    <label><input type="radio" name="sex" value="man" checked>猛男</label>
+                    <label><input type="radio" name="sex" value="twoinone">妖人</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td width="30%" align="right">
+                    爱好:
+                </td>
+                <td width="70%">
+                    <input type="checkbox" name="actor1" value="ac1" id="ac1"><label for="ac1">汤姆克鲁斯</label>
+                    <input type="checkbox" name="actor2" value="ac2" id="ac2" checked><label for="ac2">安妮海瑟薇</label><br>
+                    <input type="checkbox" name="actor3" value="ac3" id="ac3"><label for="ac3">高圆圆</label>
+                    <input type="checkbox" name="actor4" value="ac4" id="ac4"><label for="ac4">斯佳丽约翰逊</label>
+                    <input type="checkbox" name="actor5" value="ac5" id="ac5"><label for="ac5">莱昂纳多</label>
+                </td>
+            </tr>
+    
+            <tr>
+                <td width="30%" align="right">
+                    头像:
+                </td>
+                <td width="70%">
+                    <input type="file" name="userfile">
+                </td>
+            </tr>
+            
+
+            <tr>
+                <td width="30%" align="right">
+                    生日:
+                </td>
+                <td width="70%">
+                    <select name="month">
+                        <option value="1">1 月</option>
+                        <option value="2">2 月</option>
+                        <option value="3">3 月</option>
+                        <option value="4">4 月</option>
+                        <option value="5">5 月</option>
+                        <option value="6">6 月</option>
+                        <option value="7">7 月</option>
+                        <option value="8">8 月</option>
+                        <option value="9">9 月</option>
+                        <option value="10" selected>10 月</option>
+                        <option value="11">11 月</option>
+                        <option value="12">12 月</option>
+                    </select>
+                    <select name="day">
+                        <option value="1">1 日</option>
+                        <option value="2">2 日</option>
+                        <option value="3">3 日</option>
+                        <option value="4">4 日</option>
+                        <option value="5">5 日</option>
+                        <option value="6">6 日</option>
+                        <option value="7">7 日</option>
+                        <option value="8">8 日</option>
+                        <option value="9">9 日</option>
+                        <option value="10">10 日</option>
+                        <option value="11">11 日</option>
+                        <option value="12">12 日</option>
+                        <option value="13">13 日</option>
+                        <option value="14">14 日</option>
+                        <option value="15">15 日</option>
+                        <option value="16">16 日</option>
+                        <option value="17">17 日</option>
+                        <option value="18">18 日</option>
+                        <option value="19">19 日</option>
+                        <option value="20">20 日</option>
+                        <option value="21">21 日</option>
+                        <option value="22">22 日</option>
+                        <option value="23">23 日</option>
+                        <option value="24" selected>24 日</option>
+                        <option value="25">25 日</option>
+                        <option value="26">26 日</option>
+                        <option value="27">27 日</option>
+                        <option value="28">28 日</option>
+                        <option value="29">29 日</option>
+                        <option value="30">30 日</option>
+                        <option value="31">31 日</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td width="30%" align="right">
+                    个人简介:
+                </td>
+                <td width="70%">
+                    <textarea name="userinfo" cols="40" rows="5" placeholder="请输入个人简介,不超过200个字" maxlength="200"></textarea>
+                </td>
+            </tr>
+            
+            <tr>
+                <td width="30%" align="right">
+                    &nbsp;
+                </td>
+                <td width="70%">
+                    <button type="submit">我填好了</button>
+                    <input type="reset" value="我要重填">
+                </td>
+            </tr>
+        </table>
+
+    </form>
+
+</body>
+</html>

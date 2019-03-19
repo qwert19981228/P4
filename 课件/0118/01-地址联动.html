@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>地址联动</title>
+</head>
+<body>
+    <h1>地址联动</h1>
+    <hr>
+    
+    请选择您的地址:
+    <select id="country"></select>
+    <select id="city"></select>
+    
+
+    <script>
+    	var conList = ['中国', '美国', '英国', '日本'];
+    	var cityList = [
+    					['北京','上海','广州','深圳','香港', '澳门', '台北'],
+    					['加利福利亚', '洛杉矶', '休斯顿', '纽约', '华盛顿', '夏威夷'],
+    					['伦敦', '苏格兰', '剑桥', '爱丁堡', '曼彻斯特'],
+    					['东京', '大阪', '北海道', '关西', '福冈', '木叶']
+    				];
+
+
+    	// 获取 国家 和 城市的select对象
+    	var country = document.getElementById('country');
+    	var city = document.getElementById('city');
+
+
+    	// 将 conList 填进 option
+    	for (var i = 0; i < conList.length; i++) {
+    		//  	   new Option( 标签, value属性值 )
+    		var opt = new Option( conList[i], i );
+    		// console.log(opt);
+    		country.add( opt );
+    	}
+
+
+    	country.onchange = function(){
+    		// 清除原有的option
+    		city.length = 0;
+
+    		// 获取所选 国家的索引
+    		var index = this.value;
+
+    		// 根据 索引获取城市
+    		var citys = cityList[index];
+
+    		// 将 citys 遍历到 option
+    		for( var i = 0; i < citys.length; i++){
+    			var cityOpt = new Option(citys[i] , i);
+    			city.add(cityOpt);
+    		}
+    	}
+
+    	// 为了第一次正常显示, 主动执行了一次 onchange对应的函数
+    	country.onchange();
+
+    </script>
+
+</body>
+</html>

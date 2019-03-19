@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>函数参数</title>
+</head>
+<body>
+    <h1>函数参数</h1>
+    <hr>
+    <script>
+    	/*
+    		函数分类:
+    			形参: 在定义函数时, 给的参数
+    			实参: 在调用函数时, 给的参数
+
+
+    		实参个数 = 形参个数		完美
+    		实参个数 > 形参个数		将多余的实参 全部抛弃
+    		实参个数 < 形参个数		将多余的实参 全部抛弃
+			
+			问题:
+				当实参个数 不确定时??? 形参到底写几个???
+
+    	 */
+
+
+    	 // 实参个数 = 形参个数
+    	function sum1(n1, n2){
+    		document.write('n1 = '+n1+'<br />');
+    		document.write('n2 = '+n2+'<br />');
+    		return n1+n2;
+    	}
+
+    	result = sum1(10, 20);
+    	document.write('n1 + n2 = ' + result);
+    	document.write('<hr>');
+
+
+    	 // 实参个数 > 形参个数
+    	function sum2(n1, n2){
+    		document.write('n1 = '+n1+'<br />');
+    		document.write('n2 = '+n2+'<br />');
+    		return n1+n2;
+    	}
+
+    	result = sum2(10, 20, 30, 40, 50, 60);
+    	document.write('n1 + n2 = ' + result);
+    	document.write('<hr>');
+
+
+
+    	 // 实参个数 < 形参个数
+    	function sum3(n1, n2){
+    		document.write('n1 = '+n1+'<br />');
+    		document.write('n2 = '+n2+'<br />');
+    		return n1+n2;
+    	}
+
+    	result = sum3(10);
+    	document.write('n1 + n2 = ' + result);
+    	document.write('<hr>');
+
+
+
+    	// 实参个数不确定时???
+    		// 	js中, 有一个对象叫做 arguments  
+    		// 	arguments 会接收到所有的实参
+
+    	// 求和
+    	function sum4(){
+    		// 发现 一个数组对象
+    		console.log(arguments);
+
+    		// 一个一个从对象中获取出来
+    		var num = 0;
+    		for( var i = 0; i < arguments.length; i++ ){
+    			// console.log(i+' ===> '+ arguments[i]);
+    			num += arguments[i];
+    		}
+
+    		return num;
+    	}
+
+    	result = sum4(10,20,30,40,60,70);
+    	document.write('累加和: '+result);
+
+
+
+
+
+
+    </script>
+    
+
+</body>
+</html>

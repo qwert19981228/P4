@@ -1,0 +1,83 @@
+<pre>
+	1. 伪类选择器
+		s1:hover{...} 		当鼠标悬停在s1上时, 触发css
+		s1:hover s2{} 		当鼠标悬停在s1上时, s2触发css
+		s1:hover>s2{} 		当鼠标悬停在s1上时, s2触发css
+		s1:hover+s2{} 		当鼠标悬停在s1上时, s2触发css
+		s1:hover~s2{} 		当鼠标悬停在s1上时, s2触发css
+
+		s1:focus{...} 		当s1获取到光标时, 触发css
+
+		查询元素
+			父级-顺序-元素
+			s1:first-child{}
+			s1:last-child{}
+			s1:nth-child(N){}
+
+			父级-元素-顺序
+			s1:first-of-type{}
+			s1:last-of-type{}
+			s1:nth-of-type(N){}
+
+	2. 伪对象选择器
+		s1::before{} 	匹配s1里面的最前面
+		s1::after{} 	匹配s1里面的最后面
+		before 和 after 经常跟content 配合
+
+	3. 字体
+		font-size
+		font-family
+		font-weight
+		font-style
+		line-height
+
+		简写:
+			font: weight style size/line-height family
+			font: size family
+
+	4. 背景
+		background-color
+		background-image
+		background-repeat
+		background-position
+		background-attachment
+		background-size
+
+		简写:
+			background: color image repeat position/size attachment
+
+	5. 边框
+		单边
+			border-方向-属性
+			简写:
+				border-方向
+
+		四边
+			border-属性
+			简写:
+				border: 
+
+		圆角
+			border-上下-左右-radius: px 或 % 
+			简写:
+				border-radius
+
+		边框合并
+			border-collapse: collapse
+
+		轮廓
+			outline: none  取消轮廓
+
+	6. 文本
+		text-indent
+		text-align
+		text-shadow
+		text-overflow
+				ellipsis
+		text-decoration
+		vertical-align
+
+	7. 盒子阴影
+		box-shadow: 水平 垂直 模糊度 阴影面积 阴影颜色 内阴影
+	
+</pre>

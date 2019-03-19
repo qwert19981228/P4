@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+    <script src="./jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <h1>ajax</h1>
+    <hr>
+    
+	<form action="" id="myForm">
+		数字a: <input type="text" name="a"> <br>
+		数字b: <input type="text" name="b"> <br>
+	</form>
+
+	<button id="btn"> 相加 </button>
+
+	<div id="box"></div>
+
+	<script>
+			$('#btn').click(function(){
+
+				// 1. 先获取两个数字
+
+				// serialize( ) 串行化 为 字符串
+				var info = $('#myForm input').serialize();
+				// console.log(info);
+
+				$.ajax({
+					url: './cgi-bin/demo2.py',
+					type: 'post',
+					data: info,
+					success: function(data){
+						$('#box').html('结果: '+ data);
+					},
+
+					error: function(){
+						alert('响应失败');
+					}
+				});
+			});
+
+
+	</script>
+
+
+
+</body>
+</html>

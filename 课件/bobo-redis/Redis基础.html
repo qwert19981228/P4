@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Redis基础</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>非关系型数据库 NoSQL</h1>
+<pre><code>NoSQL（NoSQL = Not Only SQL），意即“不仅仅是SQL”，指的是非关系型的数据库。
+是一项全新的数据库革命性运动，早期就有人提出，发展至2009年趋势越发高涨。
+随着互联网web2.0网站的兴起，传统的关系数据库在应付web2.0网站，
+特别是超大规模和高并发的SNS类型的web2.0纯动态网站已经显得力不从心，
+暴露了很多难以克服的问题，NoSQL的拥护者们提倡运用非关系型的数据存储，
+相对于铺天盖地的关系型数据库运用，这一概念无疑是一种全新的思维的注入。
+而非关系型的数据库则由于其本身的特点得到了非常迅速的发展。
+</code></pre>
+
+<h4>Nosql特点</h4>
+<pre><code>它们可以处理超大量的数据。
+
+它们运行在便宜的PC服务器集群上。
+    PC集群扩充起来非常方便并且成本很低，避免了“sharding”操作的复杂性和成本。
+它们击碎了性能瓶颈。
+    通过NoSQL架构可以省去将Web或Java应用和数据转换成SQL友好格式的时间，执行速度变得更快。
+    “SQL并非适用于所有的程序代码，” 对于那些繁重的重复操作的数据，SQL值得花钱。
+    但是当数据库结构非常简单时，SQL可能没有太大用处。
+没有过多的操作。
+    虽然NoSQL的支持者也承认关系数据库提供了无可比拟的功能集合，
+    而且在数据完整性上也发挥绝对稳定，他们同时也表示，企业的具体需求可能没有那么多。
+</code></pre>
+
+<h4>NoSQL适用场景</h4>
+<pre><code>1. 对数据高并发读写
+2. 对海量数据的高效率存储和访问
+3. 对数据的高可扩展性和高可用性
+</code></pre>
+
+<h2>Redis</h2>
+<pre><code>Redis is an open source, advanced key-value store.
+It is often referred to as a data structure server since keys can contain
+strings, hashes, lists, sets and sorted sets. 
+
+Redis是一个开源的，先进的key-value存储。
+它通常被称为数据结构服务器，因为键可以包含字符串，哈希，链表，集合和有序集合。
+</code></pre>
+
+<h3>Redis 简介</h3>
+<pre><code>Redis 是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。
+Redis 与其他 key - value 缓存产品有以下三个特点：
+Redis支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。
+Redis不仅仅支持简单的key-value类型的数据，同时还提供list，set，zset，hash等数据结构的存储。
+Redis支持数据的备份，即master-slave模式的数据备份。
+</code></pre>
+
+<h3>Redis 优势</h3>
+<pre><code>性能极高 – Redis能读的速度是110000次/s,写的速度是81000次/s 。
+丰富的数据类型 – Redis支持二进制案例的 Strings, Lists, Hashes, Sets 及 Ordered Sets 数据类型操作
+原子 – Redis的所有操作都是原子性的，同时Redis还支持对几个操作全并后的原子性执行。
+丰富的特性 – Redis还支持 publish/subscribe, 通知, key 过期等等特性。
+</code></pre>
+
+<h3>Redis与其他key-value存储有什么不同？</h3>
+<pre><code>Redis有着更为复杂的数据结构并且提供对他们的原子性操作，这是一个不同于其他数据库的进化路径。
+Redis的数据类型都是基于基本数据结构的同时对程序员透明，无需进行额外的抽象。
+Redis运行在内存中但是可以持久化到磁盘，所以在对不同数据集进行高速读写时需要权衡内存，
+因为数据量不能大于硬件内存。在内存数据库方面的另一个优点是，相比在磁盘上相同的复杂的数据结构，
+在内存中操作起来非常简单，这样Redis可以做很多内部复杂性很强的事情。
+同时，在磁盘格式方面他们是紧凑的以追加的方式产生的，因为他们并不需要进行随机访问。
+</code></pre>
+
+<h3>Redis 安装</h3>
+<h4>Window 下安装</h4>
+<pre><code>下载地址：https://github.com/MSOpenTech/redis/releases。
+Redis 支持 32 位和 64 位。这个需要根据你系统平台的实际情况选择，
+这里我们下载 Redis-x64-xxx.zip压缩包到 C 盘，解压后，将文件夹重新命名为 redis。
+
+打开一个 cmd 窗口 使用cd命令切换目录到 C:\redis 运行 redis-server.exe redis.windows.conf 。
+如果想方便的话，可以把 redis 的路径加到系统的环境变量里，这样就省得再输路径了，
+后面的那个 redis.windows.conf 可以省略，如果省略，会启用默认的。
+
+
+这时候另启一个cmd窗口，原来的不要关闭，不然就无法访问服务端了。
+切换到redis目录下运行 redis-cli.exe -h 127.0.0.1 -p 6379 。
+设置键值对 set myKey abc
+取出键值对 get myKey
+</code></pre>
+
+<h4>Linux 下安装</h4>
+<p>下载地址：http://redis.io/download，下载最新文档版本。</p>
+<p>本教程使用的最新文档版本为 3.0.0，下载并安装：</p>
+<pre><code>$ wget http://download.redis.io/releases/redis-3.0.0.tar.gz -O redis-3.0.0.tar.gz
+$ tar xzf redis-3.0.0.tar.gz
+$ cd redis-3.0.0
+$ make
+$ make PREFIX=/usr/local/redis install  （非必需）
+</code></pre>
+
+<p>如果失败可能为gcc没有安装。make完后目录下会出现编译后的redis服务程序redis-server。</p>
+<p>注意：这种方式启动redis 使用的是默认配置。也可以通过启动参数告诉redis使用指定配置文件使用下面命令启动。</p>
+<h4>配置redis使用环境：</h4>
+<pre><code>新建目录 /usr/local/redis/etc ,
+把原redis.conf 复制到该目录下
+
+vim redis.conf
+将 daemonize no 改为 yes   意为后台启动
+
+启动服务
+$ /usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf
+</code></pre>
+
+<h2>Redis 数据类型</h2>
+<p>Redis常用的五种数据类型：</p>
+<p>string（字符串），hash（哈希），list（列表），set（集合）及zset(sorted set 有序集合)。</p>
+<p>详细格式看手册</p>
+<h4>String（字符串）</h4>
+<p>string是redis最基本的类型，你可以理解成与Memcached一模一样的类型，一个key对应一个value。</p>
+<p>string类型是二进制安全的。意思是redis的string可以包含任何数据。比如jpg图片或者序列化的对象 。</p>
+<p>string类型是Redis最基本的数据类型，一个键最大能存储512MB。</p>
+<ol>
+<li>set</li>
+<li>get</li>
+<li>setnx</li>
+<li>setex</li>
+<li>setrange</li>
+<li>getrange</li>
+<li>mset</li>
+<li>mget</li>
+<li>msetnx</li>
+<li>getset</li>
+<li>incr</li>
+<li>incrby</li>
+<li>decr</li>
+<li>decrby</li>
+<li>append</li>
+<li>strlen</li>
+</ol>
+<h4>Hash（哈希）</h4>
+<p>Redis hash 是一个键值对集合，一个string类型的field和value的映射表，hash特别适合用于存储对象。</p>
+<ol>
+<li>hset</li>
+<li>hget</li>
+<li>hsetnx</li>
+<li>hmset</li>
+<li>hmget</li>
+<li>hgetall</li>
+<li>hexists</li>
+<li>hlen</li>
+<li>hkeys</li>
+<li>hvals</li>
+<li>hincrby</li>
+<li>hdel</li>
+</ol>
+<h4>List（列表）</h4>
+<p>Redis 列表是简单的字符串列表，按照插入顺序排序。你可以添加一个元素到列表的头部（左边）或者尾部（右边）。</p>
+<ol>
+<li>lpush</li>
+<li>lrange</li>
+<li>rpush</li>
+<li>linsert</li>
+<li>lset</li>
+<li>lrem</li>
+<li>ltrim</li>
+<li>lpop</li>
+<li>rpop</li>
+<li>rpoplpush</li>
+<li>lindex</li>
+<li>llen</li>
+</ol>
+<h4>Set（无序集合）</h4>
+<p>Set是string类型的无序集合，通过哈希表实现的，所以添加，删除，查找的复杂度都是O(1)。</p>
+<ol>
+<li>sadd</li>
+<li>smembers</li>
+<li>srem</li>
+<li>spop</li>
+<li>srandmember</li>
+<li>scard</li>
+<li>sismember</li>
+<li>sdiff</li>
+<li>sdiffstore</li>
+<li>sinter</li>
+<li>sinterstore</li>
+<li>sunion</li>
+<li>sunionstore</li>
+<li>smove </li>
+</ol>
+<h4>zset(sorted set：有序集合)</h4>
+<p>zset 和 set 一样也是string类型元素的集合,且不允许重复的成员，不同的是每个元素都会关联一个double类型的分数。redis正是通过分数来为集合中的成员进行从小到大的排序。zset的成员是唯一的,但分数(score)却可以重复。</p>
+<ol>
+<li>zadd</li>
+<li>zrange</li>
+<li>zrevrange</li>
+<li>zrangebyscore</li>
+<li>zrevrangebyscore</li>
+<li>zrem</li>
+<li>zcard</li>
+<li>zcount</li>
+<li>zincrby</li>
+<li>zrank</li>
+<li>zrevrank</li>
+<li>zremrangebyrank</li>
+<li>zremrangebyscore</li>
+<li>zinterstore</li>
+<li>zunionstore</li>
+<li>zscore</li>
+</ol>
+<h3>Others</h3>
+<ol>
+<li>keys</li>
+<li>exists</li>
+<li>del</li>
+<li>expire</li>
+<li>persist</li>
+<li>ttl</li>
+<li>select</li>
+<li>move</li>
+<li>randomkey</li>
+<li>rename</li>
+<li>type</li>
+<li>ping</li>
+<li>echo</li>
+<li>quit</li>
+<li>save</li>
+<li>bgsave</li>
+<li>dbsize</li>
+<li>config get</li>
+<li>info</li>
+<li>flushdb</li>
+<li>flushall</li>
+</ol>
+<h4>Redis命令（截至到3.2.8）共174个，此文只介绍常用的，还有很多的不常用命令在《Redis命令补充》中说明，此处不提</h4>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

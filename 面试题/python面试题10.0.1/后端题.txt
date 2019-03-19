@@ -1,0 +1,74 @@
+
+jquery插件库 JS插件 分流抢票
+
+restful django接口
+
+
+
+
+
+
+
+
+1. Django 、Flask、Tornado的对比
+django 框架完美 有各种封装好的组件和插件 适用于企业级web开发MTV框架 自带后台管理 模型操作  ORM 和开发测试用的服务器
+flask 轻量级框架 灵活自由 扩展性强 有全面第三方插件库支持 适用于小型api开发 
+ 
+
+2.简述MVC和MTV  MVC 对象与数据库的映射  V视图函数 处理用户的请求和逻辑 C控制器 调用模型和视图完成请求 
+M 模型 业务对象与数据库的映射 v 视图函数 负责业务逻辑调用 t和m  t模板 页面展现给用户
+
+3.Django中如何读取和保存session，整个session的运行机制是什么? cookie是浏览器生成存储的 session是键值对方式 随机生成的键存储在cookie的值 值存储在服务端 更为保护隐私安全
+
+4. cookie和session的区别 cookie是浏览器生成 隐私性差可被查看  session键值对形式 键存储在cookie的值 值存储在服务端 更为安全隐私性强
+q
+6.请简要的说明Django框架中视图的作用? 定义完成各位对象 接受用户请求 调用模型和模板 负责业务逻辑 处理用户的请求
+
+7.简述Django对http请求的执行流程?
+
+8.Django和Flask有什么区别？ Django 重量级web框架 功能齐全 自带ORM映射和模板引擎  ORM使django和关系型数据库 耦合度高  自带数据库管理app 稳定成熟效率高 相对于 适用于企业级网站开发 
+flask 轻量级web框架 适用于小型网站及web服务的api 架构需要自己设计 自由灵活扩展性强
+
+9.ession和cookie的联系与区别；session为什么说是安全的 key是session的id存储在cookie中 值存储在服务器端 每一次用户请求 cookie带着session的id去和服务器session响应
+
+10.Django中如何读取和保存session
+
+11.Django中查询queryset时什么情况下用Q?
+
+12.Django中的Q对象还有哪些用法?
+
+13.Django框架的优缺点
+
+14.Flask框架的优缺点
+
+16.MVC的核心思想 程序解耦 不同代码之间降低耦合 增强代码扩展移植性
+
+17.简述Django请求生命周期 接口获取 中间件初次封装 传输给路由 路由分配给视图 视图进行逻辑处理 处理后返还给中间件 进行数据处理 把处理后的内容传给浏览器
+
+18.Django中想验证表单提交是否格式正确需要用到Form中的哪个函数？ is_valid()
+
+19.Flask-WTF是什么，有什么特点？ 自动创造表单 并提供免受csrf攻击
+
+20.Django 作为一个 Web 开发框架，它包括哪些基本组成部分：Http处理请求和响应
+url映射 视图控制 模型系统 数据库操作模型 
+
+21.django路由系统中name的作用： 反向解析 给url一个name名 不管url如何改变都可以通过name找到这个url
+
+22.什么是中间件并简述其作用?
+
+23.命令migrate 和makemigrations的差别?生成和 执行迁移文件
+
+24.django有哪几个组成部分? urls.py view.py templates.py forms.py admin.py settings.py models.py 
+
+25.列举django的内置组件？
+
+26.什么是wsgi,uwsgi,uWSGI？ wsgiweb服务器网关的接口协议 uwsgi和wsgi一样是通信协议
+uWSGI是
+
+27.简述什么是FBV和CBV？ fbv函数视图  cbv 类视图  cbv提高代码的复用性 可以用面向对象的技术 可以用不同的函数对不同http进行处理 不用通过很多if判断 可读性提高
+
+28.django中csrf的实现机制
+
+29.基于django使用ajax发送post请求时，都可以使用哪种方法携带csrf token？
+
+30.说一下Django，middlewares中间件的作用？

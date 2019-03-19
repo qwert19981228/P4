@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>比较运算符</title>
+</head>
+<body>
+    <h1>比较运算符</h1>
+    <hr>
+    <script>
+    	/*
+    		>  >= 
+    		<  <=
+    		==  	判断两边的值 是否相等
+    		=== 	全等: 判断两边的值 是否相等 且 数据类型是否相等
+
+    		!= 		判断两边的值 是否不等
+    		!== 	只有全等时为false, 其余都是true
+
+    		比较运算符的结果: bool值
+    	 */
+
+    	console.log( 1 > 2 );
+
+    	var a = 1;
+    	var b = true;
+    	var c = 0;
+    	var d = false;
+
+    	console.log( a == b );
+    	console.log( c == d );
+    	console.log('-------------------------------')
+
+    	console.log( a === b );
+    	console.log( 1.0 === 1 );
+    	console.log('-------------------------------')
+
+    	console.log( a != c );
+    	console.log( a != b );
+    	console.log('-------------------------------')	
+
+
+    	console.log( 0 !== false);
+    	console.log( 0 !== 0);
+
+ 
+
+    </script>
+    
+
+</body>
+</html>

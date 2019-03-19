@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+</head>
+<body>
+    <h1>数组</h1>
+    <hr>
+    <script>
+    	/*
+    		数组操作
+			1. 新增/修改数组
+				数组名[键] = 值
+
+				键不存在, 则为新增
+				键已存在, 则为修改
+
+				键为Number, 会计入length
+				键为String, 不会计入length
+
+
+			2. 访问数组
+				格式:	数组名[ 键 ]
+					如果键 不存在, 则返回 undefined
+
+    	*/
+
+    	var list = []; 	// 空数组
+
+
+    	// 1. 新增数组
+    	list[0] = '迪丽热巴';
+    	list[3] = '古力娜扎';
+    	list[8] = '马尔扎哈';
+    	// list[] = '真皮沙发'; 	// 必须要填键
+    	list['渣渣辉'] = '渣渣渣渣';
+    	console.log(list);
+
+    	// 1. 修改数组
+    	list[8] = '咔咔咔咔';
+    	console.log(list);
+
+    	// 2. 访问数组
+    		console.log(list[0]);
+    		console.log(list[3]);
+    		console.log(list[1]);
+    		console.log(list[99]);
+    		console.log(list['渣渣辉']);
+
+    </script>
+    
+
+</body>
+</html>

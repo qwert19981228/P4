@@ -1,0 +1,226 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    background: #ffffff;
+    font-family: "Helvetica Neue",
+    Helvetica, Arial,
+    "Microsoft Yahei",
+    "Hiragino Sans GB",
+    "Heiti SC",
+    "WenQuanYi Micro Hei",
+    sans-serif;
+    min-width: 1226px;
+}
+li{
+    list-style: none;
+
+}
+body,ol,ul {
+    margin: 0;
+    padding: 0;
+}
+.container-fluid .row div[class*='col-md']{
+    height: 40px;
+    background: #F5F5F5;
+}
+.container-fluid .row div[class*='col-xs']{
+    height: 40px;
+    background: #F5F5F5;
+}
+.container .row div[class*='col-md']{
+    height: 40px;
+    width: 1226px;
+    position: absolute;
+    left: 145px;
+}
+.container .row div[class*='col-xs']{
+    height: 40px;
+    width: 1226px;
+}
+.breadcrumb{
+    padding: 0;
+    width: 1226px;
+    position: absolute;
+    left: 0;
+    margin: 10px 0 0 0;
+    font-size: 12px;
+}
+.breadcrumb a{
+    color: #757575;
+    font-size: 12px;
+    text-decoration: none;
+}
+.breadcrumb a:hover{
+    color: #424242;
+}
+.breadcrumb > li + li:before {
+    color: #CCCCCC;
+    content: ">";
+    padding: 0 5px;
+}
+
+.kind .row div[class*='col-md']{
+    height: 81px;
+    background-color: #FFFFFF;
+}
+.kind .row div[class*='col-xs']{
+    height: 81px;
+    background-color: #FFFFFF;
+}
+.kind-main .row div[class*='col-md']{
+    width: 1226px;
+    position: absolute;
+    left: 145px;
+    height: 81px;
+    background-color: #FFFFFF;
+    line-height: 81px;
+}
+.kind-main .row div[class*='col-xs']{
+    width: 1226px;
+    position: absolute;
+    left: 145px;
+    height: 81px;
+    background-color: #FFFFFF;
+    line-height: 81px;
+}
+.dl-horizontal{
+    width: 1226px;
+    position: absolute;
+    left: 0;
+    margin: 30px 0 0 -10px;
+    padding: 0;
+}
+.dl-horizontal dt{
+    margin: 0;
+    padding: 0;
+    color: #b0b0b0;
+    width: 42px;
+    font-weight: normal;
+}
+.dl-horizontal dd{
+    margin: 0 0 0 70px;
+    padding: 0;
+    width: 88px;
+    height: 44px;
+    float: left;
+    color: #424242;
+}
+.dl-horizontal dd:first-of-type{
+    color: #ff6700;
+}
+.dl-horizontal dd:hover{
+    color: #ff6700;
+    cursor: pointer;
+}
+
+.goods .row div[class*='col-xs']{
+    height: 1000px;
+    position: relative;
+}
+.goods .row div[class*='col-md']{
+    height: 1000px;
+    position: relative;
+}
+.goods-text .row div[class*='col-xs']{
+    width: 1226px;
+    position: absolute;
+    left: 145px;
+    height: 81px;
+}
+.goods-text .row div[class*='col-md']{
+
+    width: 1226px;
+    position: absolute;
+    left: 145px;
+    height: 81px;
+}
+.order-list-box{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.order-list-box .order-list{
+    width: 400px;
+    margin: 0 0 0 -45px;
+}
+.order-list-box .order-list li{
+    float: left;
+    padding: 0 30px;
+    border-left: 1px solid #e0e0e0;
+}
+.order-list-box .order-list li a{
+    color: #424242;
+    text-decoration: none;
+}
+.order-list-box .order-list .first{
+    border: none;
+}
+.order-list-box .order-list .first a{
+    color: #ff6700;
+}
+.order-list-box .order-list li a:hover{
+    color: #ff6700;
+    cursor: pointer;
+}
+.order-list-box .type-list li{
+    float: right;
+    margin-left: 30px;
+}
+.order-list-box .type-list li a{
+    color: #424242;
+    text-decoration: none;
+}
+.order-list-box .type-list li i{
+    display: none;
+}
+.order-list-box .type-list li:hover a,.order-list-box .type-list li:hover i{
+    color: #ff6700;
+    cursor: pointer;
+}
+.order-list-box .type-list li span {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+    vertical-align: -2px;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+}
+
+
+.goods-main .row div[class*='col-xs-3']{
+    width: 296px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 430px;
+    top: 70px;
+    left: -30px;
+    background-color: #FFFFFF;
+    margin-right: 14px;
+    margin-bottom: 14px;
+}
+.goods-main .row div[class*='col-md-3']{
+    margin: 0;
+    padding: 0;
+    width: 296px;
+    position: relative;
+    height: 430px;
+    background-color: #FFFFFF;
+    top: 70px;
+    left: -30px;
+    margin-right: 14px;
+    margin-bottom: 14px;
+}
+#phone{
+    width: 1240px;
+}
+
+
+
+

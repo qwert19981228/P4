@@ -1,0 +1,255 @@
+body,ol,ul {
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-size: 14px;
+    background: #ffffff;
+    font-family: "Helvetica Neue",
+    Helvetica, Arial,
+    "Microsoft Yahei",
+    "Hiragino Sans GB",
+    "Heiti SC",
+    "WenQuanYi Micro Hei",
+    sans-serif;
+    min-width: 1226px;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+#main{
+    background-color: #F9F9F9;
+    width: 100%;
+    height: 720px;
+}
+h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+    padding: 0;
+}
+.clearfix::after{
+    content: " ";
+    display: block;
+    clear: both;
+}
+/*注册界面*/
+#register{
+    width: 100%;
+    height: 590px;
+    overflow: hidden;
+}
+#register .register-main{
+    width: 854px;
+    height: 549px;
+    background: #FFFFFF;
+    margin: 40px auto;
+    position: relative;
+}
+
+
+#register .register-main .register-logo{
+    width: 786px;
+    height: 88px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+#register .register-main .register-logo .logo-img{
+    margin: 0 auto;
+    display: block;
+}
+#register .register-main .register-title{
+    width: 854px;
+    height: 45px;
+    position: absolute;
+    overflow: hidden;
+    top: 90px;
+}
+#register .register-main .register-title h4{
+    font-size: 30px;
+    font-weight: normal;
+    text-align: center;
+
+}
+#register .register-main .register-input{
+    width: 332px;
+    height: 280px;
+    margin: 0 auto;
+    line-height: 20px;
+    margin-top: 30px;
+}
+
+
+#register .register-main .register-input .input-main{
+    width: 332px;
+    height: 246px;
+}
+#register .register-main .register-input .input-main .tit_normal{
+    padding-bottom: 5px;
+    color: #333;
+    font-weight: normal;
+}
+#register .register-main .register-input .input-main .country{
+    width: 330px;
+    height: 40px;
+    border: 1px #cccccc solid;
+    line-height: 40px;
+}
+#register .register-main .register-input .input-main .country p{
+    float: left;
+    width: 275px;
+    border-right: 1px solid #e8e8e8;
+    cursor: pointer;
+    height: 40px;
+    margin-left: 14px;
+    color: #555555;
+}
+#register .register-main .register-input .input-main .country i{
+    float: right;
+    background: url("icon_user.png");
+    width: 16px;
+    height: 16px;
+    margin: 11px 12px 0 12px;
+}
+#register .register-main .register-input .input-main .country-text{
+    margin-bottom: 15px;
+    color: #666666;
+    margin-top: 2px;
+}
+
+
+#register .register-main .register-input .input-main .phone{
+    width: 332px;
+    height: 42px;
+    margin-bottom: 15px;
+}
+#register .register-main .register-input .input-main .phone .phone-country{
+    width: 74px;
+    height: 42px;
+    line-height: 20px;
+    position: relative;
+}
+#register .register-main .register-input .input-main .phone .phone-country .phone-num{
+    height: 40px;
+    padding-left: 14px;
+    padding-right: 14px;
+    line-height: 40px;
+    display: inline-block;
+    border: 1px solid #e8e8e8;
+    color: #555;
+    cursor: pointer;
+    position:absolute;
+}
+#register .register-main .register-input .input-main .phone .phone-country .phone-num p{
+    float: left;
+    cursor: pointer;
+}
+#register .register-main .register-input .input-main .phone .phone-country .phone-num i{
+    float: left;
+    margin: 17px 0 0 10px;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #9d9d9d transparent transparent transparent;
+}
+#register .register-main .register-input .input-main .phone .phone-country .phone-input{
+    display: inline-block;
+    margin-left: -1px;
+    position: absolute;
+    line-height: 40px;
+    left: 74px;
+    top: 0;
+}
+#register .register-main .register-input .input-main .phone .phone-country .phone-input input{
+    width: 236px;
+    height: 20px;
+    line-height: 20px;
+    padding: 10px;
+    color: #9D9D9D;
+    font-size: 14px;
+    border: 1px solid #e8e8e8;
+}
+
+#register .register-main .register-input .input-main .register-button{
+    width: 332px;
+    height: 42px;
+    margin-top: 30px;
+}
+#register .register-main .register-input .input-main .register-button input{
+    background-color: #ff6700;
+    border: 1px solid rgba(186,186,186,0.3);
+    color: #fff;
+    width: 330px;
+    height: 42px;
+    margin: 0 auto;
+    line-height: 42px;
+    text-align: center;
+    font-size: 14px;
+    display: block;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+
+#register .register-main .privacy_box{
+    text-align: center;
+    padding-top: 40px;
+    width: 786px;
+    height: 40px;
+    margin: 0 auto;
+
+}
+#register .register-main .privacy_box .msg{
+    color: #9d9d9d;
+    width: 786px;
+    height: 40px;
+}
+#register .register-main .privacy_box .msg .n_checked{
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 0;
+}
+#register .register-main .privacy_box .msg .n_checked .icon_select{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    margin-top: -4px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url("1.png");
+}
+#register .register-main .privacy_box .msg .n_checked a{
+    color: #333;
+    font-weight: bold;
+}
+
+
+
+/*底部*/
+#bottom{
+    color: #9d9d9d;
+    text-align: center;
+    height: 80px;
+    margin-top: 50px;
+}
+#bottom .nf-link-area{
+    text-align: center;
+}
+#bottom .nf-link-area ul li{
+    display: inline-block;
+}
+#bottom .nf-link-area ul li a{
+    color: #757575;
+    display: inline-block;
+    padding: 0 10px;
+}
+#bottom .nf-intro{
+    padding: 10px;
+}
+#bottom .nf-intro a{
+    color: #9d9d9d;
+}

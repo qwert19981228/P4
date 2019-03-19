@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>键盘事件</title>
+</head>
+<body>
+    <h1>键盘事件</h1>
+    <hr>
+    
+	<!-- 
+		onkeydown 	按键按键触发
+		onkeyup 	松开按键触发
+
+		onkeypress 按下并松开触发 (js高级事件)
+					并非所有按键都会触发
+
+		event属性
+			keyCode 	当前按键的 Unicode编码
+	 -->
+	<script>
+		
+		// document.onkeydown = function ( event ){
+		// 	console.log(  event.keyCode );
+		// }
+
+		// document.onkeyup = function ( event ){
+		// 	console.log(  event.keyCode );
+		// }
+
+		document.onkeypress = function ( event ){
+			console.log(  event.keyCode );
+		}
+
+
+	</script>
+    
+
+</body>
+</html>

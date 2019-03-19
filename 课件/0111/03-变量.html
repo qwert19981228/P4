@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>变量</title>
+</head>
+<body>
+    <h1>变量</h1>
+    <hr>
+    <!-- 
+		1. 变量格式:
+			var 变量名 		没有初始化, 默认为undefined
+			var 变量名 = 值
+			var 变量名1 = 值1, 变量名2 = 值2,  ...
+			var 变量名1 = 变量名2 = 变量名3 ... = 值
+
+
+		2. 变量名规范
+			2.1 由数字, 字母, 下划线 和 $符 组成
+			2.2 不能以 数字开头
+			2.3 严格区分大小写
+			2.4 不允许包含空格和其他标点
+			2.5 不能使用关键字
+
+		3. 常见关键字
+			break    case    catch   continue    default
+		    delete   do      else    finally     for
+		    function if      in      instanceof  new
+		    return   switch  this    throw       try
+		    typeof   var     void    while        with
+			
+    -->
+    
+    <script>
+    	var a; 		
+    	var b = 10;
+    	var c = 20, d = 30;
+    	var e = f = g = 40;
+
+    	// document.write()  输出到 浏览器中
+    	document.write(a+'<br>');
+    	document.write(b+'<br>');
+    	document.write(c+'<br>');
+    	document.write(d+'<br>');
+    	document.write(e+'<br>');
+    	document.write(f+'<br>');
+    	document.write(g+'<br>');
+
+    	// console.log() 输出到 控制台中
+    	console.log(a);
+    	console.log(b);
+    	console.log(c);
+    	console.log(d);
+    	console.log(e);
+    	console.log(f);
+    	console.log('----------------------------')
+
+
+    	// var 2b = '狗子';
+    	var $2b = '二狗';
+    	console.log($2b);
+    	var a = '老王';
+    	console.log(a);
+    	// console.log(A);
+    	// var for = 100;
+    	
+
+
+
+    </script>
+
+</body>
+</html>

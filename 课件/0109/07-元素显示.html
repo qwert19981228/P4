@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>元素显示</title>
+    <style>
+    	.line1{
+    		width: 500px;
+    		height: 50px;
+    		background: pink;
+    		display: block;
+    	}
+
+    	.box1{
+    		width: 500px;
+    		height: 100px;
+    		background: skyblue;
+    		display: inline;
+    	}
+
+    	.line2{width: 500px; height: 50px; background: pink; display: inline-block; }
+
+    	.box2{width: 500px; height: 100px; background: skyblue; display: inline-block; vertical-align: top;}
+
+    	/* .box3{width: 500px; height: 100px; background: pink; display: none;} */
+    	.box3{width: 500px; height: 100px; background: pink; visibility: hidden;}
+    	.box4{width: 500px; height: 100px; background: skyblue;}
+
+
+    </style>
+</head>
+<body>
+    <h1>元素显示</h1>
+    <hr>
+    <!-- 
+		display: block 			转为块级元素
+				  inline    		转为行级元素
+				  inline-block		转为内联-块元素
+				  none 	  			隐藏元素, 不占位隐藏
+				  table 			转为块级表格
+				  table-cell 		转为td单元格
+				  ...
+
+		visibility: hidden 		占位隐藏
+					 visible 		显示
+
+
+    -->
+
+	<span class="line1">哥们去面试, 面试官问: 你能干多长时间? 哥们: 我能干到你倒闭</span>
+
+	<div class="box1">哥们去面试, 面试官问: 你能干多长时间? 哥们: 我能坚持30分钟. 面试官再次强调了一遍: 我说是在公司里面.  哥们: 在公司里有点紧张, 差不多10分钟</div>123
+
+	<hr>
+
+	<span class="line2">哥们去面试, 面试官问: 你能干多长时间? 哥们: 我能干到你倒闭</span>
+	<div class="box2">哥们去面试, 面试官问: 你能干多长时间? 哥们: 我能坚持30分钟. 面试官再次强调了一遍: 我说是在公司里面.  哥们: 在公司里有点紧张, 差不多10分钟</div>
+
+	<hr>
+
+	<div class="box3"></div>
+	<div class="box4"></div>
+
+    
+
+</body>
+</html>

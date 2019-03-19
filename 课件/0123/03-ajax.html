@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+    <script src="./jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <h1>ajax</h1>
+    <hr>
+    
+	
+	<form action="" id="myForm">
+		<input type="text" name="a">
+
+		<select name="ope" id="ope">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">&times;</option>
+			<option value="/">&divide;</option>
+		</select>
+		<input type="text" name="b">
+		<span id="res"></span>
+	</form>
+	
+
+
+	<script>
+			$('#ope').change(function(){
+
+				// 1. 先获取两个数字
+
+				// serialize( ) 串行化 为 字符串
+				var info = $('#myForm input, #myForm select').serialize();
+
+				$.ajax({
+					url: './cgi-bin/demo3.py',
+					type: 'post',
+					data: info,
+					success: function(data){
+						$('#res').html(' = ' + data);
+					},
+
+					error: function(){
+						alert('响应失败');
+					}
+				});
+			});
+
+
+	</script>
+
+
+
+</body>
+</html>

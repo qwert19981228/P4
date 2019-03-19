@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>内置对象-Math</title>
+</head>
+<body>
+    <h1>内置对象-Math</h1>
+    <hr>
+    <script>
+    	// 内置对象 - Math 数学 
+    		console.log(Math);
+
+    	// 属性
+    		// 1. PI 
+    		console.log(Math.PI);
+
+
+    	// 方法
+    		// 1. abs() 		绝对值
+    		console.log(Math.abs(-5));
+
+    		// 2. sqrt()  	平方根
+    		console.log(Math.sqrt(4));
+
+    		// 3. max() 		最大值
+    		console.log(Math.max(1,2,3,4,-5,-6));
+
+    		// 4. min() 		最小值
+    		console.log(Math.min(1,2,3,4,-5,-6));
+
+    		// 5. floor() 	舍一取整
+    		console.log(Math.floor(2.3));
+    		console.log(Math.floor(2.9));
+
+    		// 6. ceil() 	进一取整
+    		console.log(Math.ceil(2.3));
+    		console.log(Math.ceil(2.9));
+
+    		// 7. round() 	四舍五入
+    		console.log(Math.round(2.9));
+    		console.log(Math.round(2.4));
+
+    		// 8. random() 	随机数 0~1 小数 (世界上没有真正的随机, 伪随机)
+    		console.log(Math.random());
+
+    		// 9. 区间随机 0~9 
+    		console.log(Math.floor(  Math.random()*10  ));
+    		// 原理: 将随机数 * 10,  就是 第一个小数 放到 个位, 其余小数舍去
+
+    		// 10 区间随机 6~15 	回顾 %  取模结果范围公式
+    		console.log(Math.floor(  Math.random()*10000000%10 + 6  )    );
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+    <script src="./jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <h1>ajax</h1>
+    <hr>
+    <!-- 
+		Ajax
+			asyn javascript and xml
+			异步的js 和 xml
+
+			异步 和 同步?
+			同步: 发出一条指令后, 在没得到结果前, 就不能做其他事情 (事情一个一个做)
+			异步: 发出一条指令后, 在没得到结果前, 可以选做其他事   (事情分布式完成)
+
+		
+		HTTP基本原理:
+			请求: 客户端 向服务器 请求一个文件
+			响应: 服务器将文件内容返回给客户端, 文件有了输出才算真正的响应
+		
+		传统的请求 通过url地址栏 刷新请求
+		Ajax 	   通过技术 偷偷的请求
+
+
+
+		主要用于 在无刷新的情况下, 局部改变数据
+		主要用于 在无刷新的情况下, 局部改变数据
+		主要用于 在无刷新的情况下, 局部改变数据
+
+
+
+
+		$.ajax({
+			url: 'py地址',
+			type: '传输方式',
+			data: {参数名1:参数值1, 参数名2:参数值2, ...},
+			data: '参数名1=参数值1&参数名2=参数值2&...',
+			success: function(){
+				响应成功后, 功能代码块
+			},
+
+			error: function(){
+				响应失败后, 功能代码块
+			}
+		})
+
+		注意:
+			url:  ajax要传输的地址
+			type: 默认get
+			data: 常用 json格式
+				   也可以用  "参数名1=参数值1&参数名2=参数值2& ... "
+			success: 请求成功会后的 回调函数
+			error: 请求失败之后的 回调函数
+
+			datatype: 预期服务器返回的数据类型
+
+
+
+		服务器:
+			Apache
+			Nginx
+			IIS
+			Tomact
+			...
+
+		
+
+		准备 server.py 文件 (用于挂起服务器用的)
+			代码: 
+				from http.server import HTTPServer, CGIHTTPRequestHandler
+
+				# 设置 web端口, 可修改, 建议改成大点的千位数
+				port = 8000 
+
+				# 开启服务器
+				httpd = HTTPServer(('', port), CGIHTTPRequestHandler)
+				print('服务器已启动')
+				httpd.serve_forever() 	# 监听服务器端口, 该文件不能中断, 一旦中断, 服务器就不能正常使用了
+
+		通过 cmd(管理员身份运行):
+			常见cmd命令:
+				cd  	进入某目录
+				dir 	查看当前目录的所有文件
+
+				python xxxx.py 	当场运行该 py文件 (需要先安装python环境)
+
+
+
+		常见状态码
+			200 		成功响应
+			304 		文件来自于缓存
+			404 		文件不存在
+			500 		服务器未知错误
+			503 		服务器宕机(死机) 或 服务器不可用
+
+			2xx 		成功...
+			4xx 		客户端的问题
+			5xx 		服务器的问题
+
+
+    -->
+    
+	<button id="btn"> 点我送一个字 </button>
+
+	<div id="box"></div>
+
+
+	<script>
+			$('#btn').click(function(){
+
+				$.ajax({
+					// url: './cgi-bin/demo.py',
+					url: './cgi-bin/demo.p',
+					type: 'post',
+					data: 'nickname=老干妈&age=998',
+					success: function(data){
+						// alert('响应成功');
+						// console.log(data);
+						$('#box').html(data);
+					},
+
+					error: function(){
+						alert('响应失败');
+					}
+				});
+			});
+
+
+	</script>
+
+
+
+</body>
+</html>

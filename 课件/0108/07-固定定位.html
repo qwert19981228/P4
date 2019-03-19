@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>定位</title>
+    <style>
+    	
+    	.box{
+    		width: 150px;
+    		height: 150px;
+    	}
+
+    	.box1{background: #FF6A00;}
+    	.box2{background: #7FFF8E;}
+    	.box3{background: #7FC9FF; width: 200px; height: 200px;}
+    	.box4{background: #FF7FB6;}
+    	.box5{background: #6D518E; height: 5000px;}
+
+    	.box2{
+    		position: fixed;
+    		/* left: 100px; */
+    		/* top: 100px; */
+    		right: 100px;
+    		bottom: 100px;
+    	}
+
+    </style>
+</head>
+<body>
+    <h1>定位</h1>
+    <hr>
+    <!-- 
+		position: absolute 	绝对定位
+				   relative 	相对定位
+				   fixed 	    固定定位
+		
+		原点, 位置是否保留?
+
+
+		1. 绝对定位
+			位置: 不保留原来的位置
+			原点: 基于第一页的四个角落
+
+		2. 相对定位
+			位置: 保留原来的位置
+			原点: 基于原来的位置
+		
+		3. 固定定位
+			位置: 不保留原来的位置
+			原点: 
+
+		注意:
+			任意定位都会 脱离文档流
+
+
+    -->
+
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+    <div class="box box4"></div>
+    <div class="box box5"></div>
+    
+
+</body>
+</html>

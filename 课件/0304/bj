@@ -1,0 +1,36 @@
+#  协程
+    由代码进行调度
+    轻量级的线程 用户线程
+
+    协程的切换消耗资源更小 并发量可以更大
+
+    程序的切换
+    greenlet
+    需要安装  pip install greenlet
+    协程：
+    gevent
+    pip install gevent
+
+
+# 反反爬：
+    cookie
+    header
+        user-Agent
+
+    js反向工程
+
+
+    js正向工程 耗费资源 速度慢
+        工具 ：selenium 测试工具
+               浏览器:
+                    chrome
+                    火狐
+                    IE
+                    PthantomJS  无界面浏览器  3.10
+
+        下载 selenium  3.8
+        pip install selenium==3.8
+
+        将PhantomJs.exe 放入到优环境变量的目录下 最好放到 python的安装目的scripts
+
+        

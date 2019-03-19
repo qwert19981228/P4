@@ -1,0 +1,8 @@
+# 安装依赖
+    wheel、lxml、Twisted、pywin32
+
+    pip install wheel   #  为了安装本地文件.whl
+    pip install pywin32
+    pip isntall K:\py17\爬虫\day13\Twisted-18.9.0-cp36-cp36m-win_amd64.whl
+    pip isntall scrpay #如果这个提示找不到对应版本 使用本地安装的方式去装
+        pip install Scrapy-1.6.0-py2.py3-none-any.whl

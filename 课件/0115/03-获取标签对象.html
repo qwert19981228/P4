@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>获取标签对象</title>
+</head>
+<body>
+    <h1>获取标签对象</h1>
+    <hr>
+	
+	<div id="box" class="box2"></div>
+	<input type="text" id="input" value="998">
+
+
+    <script>
+    	/*
+    		1. 通过标签id  获取标签对象
+				document.getElementById( id名 )
+
+			2. 通过标签对象 来获取html属性
+				标签对象.html属性名
+				
+				注意: 不是所有的属性 都这么获取, 需要特殊手段
+
+			3. 给标签 设置/获取 style属性
+				标签对象.style.属性名 = 属性值
+
+			4. 设置/获取标签的正文内容
+
+    	 */
+    	
+
+    	// 1. 获取标签对象
+    	var box = document.getElementById('box');
+    	console.log(box, typeof(box));
+
+    	var input = document.getElementById('input');
+    	console.log(input);
+
+
+    	// 2. 获取 html属性
+    	// 弹窗
+    	// alert(input.id);
+    	// alert(input.type);
+    	// alert(input.value);
+    	// alert(box.class);
+    	// alert(box.className);
+
+    	// 3. 设置/获取 style属性
+    	box.style.width = '200px';
+    	box.style.height = '200px';
+    	box.style.background = 'pink';
+
+    	// 4. 设置/获取 标签的正文内容
+    	box.innerHTML = 'abc';
+    	alert(box.innerHTML);
+
+
+
+    </script>
+    
+
+</body>
+</html>

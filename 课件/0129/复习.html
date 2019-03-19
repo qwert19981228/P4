@@ -1,0 +1,73 @@
+<pre>
+	1. 增
+		INSERT INTO 表名 VALUES() 
+		INSERT INTO 表名 VALUES(),(),() 
+		INSERT INTO 表名() VALUES() 
+		INSERT INTO 表名() VALUES(),(),() 
+
+	2. 删
+		DELETE FROM 表名
+		DELETE FROM 表名 WHERE 条件
+		DELETE FROM 表名 [WHERE 条件] ORDER BY 排序依据 asc 升序默认/desc降序 LIMIT 行数
+
+	3. 备份
+		mysqldump -u 用户名 -p 数据库名 > 目标地址
+
+	4. 导入
+		mysql -u 用户名 -p 数据库名 < 来源地址
+
+	5. 改
+		UPDATE 表名 SET 字段名=值, 字段名=值, ...
+		UPDATE 表名 SET 字段名=值, 字段名=值, ... WHERE 条件
+
+	6. 函数
+		COUNT()
+		SUM()
+		AVG()
+		MAX()
+		MIN()
+		CONCAT()
+
+		MD5()
+		NOW()
+		UNIX_TIMESTAMP()
+		VERSION()
+
+	7. 查
+		SELECT
+		FROM
+		WHERE
+		GROUP BY
+		HAVING
+		ORDER BY
+		LIMIT
+
+
+	8. 操作符号
+		精确查询   =
+		模糊查询   like
+				   % 匹配0个, 1个, 多个字符
+				   _ 匹配1个字符
+		区间查询   between A and B  			A <=  <= B
+		 		   not between A and B 		<= A  or  >= B
+
+		非空查询   is null
+		 		   is not null
+
+		in操作 	   in 
+
+		算术       + - * / % 
+		逻辑       and   
+				   or
+				   not
+				   xor
+	
+
+
+
+
+
+
+
+
+</pre>

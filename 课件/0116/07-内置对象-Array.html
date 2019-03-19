@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>内置对象-Array</title>
+</head>
+<body>
+    <h1>内置对象-Array</h1>
+    <hr>
+    <script>
+    	// 创建数组
+    		var a = new Array('张龙','赵虎', 'x','y', 5,8, '王朝','马汉','M','N');
+
+    	// 属性
+    		// length 	获取数组长度
+    		console.log(a.length);
+
+    	// 不会改变原数组的 方法
+    		// 1. concat 合并数组
+    		b = a.concat(100, true, 1.5);
+    		console.log(a);
+    		console.log(b);
+
+    		// 2. join 	数组转为字符串
+    		b = a.join(); 		// 默认以 逗号 分割
+    		b = a.join('----'); 	// 指定 分隔符
+    		console.log(b, typeof(b));
+
+ 
+    		// 3. slice(x, y) 	截取数组   [x, y)
+    		b = a.slice(2,8);
+    		console.log(b);
+
+
+    	// 会改变原数组的 方法
+    		var a = new Array('张龙','赵虎', 'x','y', 5,8, '王朝','马汉','M','N');
+
+    		// 1. push() 	在末尾插入一个值
+    		a.push('小蜻蜓');
+    		console.log(a);
+
+    		// 2. pop() 		删除末尾值
+    		a.pop();
+    		console.log(a);
+
+    		// 3. unshift() 	在开头插入一个值
+    		a.unshift('公孙策');
+    		console.log(a);
+
+    		// 4. shift() 		删除开头值
+    		a.shift();
+    		console.log(a);
+
+    		// 5. reverse() 	反转数组
+    		a.reverse();
+    		console.log(a);
+
+    		// 6. sort() 		按照 ASCII 排序
+    		a.sort();
+    		console.log(a);
+
+
+    </script>
+    
+
+</body>
+</html>

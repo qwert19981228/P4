@@ -1,0 +1,83 @@
+<pre>
+	1. 键盘事件
+		onkeydown
+		onkeyup
+		onkeypress
+
+		event事件
+			keyCode 		返回unicode 编码
+
+	2. 表单事件
+		onfocus
+		onblur
+		onchange
+		oninput
+		onselect
+		onsubmit 	需要return 
+							false 禁止提交
+							true  允许提交
+
+	3. 正则
+		格式: / 正则表达式 /模式修正符
+
+		原子:
+			可见
+			不可见
+			最小单位
+
+		元字符
+
+			[ ]
+			[x-y] 
+			[^  ]
+			abc | xyz
+
+			\d
+			\s
+			\w
+			\D
+			\S
+			\W 
+			\u4e00 - \u9fa5
+			. 
+			
+			以上元字符 都只能匹配到一个原子
+
+			原子{n}
+			原子{n,}
+			原子{n,m}
+			原子*
+			原子+
+			原子?
+
+			( )
+			( | )
+			^
+			$
+
+
+		正则函数
+			match( )
+			replace( )
+
+		模式修正符
+			g
+			i
+
+			.*
+			.*?
+
+		后向引用
+			( )
+			\n 
+
+			
+		取消子模式组
+			(?: )			
+
+		正向/负向预查
+			(?= )
+			(?! )
+
+</pre>
+

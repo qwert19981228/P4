@@ -1,0 +1,72 @@
+<pre>
+	1. 设置密码
+		set password = password(密码)
+
+	2. 查看数据库
+		show databases
+
+	3. 创建数据库
+		create database if not exists `库名` default charset=编码
+
+	4. 删除数据库
+		drop database `库名`
+
+	5. 使用数据库
+		use `库名`
+
+	6. 查看数据表
+		show tables
+
+	7. 创建数据表
+		create table if not exists `表名`(
+			`字段名` 	字段类型 	字段属性,
+			`字段名` 	字段类型 	字段属性,
+			...
+			`字段名` 	字段类型 	字段属性
+		)engine=引擎 default charset=编码
+
+	8. 字段类型
+		整型
+			tinyint
+			int
+			
+			数据类名( 宽度 )
+
+		浮点型
+			float
+			double
+			decimal(M,D)
+
+		日期
+			date 		年-月-日
+			datetime 	年-月-日 时:分:秒
+
+		字符串
+			char 		
+			varchar
+
+	9. 字段属性
+		主键索引	primary key
+		唯一索引	unique
+		非空  		not null
+		空			null
+		默认值		default
+		自增 		auto_increment 	
+		无符号		unsigned
+		描述 		comment
+		补零		zerofill
+
+	10. 删除数据表
+		drop table `表名`
+
+	11. 查看表结构
+		desc `表名`
+
+	12. 查看建表语句
+		show create table `表名`
+
+	13. 引擎
+			MyISAM 	InnoDB 
+
+
+</pre>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>内置对象-Date</title>
+</head>
+<body>
+    <h1>内置对象-Date</h1>
+    <hr>
+    <script>
+		// 1. 创建日期对象
+			var a = new Date();
+			console.log(a); // 当天的日期和时间
+
+		// 2. 方法
+			// getFullYear( ) 年
+			console.log(a.getFullYear());
+
+			// getMonth() 	月  0~11  0代表1月, 11代表12月
+			console.log(a.getMonth());
+
+			// getDay() 	一周中的第几天  0~6   0代表周末
+			console.log(a.getDay());
+
+			// getDate() 	今天几号  1~31
+			console.log(a.getDate());
+
+			// getHours() 	小时 	0~23
+			console.log(a.getHours());
+
+			// getMinutes() 分钟  0~59
+			console.log(a.getMinutes());
+
+			// getSeconds() 秒    0~59
+			console.log(a.getSeconds());
+
+			// getMilliseconds()  毫秒 0~999
+			console.log(a.getMilliseconds());
+
+			// getTime() 	时间戳  1970~现在的毫秒数
+			console.log(a.getTime());
+
+			console.log(a.toString()); 		 		// 完整时间
+			console.log(a.toLocaleString()); 		// 本地时间
+			console.log(a.toLocaleTimeString()); 	// 本地时间-时分秒
+			console.log(a.toLocaleDateString()); 	// 本地时间-年月日
+			console.log(a.toUTCString()); 			// 格林威治时间, UTC
+
+    </script>
+</body>
+</html>

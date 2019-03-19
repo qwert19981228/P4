@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>图层拖拽</title>
+    <style>
+    	
+    	#box{
+    		width: 200px;
+    		height: 200px;
+    		border: 2px solid #ccc;
+    		position: absolute;
+    		left:  100px;
+    		top: 100px;
+    	}
+    </style>
+</head>
+<body>
+    <h1>图层拖拽</h1>
+    <hr>
+    
+    <div id="box"></div>
+
+    <script>
+    	
+    	box.onmousedown = function( event ){
+    		this.innerHTML = '按下';
+    		this.style.background = 'pink';
+
+    		var event = event || window.event; // 兼容IE
+    		var left = event.offsetX;
+    		var top = event.offsetY;
+
+
+
+
+    		document.onmousemove = function( en ){
+
+    			var en = en || window.event;
+    			var x = en.x - left;
+    			var y = en.y - top;
+
+    			box.style.left = x + 'px';
+    			box.style.top = y + 'px';
+			}
+
+    	}
+
+    	box.onmouseup = function(){
+    		this.innerHTML = '松开';
+    		this.style.background = 'orange';
+
+    		document.onmousemove = null;
+
+    	}
+
+
+
+    </script>
+    
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动</title>
+    <style>
+    	.box{width: 100px; height: 100px; }
+    	.box1{background: pink; float: left;}
+    	.box2{background: skyblue; float: right;}
+    	.box3{background: lightgreen; float: right;}
+
+    	/* .box4{width: 150px; height: 150px; background: orange; clear:both;} */
+
+		.die{
+			border: 2px solid red;
+			/* overflow: hidden; */
+		}
+
+/* 
+		.die::after{
+			content:'';
+			display: block;
+			clear: both;
+		} */
+    </style>
+</head>
+<body>
+    <h1>浮动</h1>
+    <hr>
+    <!-- 
+		float: left | right | none 
+
+		clear: left | right | both
+
+
+		注意:
+			不保留原来的位置, 脱离文档流
+			文字会     环绕浮动
+			块级元素会 重叠浮动
+			浮动主要是针对 块级元素. 因为行级元素本身就 横排的
+			
+			清除浮动之后, 元素将会保留原来的位置
+
+		清除浮动原理:
+			后面的兄弟元素 清除前面兄弟元素的浮动
+
+			清除浮动方法1:
+				利用原理, 在浮动元素的最后面, 加一个空标签, 并赋予clear
+
+			清除浮动方法2:
+				在浮动元素的父级, 添加overflow:hidden, 形成BFC区域
+				BFC区域: 暂时理解 不会影响外界的区域.
+
+			清除浮动方法3:    推荐
+				父级::after{
+					content:' '
+					display: block;
+					clear: both;
+				}
+    -->
+
+	<div class="die">
+		
+	    <div class="box box1"></div>
+	    <div class="box box2"></div>
+	    <div class="box box3"></div>
+	    <div class="box4"></div>
+	</div>
+
+	哈哈哈
+
+
+
+	<!-- 案例 -->
+<!--     <ul>
+    	<li>小米</li>
+    	<li>红米</li>
+    	<li>电视</li>
+    	<li>笔记本</li>
+    	<li>家电</li>
+    	<li>新品</li>
+    </ul> -->
+    
+
+</body>
+</html>

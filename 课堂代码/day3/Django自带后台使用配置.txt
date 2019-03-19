@@ -1,0 +1,66 @@
+Django自带后台使用配置
+参考官网地址：https://docs.djangoproject.com/en/1.11/ref/contrib/admin/ ，本文章值是介绍简单配置，如果需要详细内容可以查阅官方文档
+
+自动管理界面是Django最强大部分之一。
+
+它从你的模型中 读取元数据，以提供一个快速，以模型为中心的界面，让受信任的用户可以管理您的网站上的内容。
+
+管理员建议的使用权限于组织的内部管理工具
+
+它并不打算构建你的整个前端。
+
+1.创建一个管理员账户：项目创建好后台输入 127.0.0.1:8000/admin/ 会出现登录界面
+
+    在manage.py同级目录，
+    命令行输入 python manage.py createsuperuser
+    需要添加用户名邮箱和密码
+2.进入应用的admin.py文件，添加模型
+
+from django.contrib import admin
+from . import models
+# Register your models here.
+admin.site.register(models.Users)
+3.运行会发现所有用户都是 类名 object
+**进入model.py，给模型添加 __str__方法**
+
+def __str__(self):
+    return selft.name(字段名)
+4.后台其他设置，继续修改admin.py文件
+
+最终修改成下面
+from django.contrib import admin
+from . import models
+# Register your models here.
+class UsersAdmin(admin.ModelAdmin):
+    # 要展示的字段
+    list_display = ('id','name','password','age','addtime')
+
+    # 每一页显示多少条数据，默认是100条
+    list_per_page = 5
+
+    # 设置默认排序字段，负号表示降序排序
+    ordering = ('id',)
+
+    # 设置可编辑的字段
+    list_editable = ['name','password','age']
+
+    # 过滤器
+    list_filter = ('name','age')
+
+    # 搜索字段
+    search_fields = ('name','age')
+    # 时间分层筛选
+    date_hierarchy = 'addtime'
+
+admin.site.register(models.Users,UsersAdmin)
+最后注意如果数据库有时间相关信息，或者最好直接把settings.py配置的时间设置成本地时间，修改内容如下
+
+LANGUAGE_CODE = 'zh-Hans'   #  后台默认是英文 修改成中文
+
+TIME_ZONE = 'Asia/Shanghai'     # 设置时区
+
+USE_I18N = True
+
+USE_L10N = True
+
+USE_TZ = False                         # 设置本地时间必须改成False不然会报错

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>文本</title>
+    <style>
+    	.box{
+    		width: 500px;
+    		height: 200px;
+    		border: 1px solid red;
+    		/* text-align: center; */
+    		/* line-height: 200px; */
+    		vertical-align: middle;
+
+    		/* table-cell 代表 td单元格 */
+    		display: table-cell; 	
+    	}
+
+    	textarea{
+    		vertical-align: top;
+    	}
+
+    	p{
+    		border: 1px solid red;
+    		text-indent: 2em;
+
+    		/* 
+				10px: 水平位移
+				20px: 垂直位移
+				30px: 模糊度    不能为负数
+				red:  阴影颜色
+    		 */
+    		text-shadow: 10px 20px 30px red;
+    	}
+
+    	a{
+    		color: black;
+    		text-decoration: none;
+    	}
+
+    	a:hover{
+    		text-decoration: underline;
+    		color: orange;
+    	}
+
+
+    	.box2{
+    		width: 200px;
+    		height: 22px;
+    		border: 1px solid red;
+    		overflow: hidden;  /* 将溢出的内容进行隐藏 */
+    		text-overflow: ellipsis;
+    	}
+
+
+    	.box3{
+    		width: 200px;
+    		height: 22px;
+    		border: 1px solid red;
+
+    		/* 强制将内容转为 一行 */
+    		white-space: nowrap;
+    		overflow: hidden;
+    		text-overflow: ellipsis;
+
+    	}
+
+    </style>
+</head>
+<body>
+    <h1>文本</h1>
+    <hr>
+    <!-- 
+		text-align: 水平对齐方式 	 left center right
+		vertical-align: 垂直对齐方式  top middle bottom
+		text-indent: 首行缩进
+		text-decoration: 划线
+						underline 		下划线
+						overline 		上划线
+						line-through 	删除线
+						none 			不要线
+		text-shadow: 文字阴影
+		text-overflow: 文字溢出
+					ellipsis  将溢出的隐藏内容用 ... 代替
+							  仅限于一行
+							  需要配合white-space 和 overflow
+
+		注意:
+			vertical-align 默认对外对齐
+			如果需要对内对齐, 配合display
+
+    -->
+
+	<div class="box"> 高通已经获取5G专利 </div> 
+	<br>
+
+	评论: <textarea cols="30" rows="10"></textarea>
+	<br>
+
+	<p>惊闻大家已经考完英语四六级，很多人准备明年再战，说起战，我就想起斗战胜佛，也就是孙悟空，明年年初，中美合拍的西游记即将正式开机，我继续扮演美猴王孙悟空，我会用美猴王艺术形象努力创造一个正能量的形象，文体两开花，弘扬中华文化，希望大家多多关注。</p>
+
+	<a href="">百度</a>
+	<a href="">淘宝</a>
+	<a href="">腾讯</a>
+
+
+	<hr>
+
+
+	<div class="box2">1231231231231231231231231231231231231231</div>
+	<br>
+	<div class="box3">少年强则少女扶墙, 少女强则少年平躺</div>
+	
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>伪对象选择器</title>
+    <style>
+    	
+    	ol::before{ content: '烟盒: 吸烟有害健康'; }
+    	ol::after{ content: '医生: 我尽力了'; }
+
+
+    </style>
+</head>
+<body>
+    <h1>伪对象选择器</h1>
+    <hr>
+    <!-- 
+		s1::before{...} 	匹配s1里面的最前面
+		s1::after{...} 		匹配s1里面的最后面
+
+		s1在这里充当父级
+
+		作用: 
+			在将来  浮动技术上 非常有用
+
+		注意:
+			before 和 after 常用属性content
+			before 和 after 是用 两个冒号
+     -->
+
+	世界上最没用的一句话
+	<ol>
+
+		<li>警察: 不要跑</li>
+		<li>神经病: 我没病</li>
+		<li>女人: 不要</li>
+	</ol>
+
+
+</body>
+</html>

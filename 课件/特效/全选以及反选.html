@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>*{list-style-type: none;text-align: center;font-size: 25px;}</style>
+</head>
+<body>
+
+	<table width="900" border="5" cellpadding="0" cellspacing="0">
+	<caption>调查问卷</caption>
+		<tr id="ck">
+			<td><label for="a"><input type="checkbox" name="a" id="a" value="a">A选项</label></td>
+			<td><label for="b"><input type="checkbox" name="b" id="b" value="b">B选项</label></td>
+			<td><label for="c"><input type="checkbox" name="c" id="c" value="c">C选项</label></td>
+			<td><label for="d"><input type="checkbox" name="d" id="d" value="d">D选项</label></td>
+			<td><label for="e"><input type="checkbox" name="e" id="e" value="e">E选项</label></td>
+			<td><label for="f"><input type="checkbox" name="f" id="f" value="f">F选项</label></td>
+			<td><label for="g"><input type="checkbox" name="g" id="g" value="g">G选项</label></td>
+		</tr>
+		<tr><td colspan="7">测试选择</td></tr>
+		<tr><td colspan="7">
+			<button onclick="ck(1)">全选</button>　
+			<button onclick="ck(2)">全取消</button>　
+			<button onclick="ck(3)">反选</button>　
+			<button onclick="ckck()">提交获取值</button>　
+		</td></tr>
+		<tr><td colspan="7" id="j">还未选择</td></tr>
+	</table>
+
+
+	<script>
+	var tr = document.getElementById('ck');
+	var td = tr.getElementsByTagName('input');
+	var j = document.getElementById('j');
+	// console.log(tr);
+
+	function  ck(m) {
+		for (var i = 0; i < td.length; i++) {
+			switch(m){
+				case 1:td[i].checked=true;break;
+				case 2:td[i].checked=false;break;
+				case 3:td[i].checked=!td[i].checked;break;
+			}
+		}
+	}
+
+	function ckck () {
+		var row = '';
+		for (var i = 0; i < td.length; i++) {
+			if (td[i].checked) {
+				var ck = td[i].value;
+				row += ck;
+			}
+		}
+		console.log(row);
+		if (row == '') {
+			j.innerHTML = '无任何选项';
+		}else{
+			// 把字符串转换成大写。
+			row = row.toUpperCase();
+			j.innerHTML = '以上测试选择的值:'+row;
+		}
+	}
+
+
+	</script>
+
+
+
+</body>
+</html>

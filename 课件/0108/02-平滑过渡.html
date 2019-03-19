@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>平滑过渡</title>
+    <style>
+    	
+    	.box{
+    		width: 200px;
+    		height: 200px;
+    		background: pink;
+    		transition: background 3s;
+    		transition: all 3s;
+    	}
+
+		.box:hover{
+			background: #2BD330;
+    		text-align: center;
+		}
+
+		input{
+			width: 200px;
+			height: 30px;
+			outline: none;
+
+			transition: width 1s;
+			transition: width 1s, height 1s;
+			transition: all 5s;
+			transition: all 5s linear;
+			transition: all 5s cubic-bezier(0, 1.19, 0.49, 0.71);
+			transition: all 1s 5s;
+		}
+
+
+		input:focus{
+			width: 500px;
+			height: 100px;
+			border: 10px solid red;
+		}
+		
+
+    </style>
+</head>
+<body>
+    <h1>平滑过渡</h1>
+    <hr>
+    <!-- 
+		transition: 属性 过渡时间 过渡速率 延迟时间
+			
+			属性:  		
+				过渡一个属性
+				过渡多个属性, 每个属性之间有 逗号 隔开
+				过渡所有属性, all
+
+			过渡时间: 	单位: s/ms
+			过渡速率:
+						linear  匀速
+						ease-in 加速
+						ease-out 减速
+						ease-in-out 先加速再减速
+						自定义速率
+			延迟时间: 	单位: s/ms
+
+		注意:
+			过渡具有数值变化的属性. 例如 width, height, color, ...
+									相反案例: text-align, border-style ... 
+
+
+    -->
+    
+	<div class="box">123</div>
+	<br>
+
+	<input type="text">
+
+
+
+
+</body>
+</html>

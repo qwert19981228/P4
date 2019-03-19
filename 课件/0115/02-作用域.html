@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域</title>
+</head>
+<body>
+    <h1>作用域</h1>
+    <hr>
+    <script>
+    	/*
+    		作用域
+    		1. 全局变量
+				在函数外部通过var声明的变量
+				在函数内/外, 不用var定义的变量
+
+    		2. 局部变量
+    			在函数内部通过var声明的变量
+    	 */
+    	
+
+    	// 全局变量
+    	var a = '奥六马';
+
+    	function demo(){
+    		// 局部变量
+    		var b = '四胖';
+
+    		// 可以当全局变量, 可以当局部变量
+    		c = '晋九';
+    	}
+
+
+    	/*
+    		作用域链
+			1. 作用域链的特性
+				对上封闭: 上面的不能用下面的
+				对下透明: 下面的能用上面的
+
+				访问顺序:
+					优先 当前作用域
+					其次 上一级作用域, 以此类推
+					最终 都找不到就报错
+
+			2. 
+				作用域是在函数声明定义的, 不是在调用的时候定义的
+				意味着: 在函数声明时, 局部的变量 都已经声明好的, 只是暂时未定义(没做赋值, 相当于undefined)
+    	 */
+    	var x = 10
+    	function  outer(){
+    		var x = 99;
+    		var y = 20;
+
+    		function  inner(){
+
+    			var z = 30;
+
+    		}
+
+
+    		// outer 作用域
+    		console.log('在 outer中: y = '+y);
+    		console.log('在 outer中: x = '+x); // 优先当前作用域, 其次才去上一级作用域
+    		// console.log('在 outer中: z = '+z);
+    	}
+
+    	outer();
+
+    	document.write('<hr>');
+    	console.log('-------------------------------')
+
+    	function test( num ){
+
+    		var i = 0;
+
+    		if( num == 10 ){
+    			var j = 1;
+    			for( var k = 2; k < 10; k++){
+    				console.log(k);
+    			}
+    		}
+
+    		console.log(i);
+    		console.log(j);
+    		console.log(k);
+    		console.log(m);
+    	}
+
+    	test(99);
+
+
+
+
+
+
+    </script>
+    
+
+</body>
+</html>

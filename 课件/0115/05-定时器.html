@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器</title>
+    <style>
+    	
+    	#box{
+    		width: 500px;
+    		height: 100px;
+    		border: 2px solid red;
+    		line-height: 100px;
+    		text-align: center;
+    		font-size: 30px;
+    		color: red;
+    	}
+
+    </style>
+</head>
+<body>
+    <h1>定时器</h1>
+    <hr>
+	
+
+	<button id="btn1" disabled> 开始抢购 </button>
+	<hr>
+
+	<button id="btn2" disabled></button>
+	<hr>
+
+	<button id="btn3" disabled></button>
+	<button onclick="stopTime()">紧急停止</button>
+	<hr>
+
+	<button onclick="stopBox()">停止盒子里的时间</button>
+	<div id="box"></div>
+
+
+    <script>
+    	/*
+    		定时器: 在指定时间之后, 会执行某些事情
+			1.  setTimeout( 代码, 时间 )
+					功能: 	
+						在指定时间之后, 执行一次代码功能
+						俗称"倒计定时器"
+					参数:
+						代码: 可写功能字符串, 函数名 或 '函数名()'
+						时间: 毫秒
+
+			2. clearTimeout( 定时器 )
+					功能: 
+						清除定时器
+
+
+			3. setInterval( 代码, 时间 )
+					功能:
+						每隔一段时间, 执行一次代码功能
+
+					参数:
+						同 setTimeout
+
+			4. clearInterval( 定时器 )
+					功能: 
+						清除定时器
+
+    	*/
+    
+    	// 倒计定时器1
+    	// 	3s之后, 才能点击 抢购按钮
+    	function start(){
+    		var btn1 = document.getElementById('btn1');
+    		btn1.disabled = false;  // 取消disabled
+    	}
+
+    	setTimeout(start,  3000);
+    	console.log('-------------------------------')
+
+
+    	// 倒计定时器2
+    	// 	5s之后, 才能点击 抢购按钮 (显示倒计时)
+
+    	var time = 5;  // 倒计时
+    	start2();
+
+    	function start2(){
+    		var btn2 = document.getElementById('btn2');
+
+    		if( time < 0 ){
+    			btn2.innerHTML = '开始抢购';
+    			btn2.disabled = false;
+    			// alert('1111');
+    			return;
+    		}
+
+    		btn2.innerHTML = time;
+    		time--;
+    		setTimeout(start2, 1000);
+    	}
+    	console.log('-------------------------------')
+
+
+    	// 清除定时器
+
+    	var time2 = 5;  // 倒计时
+    	var timer;
+    	start3();
+
+    	function start3(){
+    		var btn3 = document.getElementById('btn3');
+
+    		if( time2 < 0 ){
+    			btn3.innerHTML = '开始抢购';
+    			btn3.disabled = false;
+    			return;
+    		}
+
+    		btn3.innerHTML = time2;
+    		time2--;
+    		timer = setTimeout(start3, 1000);
+    	}
+
+    	function stopTime(){
+    		clearTimeout( timer );
+    	}
+
+    	// 扩展作业:  补上 继续倒计时, 接着刚刚紧急停止继续倒计时
+    	console.log('-------------------------------')
+
+
+    	// 循环定时器
+    	// 		时时显示当前系统时间, 且 随时可以停止显示
+
+    	var timer4;
+    	start4();
+    	function start4(){
+    		var box = document.getElementById('box');
+    		box.innerHTML = new Date().toLocaleString();  // 获取本地时间
+    	}
+
+    	timer4 = setInterval(start4, 1000);
+
+    	function stopBox(){
+    		clearInterval(timer4);
+    	}
+
+    </script>
+    
+
+</body>
+</html>

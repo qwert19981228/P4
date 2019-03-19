@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM</title>
+</head>
+<body>
+    <h1>BOM</h1>
+    <hr>
+    <!-- 
+		BOM 浏览器对象模型
+			能与浏览器窗口进行交互
+			核心对象: window
+											  window
+						                         |
+						history   location  document  screen   navigator
+						                         |
+						                head            body
+						                  |               |
+						          link meta ...     div p span ... 
+
+			window对象
+				根对象, 描述整个窗口
+
+				常用方法
+					alert( ) 	警告框, 无返回值
+					confirm( )  确认框, 返回值: bool
+					prompt( )   输入框, 返回值: 内容  
+										取消:  null
+
+					setInterval( )
+					setTimeout( )
+					clearInterval( )
+					clearTimeout( )
+
+			navigator对象
+				包含了 浏览西相关的信息
+				使用格式: 	navgiator.属性名/方法名() 
+
+				功能包含:
+					浏览器名
+					平台
+					版本
+					当前操作系统
+					是否脱机
+					User-agent头信息 	(终端设备, 版本号)
+					...
+
+			history对象
+				包含了 历史记录
+				使用格式: 	history.属性名/方法名()
+
+				功能包含: 
+					上一个访问地址
+					下一个访问地址
+					访问过多少地址
+					...
+
+			Location对象
+				包含了 当前URL信息
+				使用格式: Location.属性名/方法名()
+
+				功能包含:
+					当前url地址
+					当前端口
+					当前协议
+					当前参数
+					...
+
+			Screen对象
+				包含了 客户端屏幕的信息
+				使用格式: 	screen.属性名/方法名()
+
+				功能包含:
+					屏幕宽度
+					屏幕高度
+					刷新率 
+					分辨率
+					...
+
+			以上若要具体操作, 可以查看手册 ( 找 Browser 对象)
+			
+
+
+
+    -->
+
+    <script>
+    	
+    	// console.log( confirm('您确定吗?') );
+    	console.log( prompt('请输入内容: ') );
+
+    </script>
+    
+
+</body>
+</html>

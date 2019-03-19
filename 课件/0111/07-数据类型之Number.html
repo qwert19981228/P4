@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>数据类型之Number</title>
+</head>
+<body>
+    <h1>数据类型之Number</h1>
+    <hr>
+    <!-- 
+		Number 中的特殊类型
+			NaN:  Not a Number  不是一个数
+
+		1. 作用		
+			用于表示 不是一个数字值
+
+		2. isNaN()
+			判断是否不是 一个数字值
+				true: 不是数字
+				false: 是数字
+
+		3. 运算
+			NaN与任何数字运算, 结果都是 NaN
+
+		4. 比较
+			NaN与任何数字比较, 都不相等, 包括自己
+    -->
+	<script>
+		console.log( isNaN(1) );
+		console.log( isNaN(0) );
+		console.log( isNaN('0') );
+		console.log( isNaN('1') );
+		console.log( isNaN('a') );
+		console.log( isNaN('2a') );
+		console.log( isNaN('2e3') );
+		console.log( isNaN('+-*/') );
+		console.log( isNaN('老母鸡') );
+		console.log( isNaN(NaN) );
+		console.log('-------------------------------')
+
+
+
+		console.log(NaN + 1);
+		console.log(NaN - 1);
+		console.log(NaN * 1);
+		console.log(NaN / 1);
+		console.log(NaN + '1');
+		console.log('-------------------------------')
+
+		
+		console.log( NaN == 1 );
+		console.log( NaN > 1 );
+		console.log( NaN < 1 );
+		console.log( NaN == NaN );
+		
+	</script>    
+</body>
+</html>

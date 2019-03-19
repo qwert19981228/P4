@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>注册验证</title>
+    <style>
+    	#reg table tr td:first-of-type{
+			text-align: right;
+    	}
+    </style>
+</head>
+<body>
+    <h1>注册验证</h1>
+    <hr>
+    
+    <form action="" id="reg" name="regForm" onsubmit="return checkForm()">
+    	<table>
+    		<tr>
+    			<td>电话: </td>
+    			<td><input type="text" name="tel" onblur="checkTel()" maxlength="11"></td>
+    			<td id="notice1"></td>
+    		</tr>
+    		<tr>
+    			<td>邮箱: </td>
+    			<td><input type="text" name="email" onblur="checkEmail()"></td>
+    			<td id="notice2"></td>
+    		</tr>
+    		<tr>
+    			<td>密码: </td>
+    			<td><input type="password" name="pwd" onblur="checkPwd()"></td>
+    			<td id="notice3">长度6~18位, 至少要有一个数字, 一个字母</td>
+    		</tr>
+    		<tr>
+    			<td>确认密码: </td>
+    			<td><input type="password" name="repwd" onblur="checkRepwd()"></td>
+    			<td id="notice4"></td>
+    		</tr>
+    		<tr>
+    			<td></td>
+    			<td><input type="submit" value="注册"></td>
+    			<td></td>
+    		</tr>
+
+    	</table>
+    </form>
+    
+    <script>
+    		
+    		function checkTel(){
+    			//  	对象.name1.name2....
+    			//  		name2 必须是name1的后辈元素
+    			value = document.regForm.tel.value;
+
+    			res = value.match(/^1(3\d|4[56789]|5[012356789]|66|7[0345678]|8\d|9[89])\d{8}$/);
+    			if(res == null){
+    				notice1.innerHTML = '手机号码格式不正确';
+    				notice1.style.color = 'red';
+    				return false;
+    			}else{
+    				notice1.innerHTML= '√';
+    				notice1.style.color = 'green';
+    				return true;
+    			}
+    		}
+
+    		function checkEmail(){
+    			value = document.regForm.email.value;
+
+    			// 邮箱格式:
+    			// 	 邮箱名@企业名.顶级域名
+    			// 	 
+    			// 	 以下规则纯属虚构:
+    			// 	 
+    			// 	 邮箱名: 只能由数字, 字母组成, 长度5~15
+    			// 	 企业名: 只能由字母组成, 长度1~10
+    			// 	 顶就域名:
+    			// 	 		com
+    			// 	 		cn
+    			// 	 		net
+    			// 	 		edu
+    			// 	 		org
+    			// 	 		...
+    			// 	 
+    			res = value.match( /^[\da-zA-Z]{5,15}@[a-zA-Z]{1,10}\.(com|cn|net|edu|org)$/);
+
+    			if(res == null){
+    				notice2.innerHTML = '邮箱格式不正确';
+    				notice2.style.color = 'red';
+    				return false;
+    			}else{
+    				notice2.innerHTML= '√';
+    				notice2.style.color = 'green';
+    				return true;
+    			}
+    		}
+
+    		function checkPwd(){
+    			value = document.regForm.pwd.value;
+
+    			// 密码要求:
+    			// 	长度: 6~18
+    			// 	内容: 至少一个数字, 一个字母
+    			res = value.match( /^.{6,18}$/);
+    			a = value.match( /\d/ );
+    			b = value.match( /[a-zA-Z]/ )
+
+    			if(res == null){
+    				notice3.innerHTML = '密码长度不正确';
+    				notice3.style.color = 'red';
+    				return false;
+    			}else if( a && b  ){
+    				notice3.innerHTML= '√';
+    				notice3.style.color = 'green';
+    				return true;
+    			}else{
+    				notice3.innerHTML = '密码格式不正确';
+    				notice3.style.color = 'red';
+    				return false;
+    			}
+    		}
+
+    		function checkRepwd(){
+    			// 获取 原生密码
+    			pwd = document.regForm.pwd.value;
+
+    			// 获取 确认密码
+    			repwd = document.regForm.repwd.value;
+
+
+    			if(pwd != repwd){
+    				notice4.innerHTML = '两次密码不一致';
+    				notice4.style.color = 'red';
+    				return false;
+    			}else if(repwd == ''){
+    				notice4.innerHTML = '';
+    				notice4.style.color = 'red';
+    				return false;
+    			}else{
+    				notice4.innerHTML= '√';
+    				notice4.style.color = 'green';
+    				return true;
+    			}
+    		}
+
+    		function checkForm(){
+
+    			return checkRepwd() && checkPwd() && checkEmail() && checkTel();
+
+    		}
+
+
+
+
+    </script>
+
+</body>
+</html>

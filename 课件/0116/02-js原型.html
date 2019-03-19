@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>js原型</title>
+</head>
+<body>
+    <h1>js原型</h1>
+    <hr>
+    <script>
+    	/*
+    		原型 就是Python的 类属性 类方法
+		
+			1. 设置属性和方法			
+				独享设置
+					对象名.属性名 = 属性值
+					对象名.方法名 = function(){ 代码块 }
+
+				共享设置
+					对象名.prototype.属性名 = 属性值
+					对象名.prototype.方法名 = function(){ 代码块 }
+
+			2. 删除对象
+				关键字: delete
+
+				格式:
+					delete 对象.属性名
+					delete 对象.方法名
+
+				
+				delete 删除属性后, 再次使用该属性时, 则变为 undefined
+				delete 删除方法后, 方法则不存在, 再次使用报错
+				
+				delete 实例化后不能使用
+				delelte 自带属性和方法可以使用
+
+    	 */
+
+    	function demo(){
+    		this.name = '老王';
+    	}
+
+    	var obj1 = new demo();
+    	var obj2 = new demo();
+
+
+    	// 设置属性 和 方法
+    	obj1.age = 18;
+    	console.log(obj1.age);
+    	console.log(obj2.age);
+
+    	console.log(obj1.name);
+    	console.log(obj2.name);
+    	console.log('-------------------------------')
+
+    	obj1.name = '老宋';
+    	console.log(obj1.name);
+    	console.log(obj2.name);
+
+    	obj1.getMsg = function(){
+    		console.log('我是独享方法');
+    	}
+
+    	obj1.getMsg();
+    	// obj2.getMsg();
+    	console.log('-------------------------------')
+
+    	// 设置 共享属性(原型)
+    	demo.prototype.sex = '未知';
+    	console.log(obj1.sex);
+    	console.log(obj2.sex);
+    	console.log('-------------------------------')
+
+    	// 应用
+    	var a = 100;
+    	console.log(a.constructor);
+
+
+    	Number.prototype.add = function( num ){
+    		return this + num;
+    	}
+
+    	// alert( a.add() );
+    	alert( a.add(5) );
+    	console.log('-------------------------------')
+
+
+
+    	// 删除 原型属性和方法
+    	delete Number.add;
+    	alert( a.add(5) );
+
+
+    	function demo2(){
+    		this.name = '老王';
+    	}
+
+    	var obj3 = new demo2();
+    	console.log(obj3.name);
+    	delete obj3.name;
+    	console.log(obj3.name);
+
+    	demo2.prototype.age = 18;
+    	console.log(obj3.age);
+    	delete obj3.age;
+    	console.log(obj3.age);
+
+
+
+    </script>
+    
+
+</body>
+</html>

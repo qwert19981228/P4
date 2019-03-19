@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>内置对象String</h1>
+	<script>
+		var str = new String("伯母你好,我是你儿子的女朋友");
+		var str = new String("heLLO pyTHon");
+		console.log(str)
+		//length  获取字符串的长度
+		console.log(str.length)
+		// bold()  字符串加粗
+		console.log(str.bold())
+		document.write(str.bold())
+
+		//anchor() 创建锚点
+		console.log(str.anchor('www.baidu.com'))
+
+		//indexOf()  找到指定字符的首次位置，找不到 则 -1
+		console.log(str.indexOf('你1'))
+		// lastIndexOf()  找到指定字符最后出现的位置  找不到则 -1
+		console.log(str.lastIndexOf('你1'))
+		//charAt()  找指定索引所对应的字符   
+	 	console.log(str.charAt(7))
+
+	 	// concat() 拼接字符串
+	 	console.log(str.concat('但是',false))
+
+	 	// substr(),substring(), 不支持负数  不包含末尾 slice() 截取字符串 支持负数  不包含末尾
+	 	
+	 	console.log(str.substr(2)) //键从2开始 截取全部字符
+	 	console.log(str.substr(2,10)) //键从2开始 截取10个长度 
+	 	console.log(str.substr(-5,10)) //倒数第2个开始  截取到末尾
+	 	console.log('----------------------')
+	 	console.log(str.substring(2)) //键从2开始 截取全部字符
+	 	console.log(str.substring(2,10)) //键从2开始 截取到键为10 的 但是不包含10   [2,10) 
+	 	console.log(str.substring(-5,10)) //不支持负数  默认从0开始 截取到键为10 的 但是不包含10  [0,10)
+	 	console.log('----------------------')
+	 	console.log(str.slice(2)) //键从2开始 截取全部字符
+	 	console.log(str.slice(2,10)) //键从2开始 截取到键为10 的 但是不包含10   [2,10) 
+	 	console.log(str.slice(-5,10)) //支持负数  倒数第5个开始 截取到键为10 的 但是不包含10  [0,10)
+
+	 	// split()  分割字符串 ，返回数组
+	 	console.log(str.split(''))
+	 	// replace('字符串1','字符串2')  字符串1被替换的字符  字符串2替换字符 
+	 	console.log(str.replace(',','|'))
+
+	 	// toUpperCase()  字符串转换成大写
+	 	// toLowerCase()  字符串转换成小写
+	 	console.log(str.toUpperCase())
+	 	console.log(str.toLowerCase())
+
+
+
+
+		
+	</script>	
+</body>
+</html>

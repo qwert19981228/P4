@@ -1,0 +1,78 @@
+<pre>
+	1. 定位优先级
+		z-index: num数字
+		num数字越大, 优先级越高
+		条件限制: 只能用于 定位元素
+
+	2. 盒子模型
+		IE模型:  内容(涵盖了内边距和边框) 	外边距
+		非IE模型:内容+内边距+边框 			外边距
+
+	3. 行块级元素
+		块级元素  	block
+			独占一行
+			宽度默认与浏览器一致
+			高度默认与内容一致
+			宽高, 行高, 内外边距都可以手动控制
+			容纳性: 任意元素
+
+		行级元素 	inline
+			不会独占一行
+			宽度默认与内容一致
+			高度默认与内容一致
+			行高, 水平内外边距可以手动控制
+			容纳性: 只能容纳行级元素
+
+	4. 内外边距
+		外边距
+			margin:10px 				上下左右均为10px
+			margin:10px 20px 			上下10   左右20
+			margin:10px 20px 30px 		上10  左右20  下30
+			margin:10px 20px 30px 40px上10  右20  下30  左40
+
+			margin-方向: px
+			水平居中: margin-left: auto
+					  margin-right: auto
+
+		内边距
+			padding:10px 				上下左右均为10px
+			padding:10px 20px 			上下10   左右20
+			padding:10px 20px 30px 	上10  左右20  下30
+			padding:10px 20px 30px 40px上10  右20  下30  左40
+
+			padding-方向: px
+
+	5. 浮动
+		float: left | right | none
+		clear: left | right | both
+
+		浮动属性 主要用于 块级元素
+		浮动元素 不保留原来的位置
+		浮动元素 脱离文档流
+
+		清除浮动:
+			1. 在浮动元素的后面, 加入块级元素(空标签), 通过clear清除前面兄弟的浮动
+			2. 在浮动元素的父级, 通过oveflow:hidden 形成BFC区域, 从而清除子集的浮动
+			3. 在浮动元素的父级, 通过 伪对象选择器 来清除子集的浮动
+
+
+	6. 元素显示
+		display: block; 		块级元素
+				  inline 		行级元素
+				  inline-block 内联-块元素
+				  none 		    不占位隐藏
+				  table 		块级表格
+				  table-cell   td单元格
+
+		visibility: hidden 	占位隐藏
+					 visible   显示内容
+
+	7. css初始化
+		目的: 统一浏览器默认值
+
+		body, ol, ul, div, h1~h6 ... {margin:0; padding:0}
+		li{list-style:none;}
+		a{text-decoration:none}
+		body{font-size: ;  background: ;}
+		
+</pre>

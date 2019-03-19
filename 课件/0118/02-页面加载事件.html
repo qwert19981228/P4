@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>页面加载事件</title>
+    <script>
+    	
+		// window 比 document 还大
+
+		// window.onload = function(){
+		// 	alert('页面加载完成');
+		// 	console.log(box + '前面');
+		// }
+
+		// window.onunload = function (){
+		// 	return '老弟别走啊';
+		// }
+
+		window.onbeforeunload = function (){
+			return '老弟别走啊';
+			// alert('12312');
+		}
+
+		// if (window.addEventListener) {
+	 //        window.addEventListener('beforeunload', function () {
+	 //         	alert('111');
+	 //        })
+	 //      } else if (window.attachEvent) {
+	 //        // 主要是为了兼容老的IE
+	 //        window.attachEvent('on' + 'beforeunload', function () {
+	 //         	alert('222');
+	 //        })
+	 //      } else {
+	 //        window.onbeforeunload = function () {
+	 //         	alert('123');
+	 //        }
+	 //      }
+
+
+    </script>
+
+    <style>
+    	#box2 img{
+    		width: 200px;
+    	}
+
+
+    </style>
+</head>
+<body onbeforeunload="alert('The onunload event was triggered')">
+    <h1>页面加载事件</h1>
+    <hr>
+    <!-- 
+		onload 		页面或图像加载成功时 触发
+		onunload   页面关闭时触发 	IE
+		onbeforeunload 页面关闭时触发 非IE
+					浏览器阻止关闭前的弹窗, 需要return "string"
+
+		onabort 	图片加载过程中 中断触发
+		onerror 	图片加载出错时 触发
+		onscroll   元素滚动条在滚动时 触发
+
+     -->
+   
+	<!-- <img src="http://www.google.com.cn/pic/1.jpg"> -->
+
+    <div id="box">老母鸡</div>
+
+	<script>
+			console.log(box + '后面');
+	</script>
+	<hr>
+
+
+	<div id="box2">
+		<img src="./img/Meinv001.jpg">
+		<img src="./img/Meinv002.jpg">
+		<img src="./img/Meinv003.jpg">
+		<img src="./img/Meinv004.jpg">
+		<img src="./img/Meinv005.jpg">
+		<img src="./img/Meinv0061.jpg">
+		<img src="./img/Meinv007.jpg">
+		<img src="./img/Meinv0081.jpg">
+		<img src="./img/Meinv0091.jpg">
+		<img src="./img/Meinv010.jpg">
+	</div>
+
+	<script>
+			
+		imgList = document.getElementById('box2').getElementsByTagName('img');
+		console.log(imgList);
+
+		for( var i = 0; i < imgList.length; i++){
+
+			imgList[i].onerror = function(){
+				this.src = './img/error.jpg';
+			}
+		}
+
+
+	</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

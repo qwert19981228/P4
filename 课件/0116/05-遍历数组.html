@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>遍历数组</title>
+</head>
+<body>
+    <h1>遍历数组</h1>
+    <hr>
+	<script>
+		// 遍历: 
+		// 	通过 循环一个一个获取数组中的值
+		var list = [ '熊初墨', '王根基', '倪霸霸', '于伟文', '黄阿玛' ];
+		console.log( list, typeof(list));
+		console.log( list.length );
+
+
+		// for 遍历
+		for(var i = 0; i < list.length; i++){
+			document.write(i + ' ====> ' + list[i] + '<br />');
+		}
+		document.write('<hr>');
+
+		// 优化for 
+		for(var i = 0, j = list.length; i < j; i++){
+			document.write(i + ' ====> ' + list[i] + '<br />');
+		}
+		document.write('<hr>');
+
+
+		// for in 遍历
+		for( var i in list ){
+			document.write(i + ' ====> ' + list[i] + '<br />');
+		}
+
+		// json对象数据
+		var obj = {name:'小炮',  age:18,  sex:'女'}
+		console.log(obj, typeof(obj));
+
+		for(var i in obj){
+			document.write(i + ' ====> ' + obj[i] + '<br />');
+		}
+
+		// 小结:
+		// 	for 	适合遍历数组
+		// 	for in 	适合遍历对象
+
+
+	</script>    
+
+</body>
+</html>

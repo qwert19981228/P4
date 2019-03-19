@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图-显示or隐藏</title>
+	<script src="./jquery-1.8.3.min.js"></script>
+	<style>
+		body,ul{margin: 0; padding: 0;}
+		li{list-style: none;}
+
+		
+		#banner{
+			width: 400px;
+			height: 600px;
+			border: 5px solid red;
+			margin: 100px auto;
+			position: relative;
+		}
+
+		#imgList img{
+			width: 400px;
+			height: 600px;
+		}
+
+		#iconList{
+			position: absolute;
+			left: 22%;
+			bottom: 20px;
+		}
+
+		#iconList ul li{
+			width: 30px;
+			height: 30px;
+			float: left;
+			background: #ccc;
+			border-radius: 100%;
+			line-height: 30px;
+			text-align: center;
+			margin-right: 20px;
+		}
+
+		#iconList ul li:first-of-type{
+			background: red;
+			color: #fff;
+		}
+
+
+
+	</style>
+</head>
+<body>
+	
+
+	<div id="banner">
+			
+		<div id="imgList">
+			<img src="./imgs/1.jpg" style="display: block;">
+			<img src="./imgs/2.jpg" style="display: none;">
+			<img src="./imgs/3.jpg" style="display: none;">
+			<img src="./imgs/4.jpg" style="display: none;">
+			<img src="./imgs/5.jpg" style="display: none;">
+		</div>
+
+		<div id="iconList">
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+		</div>
+	</div>
+
+	<script>
+		
+		// 改变当前图片的显示
+		function img(m){
+			$('#imgList img').css('display', 'none');
+			$('#imgList img').eq(m).css('display','block');
+		}
+
+
+		// 改变当前图标的显示
+		function icon(m){
+			$('#iconList li').css('background', '#ccc');
+			$('#iconList li').eq(m).css({
+				background: 'red',
+				color: '#fff',
+			});
+		}
+
+		// 第几张图片 (索引)
+		index = 0;
+		function run(){
+			index++;
+
+			// 一共5张图, 当到 第6张图片时, 重置index = 0
+			if( index > 4){
+				index = 0;
+			}
+
+			img(index);  // 改变显示的图片
+			icon(index); // 改变显示的图标
+		}
+		setInterval(run , 1000);
+
+
+		// 当鼠标悬停在 图片上时, 停止轮播
+		
+
+		// $(window).unload( function () { alert("Bye now!"); } );
+
+	</script>
+
+
+</body>
+</html>

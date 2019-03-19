@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>类型转换</title>
+</head>
+<body>
+    <h1>类型转换</h1>
+    <hr>
+	<script>
+		/*
+			Bool 转换
+				Boolean( ) 函数
+				以下值 转为bool时为false
+				* 0 或 0.0
+				* -0
+				* ''  空字符串
+				* null
+				* undefined
+				* NaN
+		 */
+
+		var a = Boolean( 1 ); 
+		var a = Boolean( 0 ); 
+		var a = Boolean( 0.0 ); 
+		var a = Boolean( -0 ); 
+		var a = Boolean( null ); 
+		var a = Boolean( undefined ); 
+		var a = Boolean( '' ); 
+		var a = Boolean( '0' ); 
+		var a = Boolean( NaN ); 
+		var a = Boolean( 'abc' ); 
+		var a = Boolean( 'NaN' ); 
+		var a = Boolean( 'false' ); 
+		console.log(a, typeof(a));
+		console.log('-------------------------------')
+
+		/*
+			String( ) 函数 
+		 */
+
+		var a = String( 1 );
+		var a = String( 1.0 );
+		var a = String( 0 );
+		var a = String( -0 );
+		var a = String( '1' );
+		var a = String( true );
+		var a = String( false );
+		var a = String( null );
+		var a = String( NaN );
+		var a = String( undefined );
+		console.log(a, typeof(a));
+		console.log('-------------------------------')
+
+
+		/* 
+			Number( ) 函数
+		*/
+	
+		var a = Number(null); 			//  0
+		var a = Number(undefined);  	// NaN
+		var a = Number(true);  			// 1
+		var a = Number(false);  		// 0
+		var a = Number('');  			// 1.23
+		var a = Number('0');  			// 0
+		var a = Number('123');  		// 123
+		var a = Number('1.23');  		// 1.23
+		var a = Number('123abc');  	// NaN
+		var a = Number('abc');  		// NaN
+		console.log( a, typeof(a) );
+		console.log('-------------------------------')
+
+		/*
+			parseInt( )  强制转为 Numer-int 整数
+				不带数字 直接NaN
+				二进制 -> 直接变0
+				八进制 -> 保留
+				十六进制 -> 解析,转为十进制
+		 */
+
+		var a = parseInt(1.5);
+		var a = parseInt(1.9);
+		var a = parseInt(null);
+		var a = parseInt(undefined);
+		var a = parseInt('1');
+		var a = parseInt('abc');
+		var a = parseInt(true);
+		var a = parseInt(false);
+		var a = parseInt('012');
+		var a = parseInt('0b110');
+		var a = parseInt('0xa');
+		console.log(a, typeof(a));
+		console.log('-------------------------------')
+
+
+		/*
+			parseFloat( ) 强制转为Numer-float 浮点数
+				* 基本同上
+				* 只有一个小数点有效
+				* 二进制 和 十六进制  --> 直接变 0
+				* 八进制 --> 保留数字
+				* 支持科学计数法
+
+
+		 */
+		
+		var a = parseFloat( 1 );
+		// var a = parseFloat( 1.2.3 );
+		var a = parseFloat( 1.2 );
+		var a = parseFloat( '2e3' );
+		var a = parseFloat( '10' );
+		var a = parseFloat( '011' );
+		var a = parseFloat( '0b110' );
+		var a = parseFloat( '0xa' );
+		console.log(a, typeof(a));
+
+
+
+	</script>
+
+    
+    
+
+</body>
+</html>

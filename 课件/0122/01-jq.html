@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./jquery-1.8.3.min.js"></script>
+</head>
+<body>
+	<!-- 
+		$(对象).方法1().方法2().方法3()
+		
+		$(对象).操作(function(){
+			代码块
+		})
+
+		$(function(){
+			代码块
+		})
+	-->
+
+	<div id="box" class="box2"></div>
+	<div class="box2">123</div>
+
+	<b>老母鸡</b>
+	<p>近日, 有一程序员在项目上线当天, 锁死服务器, 无法进入游戏, 无法猜测游戏, 项目耗资600W</p>
+	
+	
+	<input type="checkbox"> 吃
+	<input type="checkbox" checked> 喝
+	<input type="checkbox"> 嫖
+	<input type="checkbox"> 赌
+
+
+	<script>
+		
+		console.log( $('#box') );
+		// 单个 样式
+		$('#box').css('width', '500');
+		$('#box').css('height', '500');
+
+		// 多个 样式
+		$('#box').css({
+			background: '#ccc',
+			border: '2px solid red',
+			// ...
+		});
+
+
+		$('.box2').css({
+			width: 200,
+			height: 200,
+			background: 'skyblue',
+			border: '10px solid blue',
+		});
+
+		$('div').css({
+			// 'box-shadow': '10px 20px 30px 40px red',
+			'box-shadow': '10px 20px 30px 40px red',
+			width: 100,
+		});
+
+		$('b, p, #box').css('font-size','12px');
+
+		$('div:first').css('border-color', 'green');
+
+		$('input:checked').css('margin-right','50px');
+
+		console.log($('input:checked'));
+
+
+		$('div:empty').css('border-color', 'pink');
+
+	</script>
+
+</body>
+</html>

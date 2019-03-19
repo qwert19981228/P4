@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+</head>
+<body>
+    <h1>数组</h1>
+    <hr>
+    <script>
+    	/*
+    		1. 创建数组
+				构造创建
+					var 数组名 = new Array(值1, 值2, 值3, ...)
+
+				JSON创建
+					var 数组名 = [值1, 值2, 值3, ... ]
+
+			
+			2. 多维数组
+				数组中嵌套数组
+
+    	*/
+
+    	// 构造创建
+    	var a = new Array(); 		// 空数组
+    	var a = new Array(10); 		// 数组长度
+    	var a = new Array(10, 20, 30, 40); 	// 初始化数组
+    	console.log(a, typeof(a));  // 数组本身就是一个对象
+
+
+    	// JSON创建
+    	var b = []; 				// 空数组
+    	var b = [10]; 			// 初始化数组
+    	var b = [10,20,30,40]; //
+    	console.log(b, typeof(b));
+
+
+    	// 多维数组
+    	var c = [
+    				['大姨妈', '小姨妈'],
+    				['大姨夫', '小姨夫'],
+    			 ];
+    	console.log(c);
+
+
+    </script>
+    
+
+</body>
+</html>

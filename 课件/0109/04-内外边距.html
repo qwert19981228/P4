@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>内外边距</title>
+    <style>
+    	.box{width: 150px; height: 150px; }
+		
+		.box1{background: pink;  }
+		.box2{background: skyblue; }
+		.box3{background: lightgreen; }
+
+		.box2{
+			margin: 10px;
+			margin: 10px 20px;
+			margin: 10px 20px 30px;
+			margin: 10px 20px 30px 40px;
+			margin-top: 100px;
+			margin-left: auto;
+			margin-right: auto;
+
+			padding: 30px;
+			text-align: center;
+		}
+    </style>
+</head>
+<body>
+    <h1>内外边距</h1>
+    <hr>
+    <!-- 
+		外边距: 标签与标签之间的距离
+			四边
+			margin:10px 						上下左右均为10px
+			margin:10px 20px  					上下10  左右20
+			margin:10px 20px 30px  			上10  	左右20 	 	下30
+			margin:10px 20px 30px 40px 		上10 	右20  	下30 	左40
+
+			单边
+			margin-方向
+
+			小技巧
+				在父级元素内, 水平居中
+				margin-left: auto
+				margin-right: auto
+
+		内边距: 标签与内容之间的距离
+			四边
+			padding:10px 						上下左右均为10px
+			padding:10px 20px  				上下10  左右20
+			padding:10px 20px 30px  			上10  	左右20 	 	下30
+			padding:10px 20px 30px 40px 		上10 	右20  	下30 	左40
+
+			单边
+			padding-方向
+
+
+
+
+    -->
+
+    <div class="box box1"></div>
+    <div class="box box2">123</div>
+    <div class="box box3"></div>
+
+
+</body>
+</html>

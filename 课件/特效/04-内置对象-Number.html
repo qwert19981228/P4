@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>内置对象-Number</title>
+</head>
+<body>
+    <h1>内置对象-Number</h1>
+    <hr>
+    <script>
+    	// 属性
+    	// 1. Number的最大值
+    		console.log(Number.MAX_VALUE);
+
+    	// 2. Number的最小值
+    		console.log(Number.MIN_VALUE);
+    		console.log('---------------------------');
+    		
+
+    	// 方法
+    		var a = 9.012345678;
+
+    		// toString()
+    		console.log(a.toString()); 	 // 转为字符串, 默认十进制
+    		console.log(a.toString(2)); // 转为二进制字符串
+    		console.log(a.toString(16)); // 转为十六进制字符串
+    		// 进制范围: 2~36 进制
+    		console.log('---------------------------');
+    		
+
+
+    		// toFixed()
+    		console.log(a.toFixed()); 	// 保留0位小数, 默认
+    		console.log(a.toFixed(2)); // 保留2位小数
+    		// 保留范围: 0~20 位
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>背景</title>
+    <style>
+    	
+    	.box{
+    		width: 500px;
+    		height: 5000px;
+    		background-color: #ccc;
+    		background-image: url('./back1.jpg');
+    		background-repeat: no-repeat;
+    		background-position: 100px 100px;
+    		/* background-position: center center; */
+    		background-size: 50px;
+    		background-attachment: fixed;
+    	}
+
+    </style>
+</head>
+<body>
+    <h1>背景</h1>
+    <hr>
+    <!-- 
+		background-image: 背景图片
+							url(图片地址)
+
+		background-color: 背景颜色
+
+		background-repeat: 背景重复
+							no-repeat
+
+		background-position: 背景定位
+							X Y
+
+							正数: 向右 向下
+							负数: 向左 向上
+
+		background-size: 背景大小
+						设定背景的宽
+
+		background-attachment: 背景固定
+						fixed 
+
+		简写:
+			background: image color position/size repeat attachment
+
+		注意:
+			以上顺序随便颠倒
+			只有size 是 必须写在psotion的后面
+
+    -->
+	
+
+	<!-- div暂时理解为 平面盒子 -->
+	<div class="box"></div>
+
+</body>
+</html>

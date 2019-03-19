@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>[ 新消息 ] 您下载的 CHD-655.ぁざザ绝美.avi 已现在完成,请注意身体...</title>
+    <style type="text/css"></style>
+</head>
+<body>
+    <h1>JS title</h1>
+    <hr>
+
+    <p id="msg1">上课不听讲,一般有三种情况: 1.手里有个手机. 2.心里有个美女. 3.旁边做个逗比</p>
+    <p id="msg2">上课不听讲,一般有三种情况: 1.手里有个手机. 2.心里有个美女. 3.旁边做个逗比</p>
+
+
+    <hr>
+    <h6 id="show"></h6>        
+
+    <script>
+     var mark = true;
+        setInterval(function () {
+        if (mark) {
+             document.title = '[新消息] 隔壁老王给你媳妇发来5条新消息!';
+             mark = false;
+         } else {
+             document.title = '[　　　] 隔壁老王给你媳妇发来5条新消息!';
+             mark = true;
+         }
+    }, 500);
+    
+    setInterval(function () {
+        // 获取title内容
+        var str = document.title;
+        // 截取第一个字
+        var fstr = str.charAt(0);
+        // 截取除了第一个字符以外的剩余字
+        var estr = str.substr(1);
+        // 重写新字符
+        document.title = estr + fstr;
+    }, 500);
+
+    setInterval(function () {
+        var msg1 = document.getElementById('msg1');
+        var str1 = document.getElementById('msg1').innerHTML;
+        msg1.innerHTML = str1.substr(1) + str1[0];
+
+        var msg2 = document.getElementById('msg2');
+        var str2 = document.getElementById('msg2').innerHTML;
+        arr = str2.split('');
+        arr.push(arr.shift());
+        msg2.innerHTML = arr.join('');
+        console.log(arr);
+    }, 500);
+
+
+    // 文字跑马灯儿
+    var string = '两只黄鹂鸣翠柳,一行白鹭上青天';
+    var i = 0;
+
+    // 写一个定时的循环
+    setInterval(function() {
+        // 如果下标超出str的长度,就重置为0开始
+        if (i >= string.length) i=0;
+
+        // 变字
+        document.getElementById('show').innerHTML = show(i, string);
+
+        i++;
+    }, 300);
+
+    function show(i, str) {
+        // 变前 + 变中 + 变后
+        var tmp = str.substr(0, i);
+        tmp += '<font color="red" size="7">'+str[i]+'</font>';
+        tmp += str.substr(i + 1);
+        return tmp;
+    }
+
+    
+    </script>
+</body>
+</html>

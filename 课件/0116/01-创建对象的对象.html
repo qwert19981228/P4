@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>创建对象的对象</title>
+</head>
+<body>
+    <h1>创建对象的对象</h1>
+    <hr>
+    <script>
+    	// Python中 有祖宗类 Object
+    	// Js中 查询父级对象
+    	//  对象.constructor
+
+    	function User(){
+    		this.name = '风女';
+    		this.age = 18;
+    		this.slogan = function(){
+    			document.write('只要998, 就能让你爽到不能呼吸');
+    		}
+    	}
+
+    	var obj = new User();
+    	console.log(obj);
+    	console.log(obj.constructor);
+    	console.log('-------------------------------')
+
+
+
+    	var obj2 = new Object();
+    	console.log(obj2);
+    	console.log(obj2.constructor);
+
+    	var obj3 = {name:'老王', age:24 };
+    	console.log(obj3);
+    	console.log(obj3.constructor);
+
+
+    	var obj4 = function(){
+    		this.name = '小王';
+    	}
+    	console.log(obj4);
+    	console.log(obj4.constructor);
+
+
+
+    </script>
+    
+
+</body>
+</html>

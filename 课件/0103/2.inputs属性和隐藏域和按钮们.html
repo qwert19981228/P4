@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>表单</h1>
+    <hr>
+
+    <form action="./cgi-bin/form.py" method="post">
+        <input type="hidden" name="id" value="这是6号技师">
+        用户名: <input type="text" name="username" maxlength="30" size="40" placeholder="请输入用户名">
+        <br>
+        <br>
+        密码:  <input type="password" name="userpass" placeholder="请输入密码..">
+        <br>
+        <br>
+        个性签名: <input type="text" name="motto" value="此人很懒,什么都没写...">
+        <br>
+        <br>
+        <input type="submit" value="登录">
+        <input type="reset" value="点我重置">
+        <input type="button" value="我是普通的按钮" onclick="alert('普通的按钮 普通的摇~~')">
+    </form>
+</body>
+</html>

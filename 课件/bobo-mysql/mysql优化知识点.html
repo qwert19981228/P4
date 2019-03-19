@@ -1,0 +1,1539 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>mysql优化知识点</title></head><body><article class="markdown-body"><h1 id="day1"><a name="user-content-day1" href="#day1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>day1</h1>
+<h2 id="mysql"><a name="user-content-mysql" href="#mysql" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>mysql 优化</h2>
+<p>从 哪些开始优化?<br />
+1. sql 语句</p>
+<ol>
+<li>
+<p>表结构</p>
+</li>
+<li>
+<p>优化计算机硬件</p>
+</li>
+</ol>
+<p>怎么做优化?</p>
+<p>insert  ....  (key,val)  (k1,v1)<br />
+优化:  把 key val  k1 v1  放入数组  直接 insert 一个array</p>
+<p>少用* 多用限定字段  和 分页</p>
+<p>索引优化</p>
+<p>如何分析sql需要还是不需要优化?<br />
+根据慢查询日志,来分析<br />
+desc/explain  分析日志中的sql语句</p>
+<p>最后,总结:<br />
+mysql优化一般步骤?<br />
+1. 开启慢查询日志</p>
+<ol>
+<li>
+<p>分析sql语句</p>
+</li>
+<li>
+<p>分析是否加上索引</p>
+</li>
+<li>
+<p>分析是否用上索引</p>
+</li>
+</ol>
+<p>课堂代码:</p>
+<p>索引操作</p>
+<pre><code>mysql&gt; alter table xintest add index xin_test(name);
+Query OK, 3 rows affected
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql&gt; show index from xintest;
++---------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| Table   | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |
++---------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| xintest |          1 | xin_test |            1 | name        | A         | NULL        | NULL     | NULL   | YES  | BTREE      |         |               |
++---------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+1 row in set
+
+mysql&gt; alter table xintest add unique xin_unin(name);
+Query OK, 3 rows affected
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql&gt; show index from xintest;
++---------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| Table   | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |
++---------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| xintest |          0 | xin_unin |            1 | name        | A         | NULL        | NULL     | NULL   | YES  | BTREE      |         |               |
+| xintest |          1 | xin_test |            1 | name        | A         | NULL        | NULL     | NULL   | YES  | BTREE      |         |               |
++---------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+2 rows in set
+
+mysql&gt; alter table xintest add primary key(id);
+Query OK, 3 rows affected
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql&gt; alter table xintest drop index xin_test;
+Query OK, 3 rows affected
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql&gt; alter table xintest drop index xin_unin;
+Query OK, 3 rows affected
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql&gt; show index from xintest;
++---------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| Table   | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |
++---------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| xintest |          0 | PRIMARY  |            1 | id          | A         |           3 | NULL     | NULL   |      | BTREE      |         |               |
++---------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+1 row in set
+
+mysql&gt; alter table xintest drop primary key;
+Query OK, 3 rows affected
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql&gt; show index from xintest;
+Empty set
+
+
+</code></pre>
+
+<p>1.3 视图<br />
+使用 mysql视图的理由?</p>
+<ol>
+<li>安全性       给视图分配权限 分配到用户</li>
+<li>查询性能提高               只需要调用视图. 不需要重新定义sql</li>
+<li>灵活的需求,可以使用其来减少表的修改          </li>
+<li>复杂查询需求,可以将问题分解,然后创建多个视图,最后把视图联合起来,就可以得到问题的结果了</li>
+</ol>
+<p>注意: 视图  相当于表查询的一个快捷方式</p>
+<p>视图 本身不存储数据!!!!!  每次数据 都会从 定义好的sql 中去查询</p>
+<p>所以视图,不需要维护. 只需要维护真实表中的数据就可以了</p>
+<pre><code>
+mysql&gt; create view v_xin as select * from user where id &gt;1 and id &lt;26;
+Query OK, 0 rows affected
+mysql&gt; select * from v_xin;
++----+----------+-----+-----+----------+
+| id | name     | sex | age | province |
++----+----------+-----+-----+----------+
+|  2 | 麦克雷   |   1 |  40 | 纽约     |
+|  3 | 卢西奥   |   0 |  26 | 纽约     |
+|  4 | 半藏     |   1 |  38 | 东京     |
+|  5 | 法老之鹰 |   0 |  30 | 江苏     |
+|  6 | 安娜     |   0 |  80 | 江苏     |
+|  7 | 天使     |   0 |  30 | 江苏     |
+|  8 | 查莉娅   |   0 |  36 | 浙江     |
+|  9 | 黑百合   |   0 |  32 | 上海     |
+| 10 | 猎空     |   0 |  23 | 北京     |
+| 11 | 狂鼠     |   1 |  40 | 新疆     |
+| 12 | 托比昂   |   1 |  50 | 新疆     |
+| 13 | D.Va     |   0 |  20 | 上海     |
+| 14 | 源氏     |   1 |  35 | 东京     |
+| 15 | 死神     |   1 |  40 | 纽约     |
+| 16 | 士兵76   |   1 |  40 | 纽约     |
+| 17 | 堡垒     |   1 |  99 | 纽约     |
+| 18 | 老王     |   2 |  40 | 隔壁的   |
+| 19 | 小美     |   0 |  23 | 北京     |
+| 20 | 莱因哈特 |   1 |  80 | 纽约     |
+| 21 | 路霸     |   1 |  43 | 上海     |
+| 22 | 温斯顿   |   2 |  20 | 上海     |
+| 23 | 秩序之光 |   0 |  19 | 上海     |
+| 24 | 小王     |   1 |  40 | 北京     |
+| 25 | 小王八   |   1 |   4 | 纽约     |
++----+----------+-----+-----+----------+
+24 rows in set
+
+mysql&gt; show tables;
++-----------------+
+| Tables_in_s67   |
++-----------------+
+| hc_lover        |
+| hc_user         |
+| lover           |
+| pay_businessman |
+| pay_user        |
+| s72_user        |
+| score           |
+| t1              |
+| t1_copy         |
+| t2              |
+| t3              |
+| t4              |
+| user            |
+| user2           |
+| user_test       |
+| v_t1            |
+| v_xin           |
+| xin             |
+| xintest         |
++-----------------+
+19 rows in set
+
+mysql&gt; drop view v_xin;
+Query OK, 0 rows affected
+
+mysql&gt; show tables;
++-----------------+
+| Tables_in_s67   |
++-----------------+
+| hc_lover        |
+| hc_user         |
+| lover           |
+| pay_businessman |
+| pay_user        |
+| s72_user        |
+| score           |
+| t1              |
+| t1_copy         |
+| t2              |
+| t3              |
+| t4              |
+| user            |
+| user2           |
+| user_test       |
+| v_t1            |
+| xin             |
+| xintest         |
++-----------------+
+18 rows in set
+
+
+</code></pre>
+
+<p>1.4.MySQL内置函数</p>
+<p>请尽量减少使用 内置函数.<br />
+让mysql好好的做仓库管理员.</p>
+<p>处理好数据 是php 应该做的.</p>
+<pre><code>mysql&gt; select concat('dawei','xihuan','lluguan');
++------------------------------------+
+| concat('dawei','xihuan','lluguan') |
++------------------------------------+
+| daweixihuanlluguan                 |
++------------------------------------+
+1 row in set
+
+mysql&gt; select lcase('A')
+;
++------------+
+| lcase('A') |
++------------+
+| a          |
++------------+
+1 row in set
+
+mysql&gt; select lcase('AOOOOO
+');
++-----------------+
+| lcase('AOOOOO') |
++-----------------+
+| aooooo          |
++-----------------+
+1 row in set
+
+mysql&gt; select lcase('AOOOOO');
++-----------------+
+| lcase('AOOOOO') |
++-----------------+
+| aooooo          |
++-----------------+
+1 row in set
+
+mysql&gt; select ABS('-9');
++-----------+
+| ABS('-9') |
++-----------+
+|         9 |
++-----------+
+1 row in set
+
+mysql&gt; select pi();
++----------+
+| pi()     |
++----------+
+| 3.141593 |
++----------+
+1 row in set
+
+
+</code></pre>
+
+<p>1.5.MySQL预处理语句</p>
+<p>就是一个 方法  只不过 是 已经加载好的, 只需要你填写一些参数 <br />
+就能获得相应的结果</p>
+<p>关键词:  prepare</p>
+<p>连接词 : from</p>
+<pre><code>mysql&gt; prepare liwei from 'select * from user where id &gt;?';
+Query OK, 0 rows affected
+Statement prepared
+mysql&gt; set @i = 24;
+Query OK, 0 rows affected
+
+mysql&gt; execute liwei;
+1210 - Incorrect arguments to EXECUTE
+mysql&gt; execute liwei using @i;
++----+--------+-----+-----+----------+
+| id | name   | sex | age | province |
++----+--------+-----+-----+----------+
+| 25 | 小王八 |   1 |   4 | 纽约     |
+| 26 | 小霸王 |   1 |   4 | 上海     |
+| 27 | 王尼玛 |   1 |  40 | 深圳     |
+| 28 | 王老五 |   0 |   0 | 江苏     |
+| 29 | 王麻子 |   0 |   0 | 四川     |
+| 30 | 王中王 |   1 |   0 | 贵州     |
+| 31 | 王守义 |   1 |   0 | 四川     |
+| 32 | 王老吉 |   2 |  88 | 江苏     |
++----+--------+-----+-----+----------+
+8 rows in set
+
+mysql&gt; 
+
+</code></pre>
+
+<hr />
+<h1 id="day2"><a name="user-content-day2" href="#day2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>day2</h1>
+<h2 id="16-mysql"><a name="user-content-16-mysql" href="#16-mysql" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.6 mysql事务</h2>
+<h3 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>是什么?</h3>
+<p>是多个步骤为一个过程的事务（整体）  </p>
+<p>例子:</p>
+<p>在学员管理系统中,有学员表,成绩表,讲师表,活动表,会议表,其他表等等</p>
+<p>删除一个学员.</p>
+<p>需要删除下面这些表!<br />
+学员表,成绩表,活动表,会议表,其他表等等</p>
+<p>这些数据库的操作语句 就构成一个事务.</p>
+<h3 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>前提</h3>
+<ol>
+<li>事务使用 INNODB 数据库引擎  </li>
+</ol>
+<p>如果你不是INNODB ,开启事务,删除那就真的删除了.</p>
+<ol>
+<li>要么成批的sql全部执行,要么不执行</li>
+<li>事务用来管理   insert  update  delete 的语句</li>
+</ol>
+<h3 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>事务条件:</h3>
+<p>原子性   一组事务,要么成功,要么撤回.<br />
+稳定性 有非法数据(外键约束),事务撤回<br />
+隔离性  事务独立运行.   一个事务,处理后的结果影响到了其他事务,则事务撤回!<br />
+可靠性  软件或者硬件崩溃,Innodb 表驱动,会利用日志文件,重构修改.      可靠性  高速度  不可兼得</p>
+<h3 id="_4"><a name="user-content-_4" href="#_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>关键字</h3>
+<p>commit  roolback</p>
+<pre><code>set autocommit = 0;
+-- delete from t3 where id =4;
+-- select * from t3;
+-- desc t2;
+-- show create table t3;
+
+-- -- 1 2 3 5 6
+-- savepoint p1;
+-- 
+-- delete from t3 where id =2;
+-- 
+-- 
+-- -- 1 3 5 6
+-- savepoint p2;
+-- 
+-- 
+-- delete from t3 where id =3;
+-- 
+-- -- 1 5 6
+-- savepoint p3;
+
+
+-- ROLLBACK to p2;
+
+-- ROLLBACK to p1;
+
+-- SELECT * from t3;
+
+commit;
+
+</code></pre>
+
+<h2 id="18-trigger"><a name="user-content-18-trigger" href="#18-trigger" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.8 触发器  trigger</h2>
+<h3 id="_5"><a name="user-content-_5" href="#_5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>是什么</h3>
+<p>监视某种时间,并触发某种操作(商品的添加,订单的删除 等等 连贯操作时候使用)</p>
+<h3 id="_6"><a name="user-content-_6" href="#_6" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>触发四要素</h3>
+<ol>
+<li>监视地点 table</li>
+<li>触发时间 (after/ before)</li>
+<li>监视事件 (insert/update/delete)</li>
+<li>触发事件 (insert/update/delete)</li>
+</ol>
+<h3 id="_7"><a name="user-content-_7" href="#_7" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>例子</h3>
+<pre><code>
+mysql&gt; insert into t1 values('adc');
+    -&gt; //
+1136 - Column count doesn't match value count at row 1
+mysql&gt; create trigger yu before insert on t2 for each row
+    -&gt; begin
+    -&gt; insert into a values(20,'safjasdkf');
+    -&gt; end//
+Query OK, 0 rows affected
+
+mysql&gt; insert into t2 values(200,'chao')
+;
+    -&gt; //
+Query OK, 1 row affected
+
+delimiter ;
+
+</code></pre>
+
+<p>1.7.MySQL存储（MySQL的自定义函数）10:14-</p>
+<p>mysql 函数. 传参调用</p>
+<p>适用于  封装后的传参,同样式的sql操作.</p>
+<p>例如:  查询用户数据, 查询订单数据    删除  </p>
+<pre><code>
+
+mysql&gt; delimiter //
+mysql&gt; create procedure p1()
+    -&gt; begin
+    -&gt; set @i=1;
+    -&gt; while @i&lt;6 do
+    -&gt; select * from user where id=@i;
+    -&gt; set @i=@i+1;
+    -&gt; end while;
+    -&gt; end//
+Query OK, 0 rows affected
+mysql&gt; call p1;
+    -&gt; //
++----+------+-----+-----+----------+
+| id | name | sex | age | province |
++----+------+-----+-----+----------+
+|  1 | bobo |   1 |  88 | 上海     |
++----+------+-----+-----+----------+
+1 row in set
+
++----+--------+-----+-----+----------+
+| id | name   | sex | age | province |
++----+--------+-----+-----+----------+
+|  2 | 麦克雷 |   1 |  40 | 纽约     |
++----+--------+-----+-----+----------+
+1 row in set
+
++----+--------+-----+-----+----------+
+| id | name   | sex | age | province |
++----+--------+-----+-----+----------+
+|  3 | 卢西奥 |   0 |  26 | 纽约     |
++----+--------+-----+-----+----------+
+1 row in set
+
++----+------+-----+-----+----------+
+| id | name | sex | age | province |
++----+------+-----+-----+----------+
+|  4 | 半藏 |   1 |  38 | 东京     |
++----+------+-----+-----+----------+
+1 row in set
+
++----+----------+-----+-----+----------+
+| id | name     | sex | age | province |
++----+----------+-----+-----+----------+
+|  5 | 法老之鹰 |   0 |  30 | 江苏     |
++----+----------+-----+-----+----------+
+1 row in set
+
+Query OK, 0 rows affected
+
+mysql&gt; 
+
+
+mysql&gt; drop procedure p1;
+    -&gt; //
+Query OK, 0 rows affected
+
+mysql&gt; call p1;//
+1305 - PROCEDURE s67.p1 does not exist
+mysql&gt; 
+
+</code></pre>
+
+<p>3、查看所有procedure的status信息<br />
+mysql&gt;show procedure status<br />
+4、查看procddure p1()的具体信息<br />
+mysql&gt;show create procedure p1<br />
+5、删除procedure<br />
+mysql&gt;drop procedure p1;</p>
+<ol>
+<li>索引的使用情况</li>
+</ol>
+<p>序号  情况  使用索引情况<br />
+1   where or    都使用不到索引，并进行全表扫描<br />
+2   where and   可能<br />
+    组合索引    先到先得   status email  查前面的status 有索引 查后面的email就没有索引<br />
+3   字段类型不符  使用不到索引<br />
+4   like    当%号在第一个字符，使用不到索引<br />
+5   is null 可以</p>
+<h3 id="sql"><a name="user-content-sql" href="#sql" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>测试分析sql语句</h3>
+<p>关键字:   desc  explain<br />
+关键字段:  table  keys(索引)  keys_possible(可能用到的索引) rows</p>
+<h3 id="_8"><a name="user-content-_8" href="#_8" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>面试题:</h3>
+<p>什么是组合索引,使用情况?<br />
+    再问:  id name  password  建立组合索引 怎么建立?为什么?<br />
+    name,password<br />
+    因为先到先得,  name查询是多!!!  很少会通过password来查<br />
+    先到先得 如何设置我索引?<br />
+        根据字段的辨识度来做</p>
+<p>问: 为什么不分开加索引?而非要加组合索引<br />
+        1. 索引不是越多越好.   浪费资源   索引暂用资源,影响插入性能<br />
+        2. 根据要加索引的字段辨识度而来. 如果你给辨识度小的字段加索引<br />
+            第一, 加了你不常用  第二,影响性能<br />
+        3. 尤其是 name pasword 经典的组合索引例子</p>
+<p>为什么likt 在% 第一个字符 用不到索引</p>
+<p>like %校  会查处当前所有的姓, 再去查名中有没有校   所以 会进行全表扫描</p>
+<p><strong> 组合索引列子 </strong><br />
+<pre><code>
+# 加邮箱字段 插入数据
+mysql&gt; alter table users add email varchar(255);
+        update users set email = concat(name,'@qq.com');
+        insert into users (name,email) values ('jack','jack2@foxmail.com');
+
+
+
+# 查询状态 和 email  分析索引使用情况
+# email 现在没有索引 所以 用不到索引
+mysql&gt; desc select * from users where  status =0  and email like &quot;ja%&quot;;
+
+
+# email加上索引
+mysql&gt; alter table users add index ind_email(email);
+
+# 再测试一次
+mysql&gt; desc select * from users where  status =0  and email like &quot;ja%&quot;;
+# 结果 是用了inde_status  就已经查到数据了 .  根据实际查询情况,如果用一个索引就查到数据了. 所以说实际上会有偏差
+
+
+
+# 加上一个组合索引
+mysql&gt; alter table users add index ind_status_email (status,email);
+
+# 做status email 两个字段的共同查询 分析
+mysql&gt; desc select * from users where  status =0  and email like &quot;ja%&quot;;
+
+
+
+# 得到结果用到组合索引  通过组合索引已经查到数据了. 自身的索引 就不会再用了.
+
+
+# 再看其他情况
+
+
+# 把status 和 email 的索引删除 只留  组合索引  ind_status_emial
+
+mysql&gt; alter table users drop index ind_email;
+        alter table users drop index ind_status;
+# 执行分析
+mysql&gt; desc select * from users where email like &quot;ja%&quot;;
+# email 在后面  查询分析 用不到组合索引
+
+mysql&gt; desc select * from users where  status =0;
+# status 在前面  所以 用到了 组合索引
+
+
+
+</code></pre></p></article></body></html>

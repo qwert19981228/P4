@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小米帐号 - 登录</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="icon" href="favicon.ico">
+    <script src="iconfont/iconfont.js"></script>
+    <script src="../jquery-1.8.3.min.js"></script>
+    <style>
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="title">
+        <div class="title-main">
+            <a href="../main/main.html">
+                <img src="mistore_logo.png">
+            </a>
+        </div>
+    </div>
+    <div id="main">
+        <div class="banner"></div>
+        <div class="login">
+            <div class="login-main">
+                <div class="login-title">
+                    <div class="title-main">
+                        <span class="navtab-link now">
+                            帐号登录
+                        </span>
+                        <span class="line"></span>
+                        <span class="navtab-link after">
+                            扫码登录
+                        </span>
+                    </div>
+                </div>
+                <div class="login-area">
+                    <div class="login-form">
+                        <form action="" method="post" onsubmit="return checkForm()" name="regForm">
+                            <div class="login-input">
+                                <label>
+                                    <input type="text" placeholder="邮箱/手机号码/小米ID" name="tel">
+                                </label>
+                                <label>
+                                    <input type="text" placeholder="密码">
+                                </label>
+                            </div>
+                            <div class="errortip" style="display: none">
+                                <img src="1.png">
+                                <span class="error-con">用户名不正确
+                                </span>
+                            </div>
+                            <div class="login-btn">
+                                <button type="submit" onblur="checkTel()">登录</button>
+                            </div>
+                            <div class="other_panel clearfix">
+                                <span class="register">
+                                    <a href="">手机短信登录/注册</a>
+                                </span>
+                                <div class="reverse">
+                                    <div class="n_links_area" >
+                                        <a class="outer-link" href="../register/register.html">
+                                            立即注册
+                                        </a>
+                                        <span>|</span>
+                                        <a class="outer-link" href="">
+                                            忘记密码？
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="erde-box" style="display: none">
+                    <img src="erde.png">
+                    <div class="custom-sub">
+                        <p id="custom-qr-name">使用<span>小米商城APP</span>扫一扫</p><p>小米手机可打开「设置」&gt;「小米帐号」扫码登录</p></div>
+                </div>
+            </div>
+            <div class="login-bottom">
+                <fieldset class="oth_type_tit">
+                    <legend align="center" class="oth_type_txt">
+                        其他方式登录
+                    </legend>
+                </fieldset>
+                <div class="oth_type_links iconfont">
+                    <a href="" class="qq">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-qq"></use>
+                        </svg>
+                    </a>
+                    <a href="" class="weibo">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-weibo"></use>
+                        </svg>
+                    </a>
+                    <a href="" class="zhifubao">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-zhifubao"></use>
+                        </svg>
+                    </a>
+                    <a href="" class="weixin">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-weixin"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="bottom">
+            <div class="nf-link-area clearfix">
+                <ul class="lang-select-list">
+                    <li>
+                        <a class="lang-select-li current" href="">简体
+                        </a>|
+                    </li>
+                    <li>
+                        <a class="lang-select-li" href="">繁体
+                        </a>|
+                    </li>
+                    <li>
+                        <a class="lang-select-li" href="">English
+                        </a>
+                    </li>|
+                    <li>
+                        <a class="a_critical" href="">
+                            常见问题
+                        </a>|
+                    </li>
+                    <li>
+                        <a href="">
+                            隐私政策
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p class="nf-intro">
+                <span>小米公司版权所有-京ICP备10046444-
+                    <a href="">
+                        <span>
+                            <img src="ghs.png">
+                        </span>京公网安备11010802020134号
+                    </a>-京ICP证110507号
+                </span>
+            </p>
+        </div>
+    <!--切换选项卡-->
+    <script>
+        $('#main .login .login-main .login-title .title-main .after').click(function () {
+        $(this).css({'color': '#ff6700'});
+        $('#main .login .login-main .login-title .title-main .now').css({'color': '#757575'});
+        $('#main .login .login-main .login-area').css({'display':'none'});
+        $('#main .login-bottom').css({'display':'none'});
+        $('#main .login .erde-box').css({'display':'block'});
+        });
+        $('#main .login .login-main .login-title .title-main .now').click(function () {
+        $(this).css({'color': '#757575'});
+        $('#main .login .login-main .login-title .title-main .now').css({'color': '#ff6700'});
+        $('#main .login .login-main .login-area').css({'display':'block'});
+        $('#main .login-bottom').css({'display':'block'});
+        $('#main .login .erde-box').css({'display':'none'});
+        });
+    </script>
+    <!--表单验证-->
+    <script>
+        function checkTel() {
+            value = document.regForm.tel.value;
+            res = value.match(/^1(3\d|4[56789]|5[012356789]|66|7[0345678]|8\d|9[89])\d{8}$/);
+
+            if (res == null){
+                $('#main .login .login-main .login-area .login-form .errortip').css('display','block');
+                return false;
+            } else{
+                $('#main .login .login-main .login-area .login-form .errortip').css('display','none');
+                return true;
+            }
+
+        }
+        function checkForm() {
+            return checkTel();
+        }
+
+    </script>
+</body>
+</html>

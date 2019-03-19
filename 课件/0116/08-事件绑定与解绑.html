@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定与解绑</title>
+    <style>
+    	
+    	#big{
+    		width: 150px;
+    		height: 150px;
+    		background: #ccc;
+    		overflow: hidden;
+    	}
+
+    	#small{
+    		width: 60px;
+    		height: 60px;
+    		background: skyblue;
+    		margin: 40px auto;
+    	}
+
+
+    </style>
+</head>
+<body>
+    <h1>事件绑定与解绑</h1>
+    <hr>
+    <script>
+    	/*
+    		事件 event
+
+			事件绑定1
+				<开始标签  事件="js代码">
+
+			事件绑定2
+				元素对象.事件 = function(){ 代码块 }
+				元素对象.事件 = 函数名  	没有小括号
+
+			事件监听
+				标准: 元素对象.addEventListener(事件, 函数, bool)
+				IE: 元素对象.addachEvent(事件, 函数)
+
+				bool:
+					true: 事件捕获   --> 先触发父级, 再触发子集
+					false: 事件冒泡, 默认   --> 先触发子集, 再触发父级
+			
+			解除绑定
+				元素对象.事件 = null
+				元素对象.事件 = function(){}  空函数
+
+			解除监听
+				元素对象.removeEventListener(事件, 函数, bool)
+				元素对象.detachEvent(事件, 函数)
+
+
+    	*/
+    </script>
+
+
+    <!-- 事件绑定1 -->
+    <button   onclick="alert('OMG, 我被人点了')"> 点我试试 </button>
+
+	<!-- 事件绑定2 -->
+	<button id="btn1">点我一下, 能吓死你</button>
+	<button id="btn2">点我一下, 送你一句话</button>
+
+
+	<script>
+		var btn1 = document.getElementById('btn1');
+		var btn2 = document.getElementById('btn2');
+
+		btn1.onclick = function (){
+			alert('吓着没有啊');
+		}
+
+
+		btn2.onclick = demo;
+		function demo(){
+			alert('谁点我, 我就跟谁走');
+		}
+	</script>
+
+
+	<!-- 事件监听 -->
+	<button id="btn3">点我的反应是???</button>
+	<script>
+		var btn3 = document.getElementById('btn3');
+
+		btn3.addEventListener('click', demo );
+
+		function demo(){
+			alert('您已经被监听了, 23小时请待命, 不准随意出入境');
+		}
+	</script>
+
+
+	<!-- 解除监听 -->
+	<button id="remove"> 取消所有的绑定和监听</button>
+	<script>
+			
+		remove.onclick = function(){
+			btn1.onclick = null; 	//
+			btn2.onclick = function(){};
+			btn3.removeEventListener('click', demo);
+		}
+	</script>
+
+
+	<!-- 事件捕获 和 冒泡 -->
+	<div id="big">
+		<div id="small"></div>
+	</div>
+	<script>
+		
+
+		function demo1(){
+			alert('big');
+		}
+
+		function demo2(){
+			alert('small');
+		}
+
+		big.addEventListener('click', demo1, false);
+		small.addEventListener('click', demo2, true);
+	</script>
+
+
+</body>
+</html>

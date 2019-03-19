@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>定位技巧</title>
+    <style>
+    		
+    	.banner{
+    		width: 1226px;
+    		height: 460px;
+    		/* border: 1px solid red; */
+    		position: relative;
+    	}
+
+    	.banner ul{
+    		width: 234px;
+    		height: 460px;
+    		background: rgba(0,0,0,0.4);
+    		margin: 0;
+    		padding: 0;
+    		position: absolute;
+    		left: 0;
+    		top: 0;
+    	}
+
+    	.banner .left{
+    		background: url('./icon-slides.png') 83px 0px;
+    		width: 41px;
+    		height: 69px;
+    		position: absolute;
+    		left: 234px;
+    		top: 40%;
+    	}
+
+		.banner .left:hover{
+			background-position: 0 0;
+		}
+
+        .banner .list{
+            width: 100px;
+            height: 20px;
+            position: absolute;
+            right: 30px;
+            bottom: 20px;
+        }
+
+        .banner .list .circle{
+            width: 6px;
+            height: 6px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 100%;
+            float: left;
+            margin-right: 10px;
+            background: rgba(0,0,0,0.4);
+        }
+    </style>
+</head>
+<body>
+    <h1>定位技巧</h1>
+    <hr>
+    <!-- 
+		定位常用场景:
+			当元素 发生重叠时, 可以使用定位
+
+		问题:
+			如何让 后辈 以 祖辈 的四个角落作为原点
+
+		解决:
+			祖辈: 相对定位
+			后辈: 绝对定位
+
+
+    -->
+
+
+    <div class="banner">
+    	<img src="./banner.jpg" width="1226">
+    	<ul></ul>
+    	<div class="left"></div>
+    	<div class="right"></div>
+    	<div class="list">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>   
+        </div>
+    </div>
+    
+
+</body>
+</html>

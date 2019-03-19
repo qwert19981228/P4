@@ -1,0 +1,69 @@
+<pre>
+	1. 文件指针
+		当前指针: io对象.tell()
+		移动指针: io对象.seek()
+
+	2. 文件内容
+		写入内容: io对象.write()
+		写入序列: io对象.writelines()
+		读取内容: io对象.read()
+		读取一行: io对象.readline()
+		将读取到序列: io对象.readlines()
+		截取内容: io对象.truncate
+		刷新缓冲: io对象.flush
+		with操作: with 文件操作 as io对象:
+						代码块
+
+	3. 模块
+		定义: 包含所有自定义函数的文件
+
+		格式1:import 模块名
+
+		使用:
+			模块名.方法名()
+			模块名.变量名
+
+		格式2:from 模块名 import 方法名/变量名, 方法名/变量名, ...
+
+		使用:
+			直接使用方法名() 或 变量名
+
+		路径:
+			当前目录下
+			Python 根目录  (python安装目录)
+			Python\libs
+			Python\libs\site-packages
+			Python\DLLs
+
+		__name__:
+			自动获取当前模块/引用模块的名字, 辨明是否在本文件中
+
+			本文件使用__name__, 则返回 __main__
+			被引用时 使用__name__, 则返回 当前模块名 
+
+	4. 字符串模块
+		import string
+
+		string.ascii_letters 		获取所有的大小写字母
+		string.ascii_uppercase 		获取所有的大写字母
+		string.ascii_lowercase 		获取所有的小写字母
+		string.digits 				获取所有的十进制数字
+		string.octdigits 			获取所有的八进制数字
+		string.hexdigits 			获取所有的十六进制数字
+		string.writespace 			获取所有的空白
+		string.punctuation 			获取所有的标点
+		string.printable 			获取是所有可输出的字符
+     
+	5. 随机模块
+		import random
+
+		random.random() 				获取0-1 之间随机小数  	(0,1)
+		random.randrange(strat,stop) 	获取range区间的随机数 	[start,stop)
+		random.randint(start, stop) 	获取int区间的随机整数 	[start,stop]
+		random.uniform(start, stop) 	获取小数区间的随机小数 	[start,stop]
+		
+		random.choice( 可迭代对象 ) 		获取可迭代对象中一个字符
+		random.shuffle( 可迭代对象 ) 	随机打乱的可迭代对象
+
+
+</pre>

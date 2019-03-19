@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>弹幕</title>
+</head>
+<body>
+    <h1>弹幕</h1>
+    <hr>
+    
+    <style>
+    	#box10{
+    		width: 300px;
+    		height: 100px;
+    		border: 2px solid red;
+    		overflow: hidden;
+    	}
+    </style>
+
+    <!-- 
+		scrollLeft 
+     -->
+    <div id="box10">
+    	<span>11111111111112222222222222222333333333333333444444444444455555555555566666666666777777777</span>
+    </div>
+
+	<script>
+
+    	setInterval( function(){
+    		box10.scrollLeft += 1;
+    	}, 100)
+
+
+	</script>
+
+</body>
+</html>

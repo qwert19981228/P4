@@ -1,0 +1,20 @@
+1.requests 的使用
+    安装 pip install requests
+2.发送请求
+    request返回一个相应对象
+    response.status_code  返回状态码
+    response.headers   返回头信息
+    response.text   自动转码返回 有可能会出现乱码
+    reponse.content  返回没有编码的数据 需要手动转码
+
+    response.encoding=   如果.text方法出现乱码 可以使用此方法手动转码
+    get:
+        requests.get(url)
+        添加数据
+        requests.get(url,data)
+        # 添加添加头信息
+        requests.get(url,headers=)
+        # 添加代理
+         requests.get(url,proxeis=)
+    post:
+        requests.post()

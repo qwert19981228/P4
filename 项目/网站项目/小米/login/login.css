@@ -1,0 +1,302 @@
+/*初始化*/
+body,ol,ul,p {
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-size: 14px;
+    background: #ffffff;
+    font-family: "Helvetica Neue",
+    Helvetica, Arial,
+    "Microsoft Yahei",
+    "Hiragino Sans GB",
+    "Heiti SC",
+    "WenQuanYi Micro Hei",
+    sans-serif;
+    min-width: 1226px;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+fieldset{
+    display: block;
+    margin-inline-start: 2px;
+    margin-inline-end: 2px;
+    padding-block-start: 0.35em;
+    padding-inline-start: 0.75em;
+    padding-inline-end: 0.75em;
+    padding-block-end: 0.625em;
+    min-inline-size: min-content;
+    border-width: 2px;
+    border-style: groove;
+    border-color: threedface;
+    border-image: initial;
+}
+.container{
+    width: 1226px;
+    margin: 0px auto;
+    /*background: pink;*/
+}
+.clearfix::after{
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+.son{
+    width: 234px;
+    height: 80px;
+    background: #FF6700;
+    position: absolute;
+    top: 300px;
+    transition: all .5s;
+}
+
+/*标题*/
+#title{
+    width: 100%;
+    height: 98px;
+}
+#title .title-main{
+    margin: 0 auto;
+    width: 1130px;
+}
+#title .title-main a{
+    display: inline-block;
+}
+#title .title-main a img {
+    display: inline-block;
+}
+
+#main{
+    position: relative;
+}
+/*大广告*/
+#main .banner{
+    width: 100%;
+    height: 588px;
+    background: url("bg.jpg") center center;
+}
+
+
+/*登录主体*/
+/*大标题*/
+#main .login{
+    margin: 0 auto;
+    position: absolute;
+    width: 1130px;
+    top: 33px;
+    right: 195px;
+}
+#main .login .login-main{
+    width: 410px;
+    height: 524px;
+    margin-left:  720px;
+    background: #FFFFFF;
+}
+#main .login .login-main .login-title{
+
+    width: 410px;
+    height: 83px;
+}
+#main .login .login-main .login-title .title-main{
+    padding: 27px 0 24px;
+    text-align: center;
+    font-size: 24px;
+    color: #e0e0e0;
+}
+#main .login .login-main .login-title .title-main .navtab-link{
+    color: #757575;
+    cursor: pointer;
+}
+#main .login .login-main .login-title .title-main .now{
+    color: #ff6700;
+}
+#main .login .login-main .login-title .title-main .after{
+    color: #757575;
+}
+#main .login .login-main .login-title .title-main .line{
+    width: 1px;
+    height: 24px;
+    margin: 0 42px 0 42px;
+    border: 1px solid #e0e0e0;
+}
+
+/*输入框*/
+#main .login .login-main .login-area{
+    width: 410px;
+    height: 226px;
+    margin-top: 10px;
+}
+#main .login .login-main .login-area .login-form{
+    margin: 0 auto;
+    width: 348px;
+    height: 226px;
+}
+#main .login .login-main .login-area .login-form .login-input{
+    width: 348px;
+    height: 124px;
+    position: relative;
+}
+#main .login .login-main .login-area .login-form .login-input label{
+    width: 346px;
+    height: 48px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 14px;
+    display: inline-block;
+}
+#main .login .login-main .login-area .login-form .login-input label input{
+    width: 316px;
+    height: 22px;
+    line-height: 22px;
+    padding: 13px 16px 13px 14px;
+    display: block;
+    color: #333;
+    border: 0 none;
+}
+
+/*登录按钮*/
+#main .login .login-main .login-area .login-form .login-btn{
+    width: 348px;
+    height: 50px;
+    padding-top: 10px;
+}
+#main .login .login-main .login-area .login-form .login-btn button{
+    background-color: #ef5b00;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    display: block;
+    margin-bottom: 14px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    border: 0 none;
+}
+#main .login .login-main .login-area .login-form .other_panel{
+    margin-top: 5px;
+}
+#main .login .login-main .login-area .login-form .other_panel .register{
+    float: left;
+}
+#main .login .login-main .login-area .login-form .other_panel .register a{
+    color: #ef5b00;
+    border: 0 none;
+    height: auto;
+    line-height: normal;
+    margin: 0;
+}
+
+#main .login .login-main .login-area .login-form .other_panel .reverse{
+    float: right;
+}
+#main .login .login-main .login-area .login-form .other_panel .reverse a{
+    color: #999999;
+}
+#main .login .login-main .login-area .login-form .other_panel .reverse a:hover{
+    color: #ff6700;
+}
+#main .login .login-main .login-area .login-form .other_panel .reverse span{
+    color: #999999;
+}
+
+
+/*扫码登录*/
+#main .login .erde-box{
+    width: 303px;
+    height: 237px;
+    position: absolute;
+    top: 200px;
+    right: 55px;
+    text-align: center;
+}
+#main .login .erde-box img{
+    left: 60px;
+    position: absolute;
+}
+#main .login .erde-box .custom-sub{
+    position: absolute;
+    bottom: 0;
+    width: 302px;
+    height: 39px;
+    padding-top: 14px;
+}
+#main .login .erde-box .custom-sub p{
+    font-size: 13px;
+    width: 302px;
+    color: #757575;
+}
+#main .login .erde-box .custom-sub span{
+    color: #ff6700;
+    padding: 0 5px;
+    font-size: 14px;
+}
+
+
+/*其他方式登录*/
+#main .login-bottom{
+    padding-top: 0;
+    position: absolute;
+    top: 425px;
+    width: 348px;
+    height: 66px;
+    right: 30px;
+}
+#main .login-bottom .oth_type_tit{
+    border: 0;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 10px;
+}
+#main .login-bottom .oth_type_tit .oth_type_txt{
+    margin: 0 auto;
+    text-align: center;
+    color: #bbb;
+}
+#main .login-bottom .oth_type_links{
+    width: 348px;
+    height: 34px;
+    text-align: center;
+    margin-top: -10px;
+}
+#main .login-bottom .oth_type_links a{
+    width: 30px;
+    height: 30px;
+    margin: 0 17px;
+    display: inline-block;
+    border-radius: 50%;
+    font-size: 30px;
+}
+
+/*底部*/
+#bottom{
+    color: #9d9d9d;
+    text-align: center;
+    height: 80px;
+    margin-top: 50px;
+}
+#bottom .nf-link-area{
+    text-align: center;
+}
+#bottom .nf-link-area ul li{
+    display: inline-block;
+}
+#bottom .nf-link-area ul li a{
+    color: #757575;
+    display: inline-block;
+    padding: 0 10px;
+}
+#bottom .nf-intro{
+    padding: 10px;
+}
+#bottom .nf-intro a{
+    color: #9d9d9d;
+}
+
+/*表单验证*/
+#main .login .login-main .login-area .login-form .error-con{
+    color: #ff6700;
+}

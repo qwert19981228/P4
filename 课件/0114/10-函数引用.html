@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>函数引用</title>
+</head>
+<body>
+    <h1>函数引用</h1>
+    <hr>
+    <script>
+    	/* 
+			函数引用 
+			1. 函数名()  	调用
+			2. 函数名 		引用
+			3. (函数)() 		自动执行函数, 匿名函数
+    	*/
+
+    	function fun(){
+    		document.write('老母鸡...');
+    		return 'abc';
+    	}
+
+    	// 1. 调用 
+    	var a = fun(); 	// 带小括号, 立马执行函数
+    	console.log(a);
+
+    	// 2. 引用
+    	var b = fun; 	 // 不带小括号, 且没有执行函数
+    	console.log(b);	
+    	var c = b();
+    	console.log(c);
+    	document.write('<hr>');
+
+    	// 3. 匿名函数 ()() 一旦执行该行时, 立马执行该函数
+    		var d = (function(){
+    			document.write('老母鸡...');
+    			return 'abc';
+    		})();
+    		console.log(d);
+    </script>
+    
+
+</body>
+</html>

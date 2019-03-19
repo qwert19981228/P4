@@ -1,0 +1,320 @@
+mysql 优化
+
+从 哪些开始优化?
+1. sql 语句
+
+2. 表结构
+
+3. 优化计算机硬件
+
+
+怎么做优化?
+
+insert  ....  (key,val)  (k1,v1)
+优化:  把 key val  k1 v1  放入数组  直接 insert 一个array
+
+少用* 多用限定字段  和 分页
+
+索引优化
+
+
+如何分析sql需要还是不需要优化?
+根据慢查询日志,来分析
+desc/explain  分析日志中的sql语句
+
+
+
+最后,总结:
+mysql优化一般步骤?
+1. 开启慢查询日志
+
+2. 分析sql语句
+
+3. 分析是否加上索引
+
+4. 分析是否用上索引
+
+
+
+
+课堂代码:
+
+索引操作
+
+```
+mysql> alter table xintest add index xin_test(name);
+Query OK, 3 rows affected
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> show index from xintest;
++---------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| Table   | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |
++---------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| xintest |          1 | xin_test |            1 | name        | A         | NULL        | NULL     | NULL   | YES  | BTREE      |         |               |
++---------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+1 row in set
+
+mysql> alter table xintest add unique xin_unin(name);
+Query OK, 3 rows affected
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> show index from xintest;
++---------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| Table   | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |
++---------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| xintest |          0 | xin_unin |            1 | name        | A         | NULL        | NULL     | NULL   | YES  | BTREE      |         |               |
+| xintest |          1 | xin_test |            1 | name        | A         | NULL        | NULL     | NULL   | YES  | BTREE      |         |               |
++---------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+2 rows in set
+
+mysql> alter table xintest add primary key(id);
+Query OK, 3 rows affected
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> alter table xintest drop index xin_test;
+Query OK, 3 rows affected
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> alter table xintest drop index xin_unin;
+Query OK, 3 rows affected
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> show index from xintest;
++---------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| Table   | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |
++---------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| xintest |          0 | PRIMARY  |            1 | id          | A         |           3 | NULL     | NULL   |      | BTREE      |         |               |
++---------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+1 row in set
+
+mysql> alter table xintest drop primary key;
+Query OK, 3 rows affected
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> show index from xintest;
+Empty set
+
+
+```
+
+1.3 视图
+使用 mysql视图的理由?
+
+1. 安全性       给视图分配权限 分配到用户
+2. 查询性能提高				只需要调用视图. 不需要重新定义sql
+3. 灵活的需求,可以使用其来减少表的修改          
+4. 复杂查询需求,可以将问题分解,然后创建多个视图,最后把视图联合起来,就可以得到问题的结果了
+
+
+注意: 视图  相当于表查询的一个快捷方式
+
+视图 本身不存储数据!!!!!  每次数据 都会从 定义好的sql 中去查询
+
+所以视图,不需要维护. 只需要维护真实表中的数据就可以了
+
+```
+
+mysql> create view v_xin as select * from user where id >1 and id <26;
+Query OK, 0 rows affected
+mysql> select * from v_xin;
++----+----------+-----+-----+----------+
+| id | name     | sex | age | province |
++----+----------+-----+-----+----------+
+|  2 | 麦克雷   |   1 |  40 | 纽约     |
+|  3 | 卢西奥   |   0 |  26 | 纽约     |
+|  4 | 半藏     |   1 |  38 | 东京     |
+|  5 | 法老之鹰 |   0 |  30 | 江苏     |
+|  6 | 安娜     |   0 |  80 | 江苏     |
+|  7 | 天使     |   0 |  30 | 江苏     |
+|  8 | 查莉娅   |   0 |  36 | 浙江     |
+|  9 | 黑百合   |   0 |  32 | 上海     |
+| 10 | 猎空     |   0 |  23 | 北京     |
+| 11 | 狂鼠     |   1 |  40 | 新疆     |
+| 12 | 托比昂   |   1 |  50 | 新疆     |
+| 13 | D.Va     |   0 |  20 | 上海     |
+| 14 | 源氏     |   1 |  35 | 东京     |
+| 15 | 死神     |   1 |  40 | 纽约     |
+| 16 | 士兵76   |   1 |  40 | 纽约     |
+| 17 | 堡垒     |   1 |  99 | 纽约     |
+| 18 | 老王     |   2 |  40 | 隔壁的   |
+| 19 | 小美     |   0 |  23 | 北京     |
+| 20 | 莱因哈特 |   1 |  80 | 纽约     |
+| 21 | 路霸     |   1 |  43 | 上海     |
+| 22 | 温斯顿   |   2 |  20 | 上海     |
+| 23 | 秩序之光 |   0 |  19 | 上海     |
+| 24 | 小王     |   1 |  40 | 北京     |
+| 25 | 小王八   |   1 |   4 | 纽约     |
++----+----------+-----+-----+----------+
+24 rows in set
+
+mysql> show tables;
++-----------------+
+| Tables_in_s67   |
++-----------------+
+| hc_lover        |
+| hc_user         |
+| lover           |
+| pay_businessman |
+| pay_user        |
+| s72_user        |
+| score           |
+| t1              |
+| t1_copy         |
+| t2              |
+| t3              |
+| t4              |
+| user            |
+| user2           |
+| user_test       |
+| v_t1            |
+| v_xin           |
+| xin             |
+| xintest         |
++-----------------+
+19 rows in set
+
+mysql> drop view v_xin;
+Query OK, 0 rows affected
+
+mysql> show tables;
++-----------------+
+| Tables_in_s67   |
++-----------------+
+| hc_lover        |
+| hc_user         |
+| lover           |
+| pay_businessman |
+| pay_user        |
+| s72_user        |
+| score           |
+| t1              |
+| t1_copy         |
+| t2              |
+| t3              |
+| t4              |
+| user            |
+| user2           |
+| user_test       |
+| v_t1            |
+| xin             |
+| xintest         |
++-----------------+
+18 rows in set
+
+
+```
+
+
+1.4.MySQL内置函数
+
+请尽量减少使用 内置函数.
+让mysql好好的做仓库管理员.
+
+处理好数据 是php 应该做的.
+
+```
+mysql> select concat('dawei','xihuan','lluguan');
++------------------------------------+
+| concat('dawei','xihuan','lluguan') |
++------------------------------------+
+| daweixihuanlluguan                 |
++------------------------------------+
+1 row in set
+
+mysql> select lcase('A')
+;
++------------+
+| lcase('A') |
++------------+
+| a          |
++------------+
+1 row in set
+
+mysql> select lcase('AOOOOO
+');
++-----------------+
+| lcase('AOOOOO') |
++-----------------+
+| aooooo          |
++-----------------+
+1 row in set
+
+mysql> select lcase('AOOOOO');
++-----------------+
+| lcase('AOOOOO') |
++-----------------+
+| aooooo          |
++-----------------+
+1 row in set
+
+mysql> select ABS('-9');
++-----------+
+| ABS('-9') |
++-----------+
+|         9 |
++-----------+
+1 row in set
+
+mysql> select pi();
++----------+
+| pi()     |
++----------+
+| 3.141593 |
++----------+
+1 row in set
+
+
+```
+
+
+
+1.5.MySQL预处理语句
+
+就是一个 方法  只不过 是 已经加载好的, 只需要你填写一些参数 
+就能获得相应的结果
+
+关键词:  prepare
+
+连接词 : from
+
+```
+mysql> prepare liwei from 'select * from user where id >?';
+Query OK, 0 rows affected
+Statement prepared
+mysql> set @i = 24;
+Query OK, 0 rows affected
+
+mysql> execute liwei;
+1210 - Incorrect arguments to EXECUTE
+mysql> execute liwei using @i;
++----+--------+-----+-----+----------+
+| id | name   | sex | age | province |
++----+--------+-----+-----+----------+
+| 25 | 小王八 |   1 |   4 | 纽约     |
+| 26 | 小霸王 |   1 |   4 | 上海     |
+| 27 | 王尼玛 |   1 |  40 | 深圳     |
+| 28 | 王老五 |   0 |   0 | 江苏     |
+| 29 | 王麻子 |   0 |   0 | 四川     |
+| 30 | 王中王 |   1 |   0 | 贵州     |
+| 31 | 王守义 |   1 |   0 | 四川     |
+| 32 | 王老吉 |   2 |  88 | 江苏     |
++----+--------+-----+-----+----------+
+8 rows in set
+
+mysql> 
+
+```
+
+
+
+
+-------------------
+
+#day2
+## 1.6 mysql事务
+
+
+
+
+
+  

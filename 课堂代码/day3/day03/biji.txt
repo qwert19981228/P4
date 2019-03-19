@@ -1,0 +1,249 @@
+# 前言
+依然注意,我们使用虚拟环境,只需要写python即可.前提你进入了虚拟环境
+
+
+下面复习内容直接,照着敲写
+
+#复习:
+
+    数据库配置
+
+    1.修改配置文件
+        数据库连接  (修改数据库引擎为MySQL)
+        导入应用    settings.py->installed_apps
+        在settings.py同级的目录下__init__.py 导入pymysql(python2.7使用mysqld 就不需要导入了)
+
+    2.模型的使用
+        当前应用下的models.py定义模型 迷行要继承models.Model
+            一个模型就是一个表 类的属性是字段
+            应用名_类名
+            class Meta:
+                db_table='表名'
+        生成迁移文件
+         python3 manage.py makemigrations
+        执行迁移
+         python3 manage.py migrate
+
+
+    3.添加数据
+        在试图中导入models
+        1.实例化模型 
+            ob = models.类名()
+            ob.属性名='赋值'
+            ob.save()
+        2.ob = models.类名(name="zhsnagn",age=10)
+          ob = models.类名(**data)
+
+        3.删除数据
+            get()  # 一次只能获取一条数据 多了或没有都会报错
+            filter()  # 过滤 类似于 sql语句中 where 
+            first()
+            last()
+            属性名__lt/gt ltre gte
+
+            ob.delete()
+
+
+-------------------------------------------
+
+20分钟复习结束
+
+
+-------------------------------------------
+
+
+
+讲到添加的时候,我们把其中的def addDate
+
+中 request.get.dict()
+改成一下**post**获取
+
+那你再次提交,就会发现,卧槽,怎么回事.提示
+csrf 验证失败.
+
+# 第一知识点: csrf验证
+settings.py
+
+line 47
+
+把 ``` diango.middleware.csrf.CsrfViewMiddleware  ```  注释掉再看
+
+发现就数据添加成.
+
+1. csrf 是跨站攻击伪造
+百度百科查看
+2. django中通过中间件 csrf 来防攻击
+3. 如何使用?
+首先,在setting.py 的middleware组开启,默认是开启的
+最后,在视图中,加入 {% csrf_token %}
+
+```
+<form action="{% url 'myhome_add' %}" method="POST">
+        {% csrf_token %}
+        姓名: <input type="text" name="name" >
+        <br>
+        年龄: <input type="text" name="age">
+        <br>
+        email: <input type="text" name="email">
+        <br>
+        密码: <input type="password" name="password">
+        <br>
+        <button>提交</button>
+
+    </form>
+
+
+```
+4. 打印查看csrf_token
+在views中.
+保存的代码注释掉.  进行https_response(str(data))
+
+```
+def addData(request):
+    # 执行添加
+    # 接收用户数据
+    data = request.POST.dict()
+
+
+
+    return HttpResponse(str(data))
+
+
+```
+
+那如何存入数据呢? 怎么处理多出来的csrf_token?
+我们可以使用pop 
+```
+
+def addData(request):
+    # 接受用户数据
+    data = request.POST.dict()
+    data['age']=int(data['age'])
+    data.pop('csrfmiddlewaretoken')
+    print(data)
+    ob = models.User(**data)
+    ob.save()
+   
+    return HttpResponse(str(data))
+
+```
+-----------------------
+
+
+# 第二知识点 本地化
+打开那个django 自带后台的txt
+
+# 第三知识点 后台管理
+1. 创建超级管理员
+2. 添加模型
+
+
+
+
+
+
+
+
+
+
+-----------------
+
+
+
+
+
+
+
+
+
+模型关系
+    一对一 两张表 一条数据对应一条数据
+        # 第一个参数：是被关联的模型名称
+        # 第二个参数：当user用户表中的一条数据被删除的时候，与之对应的详情表数据也会被删除
+        models.OneToOneField(User, on_delete=models.CASCADE)
+
+说明例子: 老婆 对老公.  过去一个老公只能配一个老婆.现在一个老公能配好几把钥匙.开玩笑
+这里专指 一对一
+即, 完成添加用户顺便,在wife 表中完成添加,并且这个wife 数据关联id 是当前添加的数据.
+
+这就是一对一关系.
+
+---------------------------------------------
+
+#接下来的操作全部配合代码!!!!!!
+
+----------------------------------
+
+
+        添加数据:
+            添加用户信息
+            u = models.User(name="zhansgan")
+            添加关联信息
+            w = models.Wife()
+            w.name='zhsnagnlp'
+            w.uid= u
+        查询数据:
+            通过老公差老婆
+            lg = models.User.objects.first()
+            print(lg.name)
+            print(lg.wife.wname)
+            通过老婆找老公
+            w = models.Wife.objects.first()
+            print(w.wname)
+            print(w.uid.name)
+
+    一对多:
+        两个模型 一条数据对应多个信息
+
+        添加数据:
+            s = models.Stu()
+            s.sname='zhsna'
+            s.cid = 数据对象(models.Class.object.get(id=1))
+        根据学员差班级
+            s = models.Stu.objects.first()
+            s.cid.classname
+        根据班级查学员
+            c = models.Class.objects.first()
+            c.类名_set.all()
+
+    多对多:manyTomany
+        两个模型但是会创建三个表,一个标只存关系
+
+        添加关系
+            班级表 老师表  一个班级有多个老师 一个老师对应多个班级
+
+            给班级添加老师
+            t = models.Teacher.objects.get(id=)
+            c = models.Classs.objects.all()
+            t.cid.add(c[0],c[1])
+
+            删除 只删除当前数据和当前数据对应的关系
+
+            查询:
+                根据班级查老师 
+                c = models.Classs.objects.get(id=)
+                print(c.teacher_set.all())
+
+                根据老师查班级
+                t = models.Teacher.objects.get(id=)
+                print(t.cid.all())
+
+
+
+
+
+
+老师                                   班级
+cd   py13 py14 py15                   py13    cd zy sg ql
+zy   py13 py14 py15                   py14    cd zy sg ql
+sg   py13 py14 py15                   py15    cd zy sg ql
+ql   py13 py14 py15                   py16    cd zy sg ql
+
+                关系
+                 老师        班级
+                 c           p13
+                 c           p14
+                 c           p15
+                 z           p13
+                 z           p14
+                 z           p15

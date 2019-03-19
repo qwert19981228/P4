@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>溢出</title>
+    <style>
+
+    	body{
+    		overflow-x: auto; 
+    	}
+    	
+		.box{
+			width: 200px;
+			height: 200px;
+			border: 4px solid red;
+			/* border-radius: 100%; */
+
+			overflow: hidden;
+			overflow: visible;
+			overflow: auto;
+		}
+
+		.box2{
+			/* 100% 参照于 当前可视窗口而定 */
+			width: 100%;
+			height: 50px;
+			background: #7FC9FF;
+		}
+
+
+		.box3{
+			width: 2000px;
+			height: 50px;
+			background: #D67FFF;
+		}
+
+    </style>
+</head>
+<body>
+    <h1>溢出</h1>
+    <hr>
+    <!-- 
+		overflow: hidden 		隐藏溢出的内容
+				   visible 		显示溢出的内容, 默认值
+				   auto 	    通过滚动条显示溢出的内容
+
+		overflow-x: hidden | visible | auto
+		overflow-y: hidden | visible | auto
+
+
+    -->
+
+
+	<div class="box">
+		<img src="./1.gif">
+	</div>
+
+
+	<div class="box2">
+	</div>
+
+	<div class="box3">
+	</div>
+    
+
+</body>
+</html>

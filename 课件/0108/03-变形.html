@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>变形</title>
+    <style>
+    	.i{transition: all .5s; }
+		.i1:hover{transform: rotate(30deg);}
+		.i1:hover{transform: rotate(300deg);}
+		.i1:hover{transform: rotate(3600deg);}
+		.i1:hover{transform: rotate(-30deg);}
+		.i1:hover{transform: rotateX(60deg);}
+		.i1:hover{transform: rotateY(60deg);}
+
+
+		.i2:hover{transform: skewX(30deg);}
+		.i2:hover{transform: skewY(30deg);}
+		.i2:hover{transform: skew(30deg, 30deg)}
+		.i2:hover{transform: skewX(90deg);}
+		.i2:hover{transform: skewX(180deg);}
+		.i2:hover{transform: skewX(270deg);}
+
+
+		.i3:hover{transform: scale(1);}
+		.i3:hover{transform: scale(1.5);}
+		.i3:hover{transform: scale(2);}
+		.i3:hover{transform: scale(0.5);}
+		.i3:hover{transform: scale(0);}
+		.i3:hover{transform: scale(-1);}
+
+		.i4:hover{transform: translate(30px, -30px);}
+		.i4:hover{transform: translateX(30px);}
+		.i4:hover{transform: translateX(-30px);}
+		.i4:hover{transform: translateY(-30px);}
+
+    </style>
+</head>
+<body>
+    <h1>变形</h1>
+    <hr>
+    <!-- 
+		transform
+			none 		不变形
+			
+			rotate 		旋转
+						单位: deg 角度
+
+			skew 		扭曲
+						单位: deg 角度
+						注意: 90 * 奇数倍 都是扭没了
+
+			scale 		中心缩放	
+						单位: 倍数
+							基本倍数: 1 代表本身
+							>1 放大
+							<1 缩小
+
+			translate  位移
+						单位: px
+    -->
+
+	
+	<img src="Meinv014.jpg" height="200" class="i i1">
+	<img src="Meinv009.jpg" height="200" class="i i2">
+	<img src="Meinv011.jpg" height="200" class="i i3">
+	<img src="Meinv008.jpg" height="200" class="i i4">
+
+    
+
+</body>
+</html>

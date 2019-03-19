@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>遍历元素集合</title>
+</head>
+<body>
+    <h1>遍历元素集合</h1>
+    <hr>
+    
+    <ul id="nav">
+    	<li>小米</li>
+    	<li>红米</li>
+    	<li>笔记本</li>
+    	<li>路由器</li>
+    </ul>
+    
+
+	<script>
+		var nav = document.getElementById('nav');
+		var li = nav.getElementsByTagName('li');  // 获取 htmlCollection集合对象
+
+		console.log(nav);
+		console.log(li);
+
+		// 遍历 li
+		// 	需求1: 字体设置为 red
+		// 	需求2: 原有内容基础上加 序号
+		for(var i = 0; i < li.length; i++){
+			li[i].style.color = 'red';
+			// li[i].innerHTML = li[i].innerHTML + i;
+			li[i].innerHTML += i;
+		}
+	</script>
+
+
+
+</body>
+</html>

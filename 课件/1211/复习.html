@@ -1,0 +1,72 @@
+<pre>
+	1. 作用域
+		L -> E -> G -> B
+		
+		作用域E 改变作用域G 中的变量, 通过关键字 global
+		作用域L 改变作用域E 中的变量, 通过关键字 nonlocal
+
+	2. 闭包
+		函数A 里面定义了一个函数B, 函数B 使用了函数A的变量. 那么函数B就是闭包函数
+		函数A : 外部函数
+		函数B : 内部函数
+
+		使用方式:
+			直接调用 		在外部函数中, 直接使用闭包函数
+			返回函数名 		在外部函数中, 通过return返回闭包函数名字
+
+		作用:
+			优点: 数据的持久化
+			缺点: 占用内存
+
+		注意点:
+			闭包函数不能改变外部函数的变量
+
+	3. 内置
+		类型相关
+			int(), float(), bool(), complex(), string(), tuple(), set(), dict(), list()
+
+		变量相关
+			id(), type(). print(), locals()
+
+		数学相关
+			abs(), max(), min(), sum(), pow(), round(), range()
+
+		进制相关
+			oct(), bin(), hex(), chr(), ord(), repr(), eval()
+
+	4. 字符串方法
+		格式:
+			对象.方法名()
+
+			.upper()
+			.lower()
+			.capitalize()
+			.title() 
+			.swapcase()
+			.isalnum()
+			.isalpha()
+			.isdigit()
+			.isupper()
+			.islower()
+			.isnumeric()
+
+	5. format
+		1) {}      从前向后, 依次获取参数
+		2) {索引}   指定索引的参数
+		3) {关键字} 关键字参数
+		4) {a:bcd}  限定符
+		5) 进制 		
+			{:d}
+			{:o}
+			{:b}
+			{:x}
+		6) 千分位
+			{:,}  
+
+		7) 精度
+			{:.num}
+			{:.numf}
+
+
+
+</pre>

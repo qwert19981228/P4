@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>综合练习</title>
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <style>
+        body, ol, ul{margin: 0; padding: 0;}
+        a{text-decoration: none;}
+        li{list-style: none;}
+    		
+        
+    	.banner{
+    		width: 1226px;
+    		height: 460px;
+    		/* border: 1px solid red; */
+    		position: relative;
+            margin: 100px auto;
+    	}
+
+    	.banner ul{
+    		width: 234px;
+    		height: 420px;
+    		background: rgba(0,0,0,0.4);
+    		margin: 0;
+    		padding: 0;
+    		position: absolute;
+    		left: 0;
+    		top: 0;
+            padding: 20px 0px;
+    	}
+
+        .banner .menu-list{
+            height: 42px;
+            line-height: 42px;
+            color: #fff;
+            padding-left: 25px;
+            padding-right: 20px;
+        }
+
+        .banner .menu-list span:first-of-type{
+            float: left;
+        }
+
+        .banner .menu-list span:last-of-type{
+            float: right;
+        }
+
+        .banner .menu-list:hover{
+            background: #ff6700;
+            cursor: pointer;
+        }
+
+
+        .banner .menu-list .more{
+            min-width: 234px;
+            max-width: 992px;
+            height: 460px;
+            background: #fff;
+            position: absolute;
+            top: 0;
+            left: 234px;
+            display: none;
+            color: #000;
+            z-index: 999;
+        }
+
+        .banner .menu-list:hover .more{
+            display: block;
+        }
+
+    	.banner .left{
+    		background: url('./icon-slides.png') 83px 0px;
+    		width: 41px;
+    		height: 69px;
+    		position: absolute;
+    		left: 234px;
+    		top: 40%;
+    	}
+
+		.banner .left:hover{
+			background-position: 0 0;
+		}
+
+        .banner .list{
+            width: 100px;
+            height: 20px;
+            position: absolute;
+            right: 30px;
+            bottom: 20px;
+        }
+
+        .banner .list .circle{
+            width: 6px;
+            height: 6px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 100%;
+            float: left;
+            margin-right: 10px;
+            background: rgba(0,0,0,0.4);
+        }
+
+        .cart{
+            width: 120px;
+            height: 40px;
+            background: #404040;
+            margin: 10px auto;
+            position: relative;
+        }
+
+        .cart-list{
+            width: 316px;
+            height: 0px;
+            background: #ccc;
+            position: absolute;
+            right: 0;
+            top: 40px;
+            z-index: 999999;
+            transition: all .5s;
+        }
+
+        
+        .cart:hover .cart-list{
+            height: 128px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>综合练习</h1>
+    <hr>
+
+    <div class="cart">
+        <div class="cart-list"></div>
+    </div>
+    
+
+
+    <div class="banner">
+    	<img src="./banner.jpg" width="1226">
+    	<ul>
+            <li class="menu-list">
+                <span>手机 电话卡</span>
+                <span class="iconfont"> &#xe624; </span>
+                <div class="more">1</div>
+            </li> 
+            <li class="menu-list">
+                <span>手机 电话卡</span>
+                <span class="iconfont"> &#xe624; </span>
+                <div class="more">2</div>
+            </li>  
+            <li class="menu-list">
+                <span>手机 电话卡</span>
+                <span class="iconfont"> &#xe624; </span>
+                <div class="more">3</div>
+            </li>  
+            <li class="menu-list">
+                <span>手机 电话卡</span>
+                <span class="iconfont"> &#xe624; </span>
+                <div class="more">4</div>
+            </li>  
+            <li class="menu-list">
+                <span>手机 电话卡</span>
+                <span class="iconfont"> &#xe624; </span>
+                <div class="more">5</div>
+            </li>  
+            <li class="menu-list">
+                <span>手机 电话卡</span>
+                <span class="iconfont"> &#xe624; </span>
+                <div class="more">6</div>
+            </li>  
+            <li class="menu-list">
+                <span>手机 电话卡</span>
+                <span class="iconfont"> &#xe624; </span>
+                <div class="more">7</div>
+            </li>  
+            <li class="menu-list">
+                <span>手机 电话卡</span>
+                <span class="iconfont"> &#xe624; </span>
+                <div class="more">8</div>
+            </li>  
+            <li class="menu-list">
+                <span>手机 电话卡</span>
+                <span class="iconfont"> &#xe624; </span>
+                <div class="more">9</div>
+            </li>  
+            <li class="menu-list">
+                <span>手机 电话卡</span>
+                <span class="iconfont"> &#xe624; </span>
+                <div class="more">10</div>
+            </li>    
+        </ul>
+
+    	<div class="left"></div>
+    	<div class="right"></div>
+    	<div class="list">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>   
+        </div>
+    </div>
+    
+    
+
+
+
+</body>
+</html>

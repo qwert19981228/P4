@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+</head>
+<body>
+    <h1>DOM</h1>
+    <hr>
+    <!-- 
+		DOM
+			定义HTML 和 XML的访问标准
+
+			xml?
+				html 就是 标签属性, 显示数据
+					  预定义好的
+
+				xml  就是 描述数据, 存储数据
+					  自定义, 可以扩展
+	
+		DOM 节点
+			在html中所有的东西 都是节点;
+
+			整个文档节点: document
+			html元素节点: element
+			html属性节点: attr
+			html内容节点: text   (包含 空格)
+			注释节点: comment
+			
+
+		节点关系:
+			父节点
+			子节点
+			祖辈节点
+			后辈节点
+			同辈节点
+
+		节点访问:
+			方法
+				getElementById( )
+				getElementsByTagName( )
+				getElementsByClassName( )
+				getAttributeNode( ) 	获取属性节点
+				getAttribute( ) 		获取属性值
+
+			属性
+				attributes		获取属性节点
+				parentNode 	获取父级节点
+				childNodes 	获取子级节点
+			
+				parentElement 	获取父级元素
+				children 		获取子级元素
+
+		节点属性
+			nodeName
+				文档节点的 nodeName 始终都是 #document
+				元素节点的 nodeName 始终都是 标签名
+				属性节点的 nodeName 始终都是 属性名
+				内容节点的 nodeName 始终都是 #text
+
+			nodeValue
+				元素节点的 nodeValue 始终都是 null 就是 undefined
+				属性节点的 nodeValue 始终都是 属性值
+				内容节点的 nodeValue 始终都是 正文内容
+
+			nodeType
+				document 	9
+				element 	1
+				attr 		2 	
+				text 		3
+				comment 	8
+
+		节点操作
+			修改属性值
+				元素节点.setAttribute(属性名, 属性值)
+				元素节点.属性名 = '值'
+
+			创建节点
+			    属性: document.createAttribute('属性名');
+			    元素: document.createElement('标签名');
+
+			删除节点
+				属性:  removeAttribute() 
+					   或者 把值设置为null
+				元素:  removeChild(节点)   删除父节点的一个子节点
+				
+			替换节点
+			    属性:  setAttribute(属性名, 属性值)
+			    元素:  replaceChild(新节点,旧节点);
+
+			插入节点
+			    属性: setAttribute(属性名, 属性值)
+			    元素: 
+			        appendChild(node)   			插入子节点
+			        insertBefore(新节点, 旧节点)   指定位置插入节点
+
+			克隆节点
+				cloneNode()    
+					false(默认值)
+					true(全部复制)
+    -->
+
+
+    <table id="tab" width="800" cellspacing="0" cellpadding="5" border="1">
+    	<tr>
+    		<th class="head"  id="tabHead">序号</th>
+    		<th class="head">姓名</th>
+    		<th class="head">年龄</th>
+    		<th class="head">班级</th>
+    		<th class="head">操作</th>
+    	</tr>
+    	<tr>
+    		<td>1</td>
+    		<td>王嘉诚</td>
+    		<td>18</td>
+    		<td>P4</td>
+    		<td>
+    			<button onclick="delData(this)">删除</button>
+    		</td>
+    	</tr>
+    	<tr>
+    		<td>2</td>
+    		<td>李嘉诚</td>
+    		<td>28</td>
+    		<td>P4</td>
+    		<td>
+    			<button onclick="delData(this)">删除</button>
+    		</td>
+    	</tr>
+    </table>
+
+    <script>
+    	// console.log(document);
+
+    	// var a = document.getElementById('tab');
+    	// console.log(a);
+
+    	// var b = document.getElementsByTagName('td');
+    	// console.log(b);
+
+    	var c = document.getElementsByClassName('head');
+    	console.log(c);
+    	// console.log('-------------------------------')
+
+    	// console.log(a.getAttributeNode('id'));
+    	// console.log(a.getAttribute('id'));
+
+    	// // console.log( c[0] );
+    	// console.log(c[0].attributes);
+    	// console.log(c[0].parentNode);
+    	// console.log(c[0].childNodes);
+    	// console.log(c[0].childNodes);
+    	// console.log('-------------------------------')
+
+    	// console.log(c[0].parentElement);   // 获取 c[0] 父级的标签
+    	// console.log(c[0].children); 		// 获取 c[0] 里面的子标签
+    	// console.log('-------------------------------');
+
+    	// var x = c[0].childNodes;
+    	// console.log(x[0].nodeValue);
+    </script>
+
+
+
+	<form action="" name="myForm" onsubmit="return addData()">
+		姓名: <input type="text" name="name"> <br>
+		年龄: <input type="text" name="age"> <br>
+		班级: <input type="text" name="grade"> <br>
+		<button type="submit">添加</button>
+	</form>
+	<script>
+		
+		function addData(){
+			// alert('111');
+			// return false;
+
+			// 获取表格
+			var table = document.getElementById('tab');
+
+			// 获取表单
+			var name = document.myForm.name.value;
+			var age = document.myForm.age.value;
+			var grade = document.myForm.grade.value;
+			// console.log(name, age, grade);
+
+			// 获取当前表格的总行数
+			var index = table.rows.length;
+
+
+			// 插入一行
+			var tr = table.insertRow(index);
+			tr.insertCell(0).innerHTML = index;
+			tr.insertCell(1).innerHTML = name;
+			tr.insertCell(2).innerHTML = age;
+			tr.insertCell(3).innerHTML = grade;
+			tr.insertCell(4).innerHTML = '<button onclick="delData(this)">删除</button>';
+
+			return false;
+		}
+
+
+		function delData(self){
+			var table = document.getElementById('tab');
+			var index = self.parentNode.parentNode.rowIndex;
+			
+			table.deleteRow( index );
+		}
+
+	</script>
+
+
+    
+
+</body>
+</html>

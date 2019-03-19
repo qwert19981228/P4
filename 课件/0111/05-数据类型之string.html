@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>string</title>
+</head>
+<body>
+    <h1>string</h1>
+    <hr>
+    <!-- 
+		String 字符串
+		1. 格式
+			单双引号 ''  ""
+			反引号 ``
+
+		2. 引号区别
+			单双引号
+				不能识别变量
+				解析转义字符
+					\n
+					\r
+
+					\\ 	
+					\'
+					\"
+
+				支持互插, 不支持自插
+				不能直接输入 回车
+
+			反引号
+				识别变量
+				可以直接输入 回车
+
+		3. 字符串操作
+			+
+
+     -->
+
+    <script>
+    	// 单双引号
+    	var a = '小姐姐';
+    	var a = "小哥哥";
+    	console.log(a, typeof(a));
+
+    	var str = 'a, 今晚来玩儿啊';
+    	console.log(str);
+
+    	var str = 'How are you? \n I am fine';
+    	console.log(str);
+
+    	// var str = 'How are you? I'm fine';
+    	// var str = 'How are you? I"m fine';
+    	var str = 'How are you? I\'m fine';
+    	console.log(str);
+
+
+    	// var str = '';
+
+    	console.log('-------------------------------')
+
+
+    	// 反引号
+    	var b = `小弟弟`;
+    	console.log(b, typeof(b));
+    	console.log('-------------------------------')
+
+    	var str = `${b}, 今晚来玩儿啦`;
+    	console.log(str);
+
+    	var str = `How are you? \n I am fine`;
+    	console.log(str);
+
+    	var str = `
+					老宋: 老王, 最近咋看起来心事重重的啊
+					老王: 这几天, 隔壁总是在打孩子...
+    			   `;
+    	console.log(str);
+
+    	// 字符串拼接  + 
+    	var a = '吃的最难忘的是什么面?';
+    	var b = '泪流满面';
+    	console.log(a+b);
+    </script>
+    
+
+</body>
+</html>

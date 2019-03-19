@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>数据类型之Number</title>
+</head>
+<body>
+    <h1>数据类型之Number</h1>
+    <hr>
+    <!-- 
+		Number 数值
+		1. 整数
+			范围: -2^53 ~ 2^53
+			超出范围的运算, 都不准确
+
+						前缀 		基数
+			十进制 		无 			0-9
+			八进制 		0 			0-7
+			二进制 		0b 			0-1
+			十六进制 	0x 			0-9 a-f
+
+
+		2. 浮点数
+			2.1 常规表达方式
+			2.2 科学计数法
+			2.3 正负无穷
+				Infinity
+				-Inifinity
+			2.4 有效位数 17位
+			2.5 函数 isFinite()
+			2.6 方法 变量.toFixed( 位数 )
+
+			范围: 
+				5 E-324 ~  1.7976931348623157 E308
+    -->
+	<script>
+		// 1. 整数
+			var a = 15;
+			var a = Math.pow(2,53);
+			console.log(a);
+
+			a = a + 2;
+			console.log(a);
+			console.log('-------------------------------')
+
+
+			// 任意进制 -> 十进制
+			// 	基数*进制^次方
+
+			var a = 15; 	// 十进制
+			var a = 015;   // 八进制
+			var a = 0b110; // 二进制
+			var a = 0xab;  // 十六进制  10*16^1  +  11*16^0
+			console.log(a);
+			// 2048 1024 512 256    128 64 32 16     8 4 2 1
+			console.log(  012 / 4 ); // 2.5
+
+			// 十进制 -> 任意进制
+			// 	十进制数 除以 任意进制, 结果倒取余
+
+
+			var a = 019; // 表名看是 八进制, 由于基数超出范围, 则认为十进制
+			console.log(a);
+
+			// var a = 0b234; // 报错
+			console.log(a);
+			console.log('-------------------------------')
+
+
+		// 2. 浮点数
+			// 2.1 常规表达方式
+			var a = 0.5;
+			var a = .5;
+			var a = 5.;
+			console.log(a, typeof(a));
+
+			// 2.2 科学计数法
+			var a = 2e3;   // 2 * 10 的3次方
+
+
+			// 2.3 无穷 Infinity
+			var a = 2e500; 	// 正无穷
+			console.log(a);
+
+			var a = -2e500; 	// 负无穷
+			console.log(a);
+
+			// 2.4 有效位数  17位
+			// 	从前向后, 第一个非0数字开始, 连续保留17位
+			var a = 0.1234567890123456789;
+			console.log(a);
+
+			var a = 0.001234567890123456789;
+			console.log(a);
+
+			var a = 123.1234567890123456789;
+			console.log(a);
+
+			// 2.5 isFinite()
+			console.log( isFinite(10) );
+			console.log( isFinite(2e500) );
+
+			// 2.6 限制小数位
+			var a = 0.12345;
+			console.log( a.toFixed(3) );
+
+
+	</script>    
+
+
+
+
+
+</body>
+</html>

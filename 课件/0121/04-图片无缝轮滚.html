@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>图片无缝轮滚</title>
+    <style>
+    		
+    	#box{
+    		width: 500px;
+    		height: 291px;
+    		border: 2px solid red;
+    		overflow: hidden;
+    	}
+
+    	#content{
+    		width: 9999px;
+    	}
+
+        #box #imglist{
+            float: left;
+        }
+
+    	#box #imglist img{
+    		width: 200px;
+    		height: 291px;
+    		float: left;
+    	}
+    </style>
+    <script src="./jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <h1>图片无缝轮滚</h1>
+    <hr>
+    
+
+    <div id="box">
+    	<div id="content">
+    		<div id="imglist">
+    			<img src="./imgs/1.jpg">
+    			<img src="./imgs/2.jpg">
+    			<img src="./imgs/3.jpg">
+    			<img src="./imgs/4.jpg">
+    			<img src="./imgs/5.jpg">
+    		</div>
+    	</div>
+    </div>
+
+	<script>
+		$(function(){
+			// 将 imglist 复制一份在 imglist 自己的后面
+			$('#imglist').clone().appendTo('#content');
+
+            // 获取 imglist 的宽度
+            var width = $('#imglist').width();
+
+            // console.log(width);
+
+            setInterval(function(){
+                // console.log($('#box').scrollLeft());
+                if( $('#box').scrollLeft() >= width){
+                    // alert('123')
+                    $('#box').scrollLeft(0);
+                }
+
+				offset = $('#box').scrollLeft(); 
+				$('#box').scrollLeft( offset + 5 );
+			}, 20);
+
+
+
+		});
+
+
+	</script>
+    
+
+</body>
+</html>

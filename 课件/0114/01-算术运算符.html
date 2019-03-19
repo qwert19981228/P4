@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>运算符</title>
+</head>
+<body>
+    <h1>运算符</h1>
+    <hr>
+	<script>
+		/*  
+			1. 算术运算符
+			 	+ - * / % ++ --
+				
+				++ 自增
+					a++ 	先返回a, 再给a+1
+					++a 	先给a+1, 再返回a
+
+				-- 自减
+					a--
+					--a
+		*/
+	
+		var a = 10;
+		console.log(a++);  // 先console.log(a), 再给a+1
+		console.log(a);
+		console.log('-------------------------------')
+
+
+		var a = 10;
+		console.log(++a);  // 先给a+1, 再console.log(a)
+		console.log(a);	
+
+		// 练习
+		var a = 10;
+		var b = a++ + ++a;
+		console.log('a = ' + a);
+		console.log('b = ' + b);
+		console.log('-------------------------------');
+
+		var a = 10;
+		var b = a++ - --a;
+		console.log('a = ' + a);
+		console.log('b = ' + b);
+		console.log('-------------------------------');
+
+		var a = 10;
+		var b = 5;
+		var c = a++ - ++b + --a;
+		console.log('a = ' + a);
+		console.log('b = ' + b);
+		console.log('c = ' + c);
+		console.log('-------------------------------');
+		// 10 6 14
+		document.write('<hr>');
+
+
+		// %  取模
+		// 
+		// 结果范围: 0 ~ 5
+			// %6
+		
+		// 结果范围: 0 ~ 9
+			// %10
+
+		// 结果范围: 0 ~ x 			
+			// %(x+1) 				
+
+		// %x   范围: [0, x)
+		
+
+
+		// 结果范围: 5 ~ 10
+			//   0 ~ 5 		%6
+			// + 5
+			// -------
+			//   5 ~ 10
+			//   
+			//   结果:  ( ? %6) + 5
+
+
+		// 结果范围: 7 ~ 15
+			//   0 ~ 8 		%9 
+			//  +7
+			//  ------
+			//   7 ~ 15
+			//   
+			//   结果: ( ? % 9 ) + 7
+
+
+		// 结果范围: x ~ y
+			//   0 ~ (y-x)     %(y-x+1)
+			//  +x
+			//  --------
+			//   x ~ y
+			//   
+			//   结果:  ( ? % (y-x+1)) + x
+
+
+		// 求奇偶数
+			// 余数为0 	即为偶数
+			// 余数为1  即为奇数
+
+			// 0~1 ==> 	%2
+
+
+		// 求任意数的个位数
+			// 个位数 0-9 		%10     	10的1次方
+
+			var a = 123;
+			console.log( a % 10 );
+
+		// 求任意数的最后两位
+			// 两位数  00 - 99   %100 		10的2次方
+			var a = 123;
+			console.log( a % 100 );
+
+		// 求任意数的最后n位
+		// 		%10的n次方
+
+		document.write('<hr>');	
+
+
+		// 取模的正负
+		// 	在js 中取模的正负, 取决于第一位数的正负
+		// 	在python中取模的正负, 取决于第二位数的正负
+		console.log( 10 % 4 );
+		console.log( 10 % -4 );
+		console.log( -10 % 4 );
+		console.log( -10 % -4 );
+
+
+
+
+	</script>    
+</body>
+</html>

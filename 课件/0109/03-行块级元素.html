@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>行块级元素</title>
+	<style>
+		.box1{width:500px; height:100px; line-height: 100px; background: pink;}		
+		.box2{width:500px; height:100px; line-height: 100px; background: orange;}	
+
+		.line1{width:500px; height:100px; line-height: 100px; background: #FF7F7F;}
+		.line2{width:500px; height:100px; line-height: 100px; background: #A5FF7F;}
+
+
+	</style>
+</head>
+<body>
+    <h1>行块级元素</h1>
+    <hr>
+    <!-- 
+		在html里面, 所有标签都划分成 两种类型:
+		块级元素 block
+			div, p, h1~h6, ul ...
+			独占一行
+			宽度 默认与浏览器一致
+			高度 默认与内容一致
+			宽度, 高度, 行高, 内外边距 都是可以手动控制
+			容纳性: 任意元素
+			
+
+		行级元素 (内联元素)  inline
+			span, a, b, i, del ...
+			不会独占一行
+			宽度 和 高度默认都与 内容一致
+			行高, 水平内外边距 可以手动控制
+			容纳性: 只能容纳行级元素
+
+			注意点:
+				多个超链接a 标签 不要嵌套使用
+
+     -->
+
+	<p>横批: 没人会射</p>
+    <div class="box1">上联: 试问中国男足有多愁<span class="line1">老母鸡</span></div>
+
+    
+    <span class="line2">黑母鸡</span>
+
+    <div class="box2">下联: 恰似一群太监逛青楼</div>
+    <hr>
+
+
+    <a href="https://www.qq.com">
+    	<a href="https://www.taobao.com">
+    		<a href="https://www.baidu.com">xx小电影网站</a>
+    	</a>
+    </a>
+
+
+
+    
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+</head>
+<body>
+    <h1>函数</h1>
+    <hr>
+    <script>
+    	/*  
+			1. 定义函数
+				方法1: 函数声明
+					function 函数名( 参数 ... ){
+						代码块
+					}
+    	*/
+    	result = fun1(10,20);
+    	document.write('n1 + n2 = '+ result + '<hr>');
+
+    	// 	求出两个值的和
+    	function fun1(n1, n2){
+    		document.write('n1 = '+ n1 + '<br>');
+    		document.write('n2 = '+ n2 + '<br>');
+    		return n1+n2;
+    	}
+
+
+
+    	/*
+    		方法2: 函数表达式
+				var 变量名 = function(参数 ... ){ 代码块 }
+		*/
+	
+		// 	求出两个值的和
+		var fun2 = function(n1, n2){
+			document.write('n1 = '+ n1 + '<br>');
+			document.write('n2 = '+ n2 + '<br>');
+			return n1+n2;
+		};
+
+		result = fun2(10, 20);
+    	document.write('n1 + n2 = '+ result + '<hr>');
+
+
+    	/*
+	    	方法3: 函数构造
+				var 变量名 = new Function('参数1', '参数2', ..., '代码块')
+
+				注意点: 
+					参数 和 代码块 都必须要用引号 包起来
+					Function 首字母需要大写
+    	*/
+    
+    	var fun3 = new Function('n1', 'n2', "document.write('n1 = '+ n1 + '<br>'); document.write('n2 = '+ n2 + '<br>'); return n1+n2;");
+
+		result = fun3(10, 20);
+    	document.write('n1 + n2 = '+ result + '<hr>');
+    	document.write('<hr>');
+
+
+
+
+
+
+
+
+    </script>
+    
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>动态改变标签属性</title>
+    <style>
+    	#box{
+    		width: 100px;
+    		height: 100px;
+    		border: 2px solid red;
+    	}
+    </style>
+</head>
+<body>
+    <h1>动态改变标签属性</h1>
+    <hr>
+
+
+	<button onclick="big()"> 改变box的大小 </button>
+	<div id="box"></div>
+	
+
+	<button onclick="big2()"> 变大 </button>
+	<br>
+	<img src="./1.jpg" width="100" id="img">
+
+
+    <script>
+    	/*
+    		点击事件: 当点击某对象时, 触发js
+    				  onclick="js代码"
+    	 */	
+
+
+    	function big(){
+    		var box = document.getElementById('box');
+    		box.style.width = '200px';
+    		box.style.height = '200px';
+    	}
+
+
+    	function big2(){
+    		var img = document.getElementById('img');
+
+    		img.width += 100;
+    	}
+
+
+
+    </script>
+</body>
+</html>

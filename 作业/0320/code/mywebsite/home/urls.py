@@ -20,5 +20,6 @@ urlpatterns = [
 
     url(r'^$', views.oto),
     url(r'^ots/$', views.ots),
+    url(r'^mtm/$', views.mtm),
 
 ]

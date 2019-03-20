@@ -71,3 +71,57 @@ def ots(request):
 	print(c)
 	print(c.stu_set.all())
 	return HttpResponse('一对多')
+
+def mtm(request):
+	# 添加数据
+	# 添加班级
+	# class1 = models.Classes(classname='p1')
+	# class2 = models.Classes(classname='p2')
+	# class3 = models.Classes(classname='p3')
+	# class1.save()
+	# class2.save()
+	# class3.save()
+	# # 添加一个老师
+	# t = models.Teacher(tname='波老师')
+	# t.save()
+
+	# 给老师添加班级
+	# 先把 操作的老师 班级 查询出来
+	t = models.Teacher.objects.get(id=3)
+	c = models.Classes.objects.all()
+	# 执行添加 外键在 teacher身上
+	t.cid.add(c[1],c[2])  # 老师外键add参数给你要加的班级
+
+	# 新老师添加班级
+	# 加一个老师
+	# t = models.Teacher(tname="苍老师")
+	# # 外键在 teacher 身上
+	# c = models.Classes.objects.all() # 班级
+	# t.save()
+	# # 给新老师添加班级
+	# t.cid.add(c[0])
+
+	# 根据班级查询老师
+	# 班级外键 只能通过_set方法 去查找
+	# c = models.Classes.objects.first()
+	# print(c)
+	# print(c.teacher_set.all())
+
+	# 根据老师查询班级
+	# 因为老师 有外键 cid
+	# 所以 可以直接使用 外键+all方法
+	# t = models.Teacher.objects.first()
+	# print(t.cid.all())
+
+
+	# 删除
+	# 删除班级
+	# c= models.Classes.objects.first()
+	# c.delete()
+
+	# 给班级添加老师
+	# c = models.Classes.objects.first()
+	# t = models.Teacher.objects.all()
+	# # t = models.Teacher.objects.get(id=3)
+	# c.teacher_set.add(t[0],t[1],t[2])
+	return HttpResponse('多对多')

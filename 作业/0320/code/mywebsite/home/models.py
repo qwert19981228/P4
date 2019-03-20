@@ -41,3 +41,22 @@ class Stu(models.Model):
     def __str__(self):
         # 返回 以name 去返回 在后台管理中常用
         return self.sname
+
+# 多对多
+
+class Classes(models.Model):
+    classname = models.CharField(max_length=50)
+
+    def __str__(self):
+        # 返回 以name 去返回 在后台管理中常用
+        return self.classname
+
+class Teacher(models.Model):
+    tname = models.CharField(max_length=50)
+    # 多对多 ManyToManyField
+    # 会生成 第三张表 - 关联表
+    cid = models.ManyToManyField(to="classes")
+
+    def __str__(self):
+        # 返回 以name去返回 在后台管理中常用
+        return self.tname

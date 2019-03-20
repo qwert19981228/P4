@@ -1,0 +1,111 @@
+复习:
+    数据库配置
+    1.修改配置文件
+        数据库链接
+        导入应用
+        在settings.py同级的目录下__init__.py 导入pymysql
+    2.模型的使用
+        当前应用下的models.py定义模型 迷行要继承models.Model
+            一个模型就是一个表 类的属性是字段
+            应用名_类名
+            class Meta:
+                db_table='表名'
+        生成迁移文件
+         python3 manage.py makemigrations
+        执行迁移
+         python3 manage.py migrate
+
+    3.添加数据
+        在试图中导入models
+        1.实例化模型 
+            ob = models.类名()
+            ob.属性名='赋值'
+            ob.save()
+        2.ob = models.类名(name="zhsnagn",age=10)
+          ob = models.类名(**data)
+
+        3.删除数据
+            get()  # 一次只能获取一条数据 多了或没有都会报错
+            filter()  # 过滤 类似于 sql语句中 where 
+            first() # 返回第一个对象
+            last()  # 返回最后一个对象
+            属性名__lt/gt lte gte 小于等于 大于等于
+
+            ob.delete()
+
+模型关系
+    一对一 两张表 一条数据对应一条数据
+        models.OneToOneField(User, on_delete=models.CASCADE)
+
+        添加数据:
+            添加用户信息
+            u = models.User(name="zhansgan")
+            添加关联信息
+            w = models.Wife()
+            w.name='zhsnagnlp'
+            w.uid= u
+        查询数据:
+            通过老公差老婆
+            lg = models.User.objects.first()
+            print(lg.name)
+            print(lg.wife.wname)
+            通过老婆找老公
+            w = models.Wife.objects.first()
+            print(w.wname)
+            print(w.uid.name)
+
+    一对多:
+        两个模型 一条数据对应多个信息
+
+        添加数据:
+            s = models.Stu()
+            s.sname='zhsna'
+            s.cid = 数据对象(models.Class.object.get(id=1))
+        根据学员差班级
+            s = models.Stu.objects.first()
+            s.cid.classname
+        根据班级查学员
+            c = models.Class.objects.first()
+            c.类名_set.all()
+
+    多对多:manyTomany
+        两个模型但是会创建三个表,一个标只存关系
+
+        添加关系
+            班级表 老师表  一个班级有多个老师 一个老师对应多个班级
+
+            给班级添加老师
+            t = models.Teacher.objects.get(id=)
+            c = models.Classs.objects.all()
+            t.cid.add(c[0],c[1])
+
+            删除 只删除当前数据和当前数据对应的关系
+
+            查询:
+                根据班级查老师 
+                c = models.Classs.objects.get(id=)
+                print(c.teacher_set.all())
+
+                根据老师查班级
+                t = models.Teacher.objects.get(id=)
+                print(t.cid.all())
+
+
+
+
+
+
+老师                                   班级
+cd   py13 py14 py15                   py13    cd zy sg ql
+zy   py13 py14 py15                   py14    cd zy sg ql
+sg   py13 py14 py15                   py15    cd zy sg ql
+ql   py13 py14 py15                   py16    cd zy sg ql
+
+                关系
+                 老师        班级
+                 c           p13
+                 c           p14
+                 c           p15
+                 z           p13
+                 z           p14
+                 z           p15

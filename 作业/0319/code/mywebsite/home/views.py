@@ -30,7 +30,7 @@ def add(request):
 	print(data)
 	ob = User(**data)
 	ob.save()
-	path = reverse('home_addpage')
+	path = reverse('home_userlist')
 	return HttpResponse('<script>location.href="'+path+'"</script>')
 
 # 展示学生列表(重点)

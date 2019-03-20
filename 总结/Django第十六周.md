@@ -137,3 +137,117 @@ reverse('路由的名')
 
 ## 数据库操作
 
+#### 配置model
+
+1. 安装数据库
+
+2. 创建数据库
+
+3. 安装pymysql
+
+   ```
+   pip install pymysql
+   ```
+
+4. 修改配置文件
+
+   ```
+   DATABASES = {
+       'default': {
+           'ENGINE': 'django.db.backends.mysql',
+           'NAME': 'stu',  		# 数据库的名字
+           'USER': 'root', 		# 链接数据库的账户
+           'PASSWORD': '123456',  	# 数据哭的密码
+           'HOST': '127.0.0.1',  	# 数据库的地址
+           'PORT': '3306',        	# 数据库的端口号
+   	}
+   }
+   
+   把当前的应用导入
+   INSTALLED_APPS = [
+   	. . .
+   	'myhome',
+   ]
+   ```
+
+5. 导入pymysql
+
+   ```
+   在settings.py同级目录下的__init__.py导入pymysql
+   import pymysql
+   pymysql.install_as_MySQLdb()
+   ```
+
+#### 模型定义
+
+1. 定义模型
+
+   修改应用下的models.py
+
+   在不指定表名的情况下 自动生成的表名  应用名_类名
+
+   一个类就算是一个表,类里面的属性就是字段名
+
+   如果不指定主键 会自动创建一个主键
+
+   ```
+   class User(Models.model):
+   	name = models.CharField(max_length=50,null=True)
+   ```
+
+2. 生成迁移文件
+
+   ```
+    python manage.py makemigrations
+   ```
+
+3. 执行迁移
+
+   ```
+   python manage.py migrate
+   ```
+
+#### 增删改查
+
+##### 实例化
+
+```
+from . import models
+ob = models.User()# 得到数据库 user类
+```
+
+##### 添加数据
+
+```
+data = {xx:xx,xxx:xxx}
+ob = models.User(**data)
+ob.save()
+```
+
+##### 查询数据
+
+```
+obs = models.User.objects.all()   # 查所有
+obs = models.User.objects.filter( . . . )  	# 条件 获取所有符合条件的数据
+obs = models.User.objects.get(...)  		# 条件 执行单个条件 ,查到两条数据会报错
+filter 和 all 都是迭代器    get 不是
+```
+
+##### 删除数据
+
+```
+obs.delete()   # 把obs中的结果全部删除
+```
+
+##### 更新数据
+
+```
+先查再改
+
+obs.属性 = ' ' 
+obs.save()
+```
+
+**如何把数据传给页面?**
+
+使用render的第三个参数 该参数 须是字典形式

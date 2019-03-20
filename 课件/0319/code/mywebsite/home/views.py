@@ -76,7 +76,7 @@ def add(request):
     return HttpResponse('添加成功了,哥哥')
 
 # 展示学生列表(重点)
-# 把数据交给页面 使用render 方法 第三个参数 
+# 把数据交给页面 使用    render 方法 第三个参数
 def userlist(request):
     # 查询所有
     ob = models.User.objects.all()

@@ -8,7 +8,7 @@
 pip install virtualenv/virtualenvwrapper
 ```
 
-#### 在指定位置创建虚拟环境文件夹
+#### 89在指定位置创建虚拟环境文件夹
 
 #### 启动虚拟环境
 
@@ -107,4 +107,33 @@ def tmp(request):
     return render(request,'index.html')
 ```
 
- 
+####  参数路由
+
+```
+# 位置参数路由
+将路由给则匹配到的内容当成参数传给视图函数 是有函数必须要有形参
+(r'hello/([0-9]{2})',views.index)
+
+# 关键字参数
+(r'hello/(?P<形参名字>[0-9]{2})',views.index)
+
+# 默认值参数 定义两个路由规则指向一个视图函数
+(r'hello/$',views.index)
+(r'hello/([0-9])/$',views.index)
+```
+
+#### 反向解析
+
+```
+给内部使用  
+可以根据路由的name属性的值 动态获取url地址
+在模板里面使用 {% url '路由的名' %}
+在视图当中使用 
+from django.core.urlresolvers import reverse
+reverse('路由的名')
+```
+
+
+
+## 数据库操作
+

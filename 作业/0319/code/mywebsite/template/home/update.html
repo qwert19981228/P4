@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加学员</title>
+</head>
+<body>
+<form action="{% url 'home_update' %}">
+    {% for i in info %}
+    <input type="hidden" name="id" value="{{i.id}}">
+    <label>姓名:<input type="text" name="name" value="{{i.name}}"></label><br>
+    年龄:<input type="number" name="age" value="{{i.age}}"><br>
+    邮箱:<input type="email" name="email" value="{{i.email}}"><br>
+    密码:<input type="password" name="password" value="{{i.password}}"><br>
+    <button>提交</button>
+    {% endfor %}
+</form>
+</body>
+</html>

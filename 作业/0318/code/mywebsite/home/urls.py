@@ -17,8 +17,6 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    # url(r'^admin/', admin.site.urls),
-    # url(r'^index/', views.index),
     url(r'^index/', views.page),
     url(r'^title/([0-9]{4})/$', views.title),
     url(r'^guan_title/(?P<year>[0-9]{4})/$', views.guan_title),
@@ -28,6 +26,5 @@ urlpatterns = [
 
     url(r'^turnover/$', views.turnover,name='over'),
     url(r'^fall/$', views.fall,name='fall'),
-
 
 ]

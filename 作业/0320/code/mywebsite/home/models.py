@@ -39,7 +39,7 @@ class Stu(models.Model):
 
     cid = models.ForeignKey(to='Class',to_field='id')
     def __str__(self):
-        # 返回 以name 去返回 在后台管理中常用
+        # 返回 以name 去返回 在后台管理中常用9
         return self.sname
 
 # 多对多
@@ -58,5 +58,5 @@ class Teacher(models.Model):
     cid = models.ManyToManyField(to="classes")
 
     def __str__(self):
-        # 返回 以name去返回 在后台管理中常用
+        # 返回 以name去返将 回 在后台管理中常用
         return self.tname

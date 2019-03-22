@@ -1,0 +1,174 @@
+复习:
+    自带后台配置
+
+    模型关系
+        一对一  通过用户可以找到用信息  通过用户信息可以查到用户
+            user  userinfo uid
+            ob = models.User(name="zhasan")
+            ob.save()
+            info = models.Userinfo()
+            info.sex=1
+            info.uid= ob
+
+            数据查询:
+                根据信息查用户
+                info = models.Userinfo.objects.first()
+                print(info)
+                print(info.uid.name)
+                根据用户查信息
+                user = models.User.objects.first()
+                print(user)
+                print(user.userinfo.sex)
+        一对多
+            两个模型 一表的一条数据 对应另一个表的多条数据
+            class stu
+            c = models.Class(name='py11')
+            c.save()
+
+            s = models.Stu()
+            s.sname='zhansgan'
+            s.cid=c
+
+            查询:
+                根据班级可以查到本机当中所有学员
+                c = models.Class.objects.first()
+                print(c)
+                print(c.stu_set.all())
+                根据学员查班级
+                s = models.Stu.objects.first()
+                print(s)
+                print(s.cid.name)
+        多对多
+            两个模型 或生成三张标 一张表单独存关系
+            一本书 可以有 多个标签
+            一个标签 可以对应多本书
+
+            书     标签
+
+            添加: 
+                b = models.Book(bname="程序员穿越丗")
+                b.save()
+
+                t1 = models.Tag(tname='穿越')
+                t1.save()
+                t2 = models.Tag(tname='言情')
+                t2.save()
+                t3 = models.Tag(tname='仙侠')
+                t3.save()
+
+                ts = models.Tag.objects.all()
+                cxy = models.Book.objects.first()
+                print(cxy)
+                cxy.tid.add(ts[0],ts[1])
+
+                ts.book_set.add(cxy)
+
+            查询:
+                t = models.Tag.objects.filter(tname='仙侠')
+                print(t)
+                print(t.book_set.all())
+
+                b=models.Book.objects.first()
+                print(b)
+                print(b.tid.all())
+
+views:
+    重定向: 要在render后引入 redirect
+    ```from django.shortcuts import render,redirect```
+    
+        利用js重定向
+        return HttpResponse('<script>location.href="'+path+'"</script>')
+        利用redirect
+         # return redirect('reindex/')
+         return redirect(reverse('myhome_reindex'))
+
+request对象
+    path: 返回路径 不包括域名   http://127.0.0.1:8000/urlpath/#top?id=1&name=zhansgan
+    method: 请求方式
+    GET: 获取用户get方式提交的数据 
+        request.GET['key']  如果用户没有提交数据会报错
+        request.GET.get('key')   如果用户没有提交数据 返回None 不会报错
+        request.GET.get('key',3)   如果用户没有提交数据 返回3
+    POST: 获取用户POST方式提交的数据
+    FILES: 文件上传
+        1.返添加路由
+            返回表单页面        # 使用post提交 一定要添加enctype
+            接受用户提交的数据 
+        2.接受用户数据并写入到文件
+            request.FILES
+            写入数据
+            在项目中创建static 目录
+
+GET POST:
+    一键一值
+    GET[]
+    GET.get()
+    GET.dict()  返回字典
+
+    一键多值
+    GET.getlist('key')
+
+
+http:无状态  无法记录用户的行为  但是有时候需要记录用户的信息
+cookie
+    将数据存储到本地(浏览器) 不安全
+
+    设置cookie  在响应对象设置
+        res = HttpResonse('设置cookie')
+        res.set_cookie('key','value')
+        return res
+    获取cookie  在请求对象获取
+        request.COOKIES.get('key')
+session
+    将数据存储到服务端(数据库,文件,内存)
+    session会产生一个建 叫sessionid  将sessionid存到客户端
+    设置和获取都在request对象
+
+    def setsession(request):
+        request.session['uname']='zhansagn'
+        return HttpResponse('SHEHZISESSION')
+
+    def getsession(request):
+        print(request.session.get('uname'))
+        # request.session.clear()  # 清空会话信息 不会删除会话
+        request.session.flush()   # 删除会话
+        return HttpResponse('获取session')
+
+
+de96e23a1757d07185969f7c236234c7788180db:
+{"_auth_user_hash":"8249a7137f985a692b4d0926c7cdf1f112d78ee9","_auth_user_backend":"django.contrib.auth.backends.ModelBackend","_auth_user_id":"2","uname":"zhansagn"}
+
+---------------------
+
+#模板中 自动转义
+在django的模板中 默认会把变量中的 html,css,js等标签转义输出 
+可以在输出变量时关闭自动转义 
+{{ shtml|safe }}
+
+为什么要把变量中的标签内容自动转义? 
+涉及到web安全,xss攻击 
+XSS是一种在web应用中的计算机安全漏洞，它允许恶意web用户将代码植入到提供给其它用户使用的页面中。
+
+sql注入攻击 
+在你把用户提交的内容和你的sql语句做拼接时,会暴露
+
+解决方法: 
+1,在进行数据库相关操作时,使用预处理方法, 
+sql语句和参数进行分类,先执行sql语句,在给定参数
+
+2,不要相信用户提交的数据 
+过滤关键字及特殊符合
+
+3,使用框架中的模型进行数据库的操作
+
+
+#自定义 标签 或 过滤器
+
+
+
+XSS攻击 跨站脚本攻击
+csrf 跨站伪造攻击
+sql注入
+zhansgan"#
+str = 'selet * from user where  name="usenrma" and password';
+select * from user where name="zhsnagn" # and password="

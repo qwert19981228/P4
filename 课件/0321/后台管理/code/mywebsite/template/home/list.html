@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>py04-学生列表</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>编号</td>
+            <td>姓名</td>
+            <td>年纪</td>
+            <td>邮箱</td>
+            <td>密码</td>
+            <td>操作</td>
+
+        </tr>
+        <!-- 这下面的是循环体  我们需要循环输出-->
+        
+        {% for i in info %}
+
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.age}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.password}}</td>
+            <td><a href="{% url 'home_del' i.id %}">删除</a>    修改</td>
+        </tr>
+
+        <!-- 这下面的是循环体  我们需要循环输出-->
+        {% endfor %}
+
+    </table>
+</body>
+</html>

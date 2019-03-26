@@ -8,7 +8,37 @@
     <h1>变量输出</h1>
     {{info.name}}
     {{list.1}}
+    <h1>返回html 与 js 会自动转义</h1>
+    <h2>html 原样输出</h2>
+    {{html}}
+    {{js}}
+    <h2>变量 | safe 即可关闭转义</h2>
+    {{html|safe}}
+    {{js|safe}}
+    <h1>注释</h1>
+    {#{{2+2}}#}
+    {% comment %}
+    {{1+1}}
+    {{info.name}}
+    <h1>注释完成</h1>
+    <hr>
+    <hr>
+    <hr>
+    <h1>过滤器</h1>
+    {{'abc'|upper}}
+    {{'BIG EYES'|lower}}
+
+    <h2>传参数-- join 分割</h2>
+    {{info.name|join:'-'}}
+    <h2>默认值过滤器 default</h2>
+    {{info.name|default:'我是默认值'}}
+
+
+    <h1>自定义标签与过滤器</h1>
     {% load demo %}
     {% dan data1 %}
+
+    <h1>include 标签HTML页面</h1>
+    {% include 'footer.html' %}
 </body>
 </html>

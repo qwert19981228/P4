@@ -1,0 +1,146 @@
+
+# 模板继承
+
+模板继承可以减少页面内容的重复定义，实现页面内容的重用
+典型应用：网站的头部、尾部是一样的，这些内容可以定义在父模板中，子模板不需要重复定义
+
+
+block标签：在父模板中预留区域，在子模板中填充
+extends继承：继承，写在模板文件的第一行
+
+##1 模板继承语法
+
+
+
+定义父模板index.html
+
+{ %  block block_name  % }
+   这里可以定义默认值
+   如果不定义默认值，则表示空字符串
+{ %  endblock  % }
+
+
+定义子模板add.html
+
+{ %  extends "base.html"  % }
+
+在子模板中使用block填充预留区域
+
+{ %  block block_name  % }
+实际填充内容
+{ %  endblock  % }
+
+
+##2. 模板继承例子
+
+
+在 父模板中如下
+
+定义 的block  是指，这是一个block， 当儿子想要使用， 那就 extend 继承父模板，即可。 
+如果儿子， 使用 跟父亲同一个block，
+
+两种情况：
+	第一： 使用父亲提供的默认值
+	第二： 使用自己的默认值。
+
+详情参考模板语法的规则
+
+----------------------------
+##3. 作业
+
+###用amazeUI 进行后台模板嵌套
+带领学生完成 index。html
+
+add.html
+userlist.html
+
+**edit.html模板任务**
+
+**编辑交给学生课堂作业**
+
+
+
+
+##3. 说明
+如果在模版中使用extends标签，它必须是模版中的第一个标签
+不能在一个模版中定义多个相同名字的block标签
+
+
+##4. 三重继承架构
+
+ - 三层继承结构使代码得到最大程度的复用，并且使得添加内容更加简单
+ - 如下图为常见的电商页面
+
+![title](https://leanote.com/api/file/getImage?fileId=5c946b99ab644147620014c7)
+
+
+
+#3. 套用静态资源
+
+项目中的CSS、图片、js都是静态文件
+
+配置静态文件
+1.在settings 文件中定义静态内容
+
+
+```STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]```
+
+
+2.在项目根目录下创建static目录，再创建当前应用名称的目录
+```mysite/static/myapp/```
+
+
+3.在模板中可以使用硬编码
+```/static/my_app/myexample.jpg```
+
+4.在模板中可以使用static编码
+```
+{ % load static from staticfiles % }
+<img src="{ % static "my_app/myexample.jpg" % }" alt="My image"/>
+```
+
+
+
+#4. 新建app后台管理
+创建admin 应用
+
+创建后台的Users 模型
+
+根据之前完成的页面，我们定义操作url，去完成CRUD
+
+
+
+#5. 完成一个用户的CURD
+基本的CURD
+
+
+# 明日预告
+分页搜索
+
+# 后日预告
+分层 views
+商品分类CURD
+
+# 大后日预告
+
+后台首页，登录注册 验证码
+
+
+商品管理CURD
+
+# 大大后日预告（day10）
+
+前台首页 列表页 详情页
+
+登录注册 短信验证登录
+
+
+
+
+
+
+
+

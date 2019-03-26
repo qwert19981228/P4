@@ -1,0 +1,82 @@
+{% extends 'myadmin/user/index.html' %}
+{% block title %}
+<title>会员列表</title>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid am-cf">
+                <div class="row">
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-9">
+                        <div class="page-header-heading"><span class="am-icon-home page-header-heading-icon"></span> 添加会员 <small>Amaze UI</small></div>
+                        <p class="page-header-description">会员,请注意.....</p>
+                    </div>
+                    <div class="am-u-lg-3 tpl-index-settings-button">
+                        <button type="button" class="page-header-button"><span class="am-icon-paint-brush"></span> 设置</button>
+                    </div>
+                </div>
+
+            </div>
+<div class="row">
+
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                        <div class="widget am-cf">
+                            <div class="widget-head am-cf">
+                                <div class="widget-title am-fl">斑马线</div>
+                                <div class="widget-function am-fr">
+                                    <a href="javascript:;" class="am-icon-cog"></a>
+                                </div>
+                            </div>
+                            <div class="widget-body  widget-body-lg am-fr">
+
+                                <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
+                                    <thead>
+                                        <tr>
+                                            <th>id</th>
+                                            <th>头像</th>
+                                            <th>用户名</th>
+                                            <th>密码</th>
+                                            <th>手机</th>
+                                            <th>邮箱</th>
+                                            <th>性别</th>
+                                            <th>年龄</th>
+                                            <th>状态</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for i in info %}
+                                        <tr class="gradeX">
+                                            <td>{{i.id}}</td>
+                                            <td><img src="{{i.pic_url}}" alt="" width="100"></td>
+                                            <td>{{i.username}}</td>
+                                            <td>**********</td>
+                                            <td>{{i.phone}}</td>
+                                            <td>{{i.email}}</td>
+                                            <td>{{i.sex}}</td>
+                                            <td>{{i.age}}</td>
+                                            <td>{{i.status}}</td>
+                                            <td>
+                                                <div class="tpl-table-black-operation">
+                                                    <a href="javascript:;">
+                                                        <i class="am-icon-pencil"></i> 编辑
+                                                    </a>
+                                                    <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                        <i class="am-icon-trash"></i> 删除
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                        <!-- more data -->
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+</div>
+{% endblock %}

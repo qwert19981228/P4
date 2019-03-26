@@ -11,4 +11,6 @@ def tmp(request):
 	lists = ['嘤嘤嘤','切克闹']
 	name = '大爷来玩儿'
 	data1 = ['首页','女装','汉服','cosplay']
+	html = '<h1>老子明天不上班</h1>'
+	js = '<script>alert("爽的一比")</script>'
 	return render(request,'home/tmp.html',{'info':data2,'list':lists,'name':name,'data1':data1})

@@ -525,3 +525,62 @@ def getsession(request):
     return HttpResponse('获取session')
 ```
 
+
+
+## 漏洞攻击
+
+在django的模板中 默认会把变量中的 html,css,js等标签转义输出 
+可以在输出变量时关闭自动转义 
+{{ shtml|safe }}
+
+为什么要把变量中的标签内容自动转义
+涉及到web安全,xss攻击 
+**XSS**是一种在web应用中的计算机安全漏洞，它允许恶意web用户将代码植入到提供给其它用户使用的页面中
+
+**sql注入攻击**
+
+ 在你把用户提交的内容和你的sql语句做拼接时,会暴露
+
+**解决方法**
+
+1. 在进行数据库相关操作时,使用预处理方法, sql语句和参数进行分类,先执行sql语句,在给定参数
+2. 不要相信用户提交的数据 过滤关键字及特殊符合
+3. 使用框架中的模型进行数据库的操作
+
+
+
+## 自定义标签,过滤器
+
+在当前应用下 创建文件夹 (templatetags)并创建文件(根据你的项目情况进行命名)
+
+#### 自定义过滤器
+
+```
+from django import template
+register = template.Library()
+# 自定义过滤器
+@register.filter
+def kong_upper(val):
+    # print ('val from template:',val)
+    return val.upper()
+```
+
+#### 自定义标签
+
+```
+from django.utils.html import format_html
+@register.simple_tag
+# 自定义标签
+def jia(a,b):
+    res = int(a) + int(b)
+    return res
+```
+
+> 需要在末尾中导入文件[记得重启项目!要加载新文件]
+
+```
+{% load 文件名 %}
+{{ 变量|kong_upper }}
+{% jia 1 2 %}
+```
+
